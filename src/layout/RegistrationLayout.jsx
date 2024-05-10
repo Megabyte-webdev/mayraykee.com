@@ -9,11 +9,6 @@ function RegistrationLayout() {
 
     const sharedData = {state: state, dispatch: dispatch}
 
-    
-    useEffect(() => {
-        
-    }, [state])
-
     return (
         <main className='w-full h-screen flex'>
             <div className='w-[50%] h-screen'>

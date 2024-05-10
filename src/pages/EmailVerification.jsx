@@ -67,7 +67,7 @@ function EmailVerification() {
 
       <button
           onClick={() => navigate('/registration/profile_details')}
-          className="text-small hover:text-[13px] font-semibold w-[60%] text-white bg-green h-[45px] mt-[20px] rounded-md"
+          className="text-small hover:text-[13px] hover:scale-105 duration-150 font-semibold w-[60%] text-white bg-green h-[45px] mt-[20px] rounded-md"
         >
           Create Account
         </button>

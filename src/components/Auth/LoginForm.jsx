@@ -6,14 +6,14 @@ import { GiCircle, GiPlainCircle } from "react-icons/gi";
 import { handleOnChange } from "../../utils/UtilMethods";
 import { NavLink } from "react-router-dom";
 
-function LoginForm({rememberMe, toogleRememberMe, setLoginDetails, handleOnSubmit}) {
+function LoginForm({rememberMe, toogleRememberMe, setLoginDetails, handleOnSubmit,version}) {
 
     
 
   return (
     <div
       id="login-form"
-      className="h-[60%] w-[25%] bg-white/95 absolute rounded-md left-[20%] top-[20%] px-[3%] py-[10px]"
+      className={`h-[60%] w-[25%] bg-white absolute rounded-md ${version.position} px-[3%] py-[10px]`}
     >
       <img src={MainLogo} />
 
@@ -40,10 +40,10 @@ function LoginForm({rememberMe, toogleRememberMe, setLoginDetails, handleOnSubmi
                 {rememberMe ? <GiPlainCircle onClick={toogleRememberMe} className="text-green cursor-pointer"/> : <GiCircle className="cursor-pointer" onClick={toogleRememberMe} />}
                 <span onClick={toogleRememberMe} className="cursor-pointer">Remember Me</span> 
                 </p> 
-               <p className="cursor-pointer hover:underline">Forgot Password?</p>
+               <p className="cursor-pointer hover:underline"><NavLink to={'/forgot_password'}>Forgot Password?</NavLink></p>
             </div>
 
-              <button type="submit" className="w-full text-small hover:text-[13px] font-semibold text-white bg-green h-[45px] mt-[10px] rounded-md">
+              <button type="submit" className="w-full text-small hover:scale-105 hover:text-[13px] font-semibold text-white bg-green h-[45px] mt-[10px] rounded-md">
                   Login to continue
               </button>
 

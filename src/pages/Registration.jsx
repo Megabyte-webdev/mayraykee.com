@@ -1,8 +1,4 @@
 import React, { useEffect, useReducer, useState } from "react";
-import {
-  RegistrationReducer,
-  intialProfileState,
-} from "../reducers/RegistrationReducer";
 import { registration_steps_keys } from "../utils/constants";
 import MainIcon from "../assets/svgs/main-logo.svg";
 import Person from "../assets/pngs/person.png";
@@ -34,11 +30,10 @@ function Registration() {
     console.log(state);
   }, [state])
 
+
   return (
     <div className="w-[50%] px-[5%] pt-[10px] flex flex-col  items-center">
-      {/* <button onClick={() => dispatch({ type: registration_steps_keys.email_verification.title, payload: registration_steps_keys.email_verification })}>Clock</button>
-            <button onClick={() => dispatch({ type: registration_steps_keys.course_details.title, payload: registration_steps_keys.course_details })}>Clock</button> */}
-      <img src={MainIcon} className="w-[60%]" />
+     <img src={MainIcon} className="w-[60%]" />
 
       <div className="flex flex-col items-center gap-[8px] w-[60%]">
         <h1 className="font-semibold text-[25px]">Create Account</h1>
@@ -170,7 +165,7 @@ function Registration() {
 
         <button
           type="submit"
-          className="text-small hover:text-[13px] w-full font-semibold text-white bg-green h-[45px] mt-[10px] rounded-md"
+          className="text-small hover:text-[13px] hover:scale-105 duration-150 w-full font-semibold text-white bg-green h-[45px] mt-[10px] rounded-md"
         >
           Submit
         </button>
