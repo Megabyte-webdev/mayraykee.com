@@ -3,11 +3,6 @@ import BoardMen from "../assets/pngs/men-in-board.png";
 import Computer from "../assets/pngs/computer.png";
 import Dialog from "../assets/pngs/dialog.png";
 import Calenderr from "../assets/pngs/calender.png";
-import Badge from "@mui/material/Badge";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
-import dayjs from "dayjs";
-import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 import { Calendar } from "primereact/calendar";
 import HomeWork from "../components/dashboard/HomeWork";
 import Upcoming from "../components/dashboard/Upcoming";
@@ -58,7 +53,7 @@ function Dashboard() {
             </span>
           </div>
         </ul>
-        <div className="flex w-full flex justify-between pr-[8%] h-[100px]">
+        <div className="flex w-full justify-between pr-[8%] h-[100px]">
         <LineChart/>
        <ProgressPieChart/>
         </div>

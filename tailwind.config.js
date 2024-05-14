@@ -1,9 +1,10 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    
   ],
   theme: {
     extend: {
@@ -19,6 +20,7 @@ module.exports = {
       },
       content: {
         'link': "url('src/assets/pngs/edit.png')",
+        'link-icon': "url('src/assets/pngs/link-icon.png')",
       },
       textColor: {
         dark: ''
