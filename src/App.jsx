@@ -9,9 +9,6 @@ import 'primeflex/primeflex.css';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primeicons/primeicons.css';
-
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Tailwind, TRANSITIONS } from "./utils/datestyles";
 import Login from "./pages/Login";
 import { ToastContainer, toast } from "react-toastify";

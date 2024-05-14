@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import Medal from '../../assets/pngs/medal.png'
+import { Link } from "react-router-dom";
 
 function InviteComponent() {
   return (
@@ -9,7 +10,9 @@ function InviteComponent() {
         <img src={Medal} className="h-[60%]"/>
       </div>
 
+      <Link to='/invite_friends' >
       <button className="py-[5px] w-full bg-green text-white rounded-[5px] hover:scale-105 duration-150 text-sm font-semibold">Invite</button>
+      </Link>
     </div>
   );
 }
