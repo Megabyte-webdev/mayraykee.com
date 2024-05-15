@@ -21,6 +21,7 @@ module.exports = {
       content: {
         'link': "url('src/assets/pngs/edit.png')",
         'link-icon': "url('src/assets/pngs/link-icon.png')",
+        'arrow-right': "url('src/assets/pngs/arrow-right.png')"
       },
       textColor: {
         dark: ''
