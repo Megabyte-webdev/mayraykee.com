@@ -12,3 +12,17 @@ export const formatTime = (seconds) => {
   const remainingSeconds = seconds % 60;
   return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`; // Add leading zero for single-digit seconds
 }
+
+
+export const highlightKeyword = (sentence, keyword) => {
+  
+  const regex = new RegExp(`\\b${keyword.name}\\b`, 'gi');
+ 
+  return sentence.replace(regex, `<span class="${keyword.color} font-bold cursor-pointer hover:underline ">${keyword.name}</span>`);
+};
+
+export const FormatPrice = (price) => {
+
+  return `$${price.toLocaleString(navigator.language, {minmumFractionDigits: 0})}`;
+
+}
