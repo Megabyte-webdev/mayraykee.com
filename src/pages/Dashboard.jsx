@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BoardMen from "../assets/pngs/men-in-board.png";
+import BoardMen from "../assets/jpgs/boardroom.jpg";
 import Computer from "../assets/pngs/computer.png";
 import Dialog from "../assets/pngs/dialog.png";
 import Calenderr from "../assets/pngs/calender.png";
@@ -25,11 +25,14 @@ function Dashboard() {
     <div className="flex w-full h-full px-[2%] overflow-x-auto pt-[1%]">
       <section className="w-[70%] h-full flex flex-col  gap-[5%] pt-[3%]">
         <ul className="h-[50%]  w-full grid grid-cols-2 gap-[10px] ">
-          <div
-            className={`w-[350px] rounded-[10px] cursor-pointer hover:scale-105 bg-card-background bg-[length:120%_125%] bg-center  bg-red-100 duration-150 overflow-hidden h-[190px] `}
-          >
-            {/* <img className="object-cover w-full" src={BoardMen} /> */}
-          </div>
+        <div className="h-[190px] w-[350px] rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 duration-150">
+        <img
+          src={BoardMen}
+          alt="Board Men" // Descriptive alt text for accessibility
+          className="h-full w-full object-cover"
+        />
+      </div>
+          
 
           <div
             className={`w-[350px] cursor-pointer group hover:scale-105 duration-150 flex flex-col gap-[10px] justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-white`}
