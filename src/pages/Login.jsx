@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import LoginForm from '../components/Auth/LoginForm'
+import LoginOne from '../assets/pngs/login-image2.png'
+import LoginTwo from '../assets/svgs/login-image-2.svg'
 import { toast } from 'react-toastify'
 import { onSuccess } from '../utils/notifications/OnSuccess'
 import { onFailure } from '../utils/notifications/OnFailure'
@@ -10,17 +12,20 @@ const getLoginVersion = (version) => {
       case 1: return {
           bgImage: 'bg-login-background',
           bgSize: 'bg-[length:100%_120%]',
-          position: 'left-[20%] top-[20%]',
+          background: LoginOne,
+          position: 'left-[10%] top-[20%]',
       }
       case 2: return {
           bgImage: 'bg-login-background',
           bgSize: 'bg-[length:100%_120%]',
+          background: LoginOne,
           position: 'right-[20%] top-[20%]',
       }
       case 3: return {
           bgImage: 'bg-login-background2',
           bgSize: 'bg-contain',
-          position: 'left-[20%] top-[20%]',
+          background: LoginTwo,
+          position: 'left-[15%] top-[20%]',
       }
     }
  }
@@ -46,8 +51,9 @@ function Login() {
 
 
     return (
-        <main id='login-Wrapper' className={`h-screen w-screen flex bg-center items-start justify-center relative ${version.bgSize} ${version.bgImage}`}>
-            <div className='flex gap-[15px] pt-[10px] text-white text-sm font-semibold'>
+        <main id='login-Wrapper' className={`h-screen w-screen flex bg-center items-start justify-center relative `}>
+            <img className='w-full h-full object-cover object-top absolute' src={version.background}/>
+            <div className='flex gap-[15px] pt-[10px] text-white text-sm z-10 font-semibold'>
                 <button onClick={() => setVersion(getLoginVersion(1))} className='py-[5px] bg-green rounded-[10px] px-[5px]'>
                     Version One
                 </button>
