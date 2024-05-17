@@ -11,13 +11,21 @@ const Profile = lazy(() => import('../layout/ProfileDetails'))
 const Activity = lazy(() => import('../layout/Activity'))
 const You = lazy(() => import('../pages/You'))
 const Following = lazy(() => import('../pages/Following'))
+const AllCourses = lazy(() => import('../pages/AllCourses'))
+const CoursePage = lazy(() => import('../pages/CoursePage'))
 
 function useDashboardRoute() {
     return (
         <Route path='/' element={<DashboardLayout/>}>
             <Route index element={<Dashboard/>} />
+
             <Route path='/invite_friends' element={<InviteFriends/>}/>
-            <Route path='/courses' element={<Courses/>} />
+
+            <Route path='/courses' element={<Courses/>}>
+              <Route index element={<AllCourses/>}/>
+              <Route path='/courses/:id' element={<CoursePage/>}/>
+            </Route>
+
             <Route path='/account_profile' element={<Profile/>} />
 
             <Route path='/activity' element={<Activity/>} >
