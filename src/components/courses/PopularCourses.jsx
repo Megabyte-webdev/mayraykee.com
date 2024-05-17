@@ -1,12 +1,13 @@
 import ArrowRight from '../../assets/pngs/arrow-right.png'
 import { courses_two } from '../../utils/constants';
-import CourseCard from './CourseCard';
+import CategoryCard from './CategoryCard';
+import CourseCard from './CategoryCard';
 import { memo } from 'react';
 
 function PopularCourses() {
 
     const getCourses = () => {
-        return courses_two.map((currentCourse, index) => <CourseCard key={index} currentCourse={currentCourse}/>)
+        return courses_two.map((currentCourse, index) => <CategoryCard key={index} data={currentCourse}/>)
     }
 
     return ( 

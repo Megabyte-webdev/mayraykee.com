@@ -4,7 +4,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 function ProgressPieChart() {
   return (
-    <div className="w-[20%] h-[250px] rounded-[10px] bg-white justify-start flex px-[10px] pt-[10px] flex-col items-center bg-red-300 center mt-[120px]">
+    <div className="w-[20%] h-[250px] rounded-[10px] bg-white justify-start flex px-[10px] pt-[10px] flex-col items-center center mt-[120px]">
       <div className="w-[80%] h-[45%]">
         <CircularProgressbar
           value={70}

@@ -1,5 +1,5 @@
 import { highlightKeyword } from "../utils/UtilMethods";
-import { courses } from "../utils/constants";
+import { categories } from "../utils/constants";
 
 function NameTag({initials, initialsBackground, name, extraText}) {
 
@@ -7,7 +7,11 @@ function NameTag({initials, initialsBackground, name, extraText}) {
   const editExtraText = () => {
     let text = extraText
 
-    courses.map((currentCourse => {
+    if(!extraText){
+      return
+    }
+
+    categories.map((currentCourse => {
         if(text.toLowerCase().includes(currentCourse.name.toLowerCase())){
           text = highlightKeyword(text, currentCourse)
         }

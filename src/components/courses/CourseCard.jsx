@@ -1,16 +1,32 @@
-import { memo } from "react";
-import ArrowRight from '../../assets/pngs/arrow-right.png'
-function CourseCard({currentCourse}) {
+import { memo } from 'react';
+import RedClock from '../../assets/pngs/red-clock.png'
+import Location from '../../assets/pngs/location.png'
+import Clipboard from '../../assets/pngs/clipboard.png'
+import { FormatPrice } from '../../utils/UtilMethods';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+function CourseCard({data}) {
+    const navigate = useNavigate();
+    const location = useLocation()
+
+    const navigateToCoursePage = () => navigate(`/courses/${data.id} ${data.name}`, {state: {data: data, previousPath: location.pathname}})
+
+
     return ( 
-    <li className="w-[23%] px-[10px] group cursor-pointer hover:scale-105 duration-100 hover:shadow-md py-[5px] justify-between bg-white items-center rounded-[10px] flex">
-        <img className="h-[80%]" src={currentCourse.icon}/>
-        <div className="flex flex-col gap-[5px]">
-            <span className="text-sm font-semibold text-gray-500">{currentCourse.name}</span>
-            <span className="text-[11px] text-gray-400">{currentCourse.desc}</span>
+    <li onClick={navigateToCoursePage} className="w-[220px] cursor-pointer hover:shadow-md hover:scale-105 duration-100 h-[250px] flex  flex-col rounded-[10px] p-[1%] gap-[10px] bg-white">
+        <img src={data?.thumbnail} className="w-full object-cover rounded-[10px] h-[55%]"/>
+        <div className="flex flex-col text-small gap-[5px]  justify-between h-[40%] items-center px-[10px]">
+            <h5 className="text-small font-semibold  text-blacktext-center truncate">{data?.name}</h5>
+            <span className="text-[11px] text-black line-clamp-2">{data?.shortDesc}</span>
+
+            <div className="flex w-full text-black justify-between ">
+                <span className='text-[10px] gap-[3px] flex'><img src={RedClock} className='h-[15px]'/>{data?.duration}</span>
+                <span className='text-[10px] gap-[3px] flex'><img src={Location} className='h-[15px]'/>{data?.location}</span>
+                <span className='text-[10px] gap-[3px] flex'><img src={Clipboard} className='h-[15px]'/>{FormatPrice(Number(data?.price))}</span>
+
+            </div>
         </div>
-
-        <img className="h-[10px] pr-[10px] duration-150 group-hover:pr-0" src={ArrowRight}/>
-
+     
     </li> );
 }
 

@@ -117,7 +117,7 @@ export const courses_two = [
   },
 ];
 
-export const courses = [
+export const categories = [
   {
     name: "Graphics Design",
     color: "text-[#fec64f]",
@@ -135,3 +135,10 @@ export const activityNavStates = {
   following: "Following",
   you: "You",
 };
+
+export const courseOverviewOptions = {
+    about: 'About',
+    curriculum: 'Curriculum',
+    objective: 'Objectives',
+    outline: 'Outline'
+}
