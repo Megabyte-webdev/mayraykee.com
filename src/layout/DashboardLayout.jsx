@@ -7,6 +7,7 @@ import SideBarOptionCard from '../components/dashboard/SideBarOptionCard'
 import { Outlet, useLocation } from 'react-router-dom'
 import { getInitialDashboardState,} from '../utils/DashboardUtilMethods'
 
+
 function DashboardLayout() {
 
     const location = useLocation()
@@ -27,6 +28,7 @@ function DashboardLayout() {
       };
     return (
         <main className='w-full h-screen flex'>
+       
             <SideBar>
             {getSideBarOptions(state, dispatch)}
             </SideBar>

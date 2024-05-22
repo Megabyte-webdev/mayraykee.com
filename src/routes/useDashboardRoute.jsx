@@ -11,8 +11,12 @@ const Profile = lazy(() => import('../layout/ProfileDetails'))
 const Activity = lazy(() => import('../layout/Activity'))
 const You = lazy(() => import('../pages/You'))
 const Following = lazy(() => import('../pages/Following'))
+const Cart = lazy(() => import('../pages/Cart'))
 const AllCourses = lazy(() => import('../pages/AllCourses'))
-const CoursePage = lazy(() => import('../pages/CoursePage'))
+const CoursePreview = lazy(() => import('../pages/CoursePreview'))
+const CourseDisplay = lazy(() => import('../pages/CourseDisplay'))
+const CourseCheckout = lazy(() => import('../pages/CourseCheckout'))
+const CoursePayment = lazy(() => import('../pages/CoursePayment'))
 
 function useDashboardRoute() {
     return (
@@ -23,7 +27,10 @@ function useDashboardRoute() {
 
             <Route path='/courses' element={<Courses/>}>
               <Route index element={<AllCourses/>}/>
-              <Route path='/courses/:id' element={<CoursePage/>}/>
+              <Route path='/courses/preview/:id' element={<CoursePreview/>}/>
+              <Route path='/courses/display/:id' element={<CourseDisplay/>}/>
+              <Route path='/courses/checkout_session/:id' element={<CourseCheckout/>}/>
+              <Route path='/courses/payment_session/:id' element={<CoursePayment/>}/>
             </Route>
 
             <Route path='/account_profile' element={<Profile/>} />
@@ -32,6 +39,9 @@ function useDashboardRoute() {
                 <Route index element={<You/>} />
                 <Route path='/activity/following' element={<Following/>}/>
             </Route>
+
+            <Route path='/cart' element={<Cart/>} />
+
         </Route>
     )
 }

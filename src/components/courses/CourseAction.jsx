@@ -3,20 +3,42 @@ import VideoImg from "../../assets/pngs/video.png";
 import { FormatPrice } from "../../utils/UtilMethods";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import Tick from "../../assets/pngs/tick.png";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function CourseAction({ data }) {
   const [addToWishList, setAddToWishList] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toogleAddToWishList = () => setAddToWishList(!addToWishList);
 
+  const navigateToCheckoutPage = () => {
+    
+
+   
+     let routeId = ` ${data.id} ${data.name}`;
+   
+
+    navigate(`/courses/checkout_session/${routeId}`, {
+      state: { data: [data] },
+    });
+  };
+
+  const testNavigate = () =>
+    navigate(`/courses/display/${data.id} ${data.name}`, {
+      state: { data: data, previousPath: location.pathname },
+    });
+
   const getThingsToLearn = () => {
-     
-    if(data.things_to_learn?.length === 0 || !data.things_to_learn) {
-        return "No Data Found"
+    if (data.things_to_learn?.length === 0 || !data.things_to_learn) {
+      return "No Data Found";
     }
 
     return data?.things_to_learn?.map((currentThing, index) => (
-      <li className="flex items-center gap-[5px] text-small text-gray-400" key={index}>
+      <li
+        className="flex items-center gap-[5px] text-small text-gray-400"
+        key={index}
+      >
         <img src={Tick} className="h-[10px]" />
         {currentThing}
       </li>
@@ -71,8 +93,18 @@ function CourseAction({ data }) {
         </div>
 
         <div className="w-full flex justify-between ">
-              <button className="border w-[45%] rounded-[10px] border-black hover:scale-105 duration-100 font-semibold py-[10px]">Add to Cart</button>
-              <button className="w-[45%] rounded-[10px] hover:scale-105 duration-100 text-white font-semibold bg-green py-[10px]">Buy Now</button>
+          <button
+            onClick={testNavigate}
+            className="border w-[45%] rounded-[10px] border-black hover:scale-105 duration-100 font-semibold py-[10px]"
+          >
+            Add to Cart
+          </button>
+          <button
+            onClick={navigateToCheckoutPage}
+            className="w-[45%] rounded-[10px] hover:scale-105 duration-100 text-white font-semibold bg-green py-[10px]"
+          >
+            Buy Now
+          </button>
         </div>
       </div>
     </div>

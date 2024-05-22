@@ -6,9 +6,15 @@ import ArrowDown from '../../assets/pngs/arrow-down.png'
 import Notification from '../../assets/pngs/notification.png'
 import Settings from '../../assets/pngs/settings.png'
 import ProfilePic from '../../assets/pngs/profile-pic.png'
+import { FaCartShopping, FaBell } from "react-icons/fa6";
+import { IoChatbubbleEllipsesSharp, IoSettings } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 
 function NavBar({ title }) {
+  const navigate = useNavigate()
+
+  const navigateToCart = () => navigate('/cart')
 
 
   return (
@@ -37,15 +43,19 @@ function NavBar({ title }) {
       
         <ul className="flex h-full items-center gap-[20px]">
           <li className="h-full flex items-center hover:scale-105 duration-500 cursor-pointer relative">
-            <div className="h-[8px] top-[20%] right-0 w-[8px] rounded-full absolute bg-lime-400"/>
-            <img className="h-[40%]" src={Cloud}/>
+            <div className="h-[5px] top-[30%] right-0 w-[5px] rounded-full absolute bg-lime-400"/>
+            <IoChatbubbleEllipsesSharp className="text-xl text-gray-400"/>
           </li>
           <li className="h-full flex items-center hover:scale-105 duration-500 cursor-pointer relative">
-            <div className="h-[8px] top-[20%] right-0 w-[8px] rounded-full absolute bg-lime-400"/>
-            <img className="h-[40%]" src={Notification}/>
+            <div className="h-[5px] top-[30%] right-0 w-[5px]  rounded-full absolute bg-lime-400"/>
+            <FaBell className="text-xl text-gray-400"/>
+          </li>
+          <li className="h-full flex items-center hover:scale-105 duration-500 cursor-pointer relative">
+            <div className="h-[5px] top-[30%] right-0 w-[5px]  rounded-full absolute bg-lime-400"/>
+            <FaCartShopping onClick={navigateToCart} className="text-lg text-gray-400"/>
           </li>
           <li className="h-full flex items-center hover:scale-105 duration-500 cursor-pointer relative"> 
-            <img className="h-[40%]" src={Settings}/>
+          <IoSettings className="text-lg text-gray-400"/>
           </li>
           <li className="h-full flex items-center cursor-pointer hover:scale-105 duration-500 relative"> 
             <img className="h-[50%]" src={ProfilePic}/>
