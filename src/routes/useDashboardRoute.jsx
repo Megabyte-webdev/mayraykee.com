@@ -17,6 +17,7 @@ const CoursePreview = lazy(() => import('../pages/CoursePreview'))
 const CourseDisplay = lazy(() => import('../pages/CourseDisplay'))
 const CourseCheckout = lazy(() => import('../pages/CourseCheckout'))
 const CoursePayment = lazy(() => import('../pages/CoursePayment'))
+const Schedule = lazy(() => import('../pages/Schedule'))
 
 function useDashboardRoute() {
     return (
@@ -41,6 +42,9 @@ function useDashboardRoute() {
             </Route>
 
             <Route path='/cart' element={<Cart/>} />
+
+
+            <Route path='/schedule' element={<Schedule/>} />
 
         </Route>
     )
