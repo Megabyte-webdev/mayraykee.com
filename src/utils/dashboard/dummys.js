@@ -1113,3 +1113,5 @@ export const countriesDummy = [
   { id: 54, name: "Zimbabwe" }
 ];
 
+
+export const timeScheduleDummy = ['07 AM', '08 AM', '09 AM', '10 AM', '11 AM', '12 AM', '01 PM', '02 PM', '03 PM', '04 PM', '05 PM']

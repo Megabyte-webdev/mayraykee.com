@@ -70,6 +70,7 @@ export const sidebar_keys = {
     title: "Schedule",
     activeIcon: Schedule,
     inactiveIcon: ScheduleInactive,
+    route: "schedule",
   },
   instructor: {
     title: "Instructors",
