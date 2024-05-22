@@ -1,22 +1,16 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import ArrowLeft from "../assets/pngs/arrow-left-gray.png";
-import CoursePreview from "../components/courses/CoursePreview";
 import CourseOverview from "../components/courses/CourseOverview";
 import CourseAction from "../components/courses/CourseAction";
 
-function CoursePage() {
+function CoursePreview() {
   const location = useLocation();
   const navigate = useNavigate();
   const courseData = location.state?.data;
   const pathname = location.state?.previousPath;
 
-  const navigateToPreviousPage = () => {
-    if (pathname) {
-      navigate(pathname);
-    } else {
-      navigate("/courses");
-    }
-  };
+  const navigateToPreviousPage = () => navigate(-1)
+  
 
   return (
     <section className="flex flex-col pt-[2%] pb-[10px] min-h-[90%] px-[2%] overflow-y-auto gap-[3%]">
@@ -28,12 +22,12 @@ function CoursePage() {
         Back
       </button>
 
-      <CoursePreview>
-        <CourseOverview data={courseData}/>
-        <CourseAction data={courseData}/>
-      </CoursePreview>
+      <div className="w-full flex justify-between">
+        <CourseOverview data={courseData} />
+        <CourseAction data={courseData} />
+      </div>
     </section>
   );
 }
 
-export default CoursePage;
+export default CoursePreview;

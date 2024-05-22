@@ -26,3 +26,8 @@ export const FormatPrice = (price) => {
   return `$${price.toLocaleString(navigator.language, {minmumFractionDigits: 0})}`;
 
 }
+export const FormatPriceInUsd = (price) => {
+
+  return `USD ${price.toLocaleString(navigator.language, {minmumFractionDigits: 0})}`;
+
+}

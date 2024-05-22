@@ -142,3 +142,14 @@ export const courseOverviewOptions = {
     objective: 'Objectives',
     outline: 'Outline'
 }
+
+export const courseDisplayOptions = {
+    about: 'About',
+    review: 'Reviews',
+    discussion: 'Discussion'
+}
+
+export const paymentOptions = {
+  card: 'Credit/Debit Card',
+  paypal: 'Paypal'
+}

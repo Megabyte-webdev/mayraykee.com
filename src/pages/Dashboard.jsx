@@ -8,6 +8,7 @@ import HomeWork from "../components/dashboard/HomeWork";
 import Upcoming from "../components/dashboard/Upcoming";
 import LineChart from "../components/dashboard/chart/LineChart";
 import ProgressPieChart from "../components/dashboard/chart/ProgressPieChart";
+import {Helmet} from 'react-helmet'
 
 const preselectedDates = [
   new Date(2024, 5, 15), // Pre-selected date (December 25, 2023)
@@ -23,6 +24,10 @@ function Dashboard() {
   }, [date]);
   return (
     <div className="flex w-full h-full px-[2%] overflow-x-auto pt-[1%]">
+         <Helmet>
+          <title>Mayrahkee - Africa | Dashboard</title>
+          </Helmet>
+          
       <section className="w-[70%] h-full flex flex-col  gap-[5%] pt-[3%]">
         <ul className="h-[50%]  w-full grid grid-cols-2 gap-[10px] ">
         <div className="h-[190px] w-[350px] rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 duration-150">

@@ -6,7 +6,7 @@ export const onFailure = (message) => {
     <div className="flex items-center text-red-500 gap-[10px]">
       <MdCancel className="text-[25px] " />
       <div className="flex flex-col">
-       <strong className="text-[14px] ">Success Message</strong>
+       <strong className="text-[14px] ">Failure Message</strong>
        <p className="text-small ">{message}</p>
       </div>
        
