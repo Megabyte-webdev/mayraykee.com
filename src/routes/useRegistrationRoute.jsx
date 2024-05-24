@@ -1,10 +1,11 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import EmailVerification from "../pages/EmailVerification";
 
 
 const RegistrationLayout = lazy(() => import("../layout/RegistrationLayout"));
 const Registration = lazy(() => import("../pages/Registration"));
+const EmailVerification = lazy(() => import("../pages/EmailVerification"));
+
 
 function useRegistrationRoute() {
   return (
@@ -12,7 +13,6 @@ function useRegistrationRoute() {
         <Route path="/registration" element={<RegistrationLayout />}>
           <Route index element={<Registration />} />
           <Route path="/registration/email_verification" element={<EmailVerification/>} />
-          
         </Route>
     </>
   );

@@ -21,30 +21,30 @@ const Schedule = lazy(() => import('../pages/Schedule'))
 
 function useDashboardRoute() {
     return (
-        <Route path='/' element={<DashboardLayout/>}>
-            <Route index element={<Dashboard/>} />
+        <Route path='dashboard' element={<DashboardLayout/>}>
+            <Route path='/dashboard/home' element={<Dashboard/>} />
 
-            <Route path='/invite_friends' element={<InviteFriends/>}/>
+            <Route path='/dashboard/invite_friends' element={<InviteFriends/>}/>
 
-            <Route path='/courses' element={<Courses/>}>
+            <Route path='/dashboard/courses' element={<Courses/>}>
               <Route index element={<AllCourses/>}/>
-              <Route path='/courses/preview/:id' element={<CoursePreview/>}/>
-              <Route path='/courses/display/:id' element={<CourseDisplay/>}/>
-              <Route path='/courses/checkout_session/:id' element={<CourseCheckout/>}/>
-              <Route path='/courses/payment_session/:id' element={<CoursePayment/>}/>
+              <Route path='/dashboard/courses/preview/:id' element={<CoursePreview/>}/>
+              <Route path='/dashboard/courses/display/:id' element={<CourseDisplay/>}/>
+              <Route path='/dashboard/courses/checkout_session/:id' element={<CourseCheckout/>}/>
+              <Route path='/dashboard/courses/payment_session/:id' element={<CoursePayment/>}/>
             </Route>
 
-            <Route path='/account_profile' element={<Profile/>} />
+            <Route path='/dashboard/account_profile' element={<Profile/>} />
 
-            <Route path='/activity' element={<Activity/>} >
+            <Route path='/dashboard/activity' element={<Activity/>} >
                 <Route index element={<You/>} />
-                <Route path='/activity/following' element={<Following/>}/>
+                <Route path='/dashboard/activity/following' element={<Following/>}/>
             </Route>
 
-            <Route path='/cart' element={<Cart/>} />
+            <Route path='/dashboard/cart' element={<Cart/>} />
 
 
-            <Route path='/schedule' element={<Schedule/>} />
+            <Route path='/dashboard/schedule' element={<Schedule/>} />
 
         </Route>
     )

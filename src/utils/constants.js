@@ -20,6 +20,9 @@ import WebPage from "../assets/pngs/web-page.png";
 import MindAnatomy from "../assets/pngs/mind-anatomy.png";
 import Microscope from "../assets/pngs/microscope.png";
 
+
+export const landingNavOptions = ['Home', 'About Us', 'Services', 'Contact Us']
+
 export const registration_steps_keys = {
   create_account: {
     title: "User Registration",
@@ -58,19 +61,19 @@ export const sidebar_keys = {
     title: "Dashboard",
     activeIcon: Dashboard,
     inactiveIcon: DashboardInactive,
-    route: "/",
+    route: "/dashboard/home",
   },
   courses: {
     title: "Courses",
     activeIcon: Courses,
     inactiveIcon: CoursesInactive,
-    route: "courses",
+    route: "/dashboard/courses",
   },
   schedules: {
     title: "Schedule",
     activeIcon: Schedule,
     inactiveIcon: ScheduleInactive,
-    route: "schedule",
+    route: "/dashboard/schedule",
   },
   instructor: {
     title: "Instructors",
@@ -81,13 +84,13 @@ export const sidebar_keys = {
     title: "Profile",
     activeIcon: PersonActive,
     inactiveIcon: Person,
-    route: "account_profile",
+    route: "/dashboard/account_profile",
   },
   activity: {
     title: "Activity",
     activeIcon: Activity,
     inactiveIcon: ActivityInactive,
-    route: "activity",
+    route: "/dashboard/activity",
   },
 };
 

@@ -55,7 +55,7 @@ function CheckoutSummary({ checkoutCourses, termsStatus, toogleTermsStatus }) {
       routeId = `${routeId} ${currentCourse.id} ${currentCourse.name}`;
     });
 
-    navigate(`/courses/payment_session/${routeId}`, {
+    navigate(`/dashboard/courses/payment_session/${routeId}`, {
       state: { data: checkoutCourses },
     });
   };
