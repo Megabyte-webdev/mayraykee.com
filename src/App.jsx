@@ -10,7 +10,6 @@ import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primeicons/primeicons.css';
 import { Tailwind, TRANSITIONS } from "./utils/datestyles";
-import Login from "./pages/Login";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useRegistrationRoute from "./routes/useRegistrationRoute";
@@ -18,7 +17,9 @@ import useDashboardRoute from "./routes/useDashboardRoute";
 import FallbackComponent from "./utils/FallbackComponent";
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 
+const Login = lazy(() => import('./pages/Login')) ;
 const ForgotPassword = lazy(() => import("../src/pages/ForgotPassword"));
+const Landing = lazy(() => import("../src/pages/Landing"));
 
 function App() {
   const registrationRoute = useRegistrationRoute();
@@ -32,6 +33,7 @@ function App() {
           <Router>
             <Routes>
               
+              <Route path="/" element={<Landing/>}/>
               <Route path="/login" element={<Login />} />
               <Route path="/forgot_password" element={<ForgotPassword />} />
 

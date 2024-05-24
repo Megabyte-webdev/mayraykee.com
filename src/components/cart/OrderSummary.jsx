@@ -32,7 +32,7 @@ function OrderSummary({ data }) {
       routeId = `${routeId} ${currentCourse.id} ${currentCourse.name}`;
     });
 
-    navigate(`/courses/checkout_session/${routeId}`, {
+    navigate(`/dashboard/courses/checkout_session/${routeId}`, {
       state: { data: data },
     });
   };

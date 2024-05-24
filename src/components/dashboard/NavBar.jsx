@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 function NavBar({ title }) {
   const navigate = useNavigate()
 
-  const navigateToCart = () => navigate('/cart')
+  const navigateToCart = () => navigate('/dashboard/cart')
 
 
   return (

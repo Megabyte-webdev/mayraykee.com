@@ -9,7 +9,7 @@ function CourseCard({data}) {
     const navigate = useNavigate();
     const location = useLocation()
 
-    const navigateToCoursePage = () => navigate(`/courses/preview/${data.id} ${data.name}`, {state: {data: data, previousPath: location.pathname}})
+    const navigateToCoursePage = () => navigate(`/dashboard/courses/preview/${data.id} ${data.name}`, {state: {data: data, previousPath: location.pathname}})
 
 
     return ( 

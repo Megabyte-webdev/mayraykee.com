@@ -19,13 +19,13 @@ function CourseAction({ data }) {
      let routeId = ` ${data.id} ${data.name}`;
    
 
-    navigate(`/courses/checkout_session/${routeId}`, {
+    navigate(`/dashboard/courses/checkout_session/${routeId}`, {
       state: { data: [data] },
     });
   };
 
   const testNavigate = () =>
-    navigate(`/courses/display/${data.id} ${data.name}`, {
+    navigate(`/dashboard/courses/display/${data.id} ${data.name}`, {
       state: { data: data, previousPath: location.pathname },
     });
 
