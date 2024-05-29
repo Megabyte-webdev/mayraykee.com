@@ -19,9 +19,11 @@ import ColorPallete from "../assets/pngs/color-palette.png";
 import WebPage from "../assets/pngs/web-page.png";
 import MindAnatomy from "../assets/pngs/mind-anatomy.png";
 import Microscope from "../assets/pngs/microscope.png";
+import CameraWhite from "../assets/pngs/camera-white.png";
 
 
-export const landingNavOptions = ['Home', 'About Us', 'Services', 'Contact Us']
+export const landingNavOptions = ['Home', 'About Us', 'Services', 'Contact Us', 'Landing Two']
+export const landingNavOptionsTwo = ['Home', 'About Us', 'Services', 'Contact Us', 'Landing One']
 
 export const registration_steps_keys = {
   create_account: {
@@ -92,6 +94,12 @@ export const sidebar_keys = {
     inactiveIcon: ActivityInactive,
     route: "/dashboard/activity",
   },
+  live_classes: {
+    title: "Live Classes",
+    activeIcon: CameraWhite,
+    inactiveIcon: ActivityInactive,
+    route: "/dashboard/live_classes",
+  },
 };
 
 export const courses_two = [
@@ -138,6 +146,7 @@ export const categories = [
 export const activityNavStates = {
   following: "Following",
   you: "You",
+  myCourses: 'My Courses'
 };
 
 export const courseOverviewOptions = {

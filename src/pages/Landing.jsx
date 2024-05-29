@@ -4,22 +4,29 @@ import "../css/extras.css";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import ScienceTools from "../assets/anim/science-tools.json";
-import Recuitement from "../assets/anim/recuitment.json";
+import Refinery from "../assets/anim/refinery.json";
+import RecuitementSteps from "../assets/anim/recuitment-steps.json";
 import LaptopPeople from "../assets/anim/laptop-people.json";
-import OilAndGas from "../assets/anim/filling-station.json";
+import Learning from "../assets/anim/learning.json";
 import AnimDisplay from "../components/landing/AnimDisplay";
+import {useNavigate} from 'react-router-dom'
+import { landingNavOptions } from "../utils/constants";
 
 function Landing() {
 
+  const navigate = useNavigate()
 
   const [showRecuitementAnimation, setShowRecuitementAnimation] = useState(false);
   const [showElearningAnimation, setShowElearningAnimation] = useState(false);
   const [showOilAndGasAnimation, setShowOilAndGasAnimation] = useState(false);
 
 
+  const navigateToLandingTwo = () => navigate('/landing_two')
+
+
   return (
     <main className="w-full flex relative flex-col items-center  h-screen  bg-[#0d4704]">
-      <NavBar />
+      <NavBar navOptions={landingNavOptions} />
 
       <motion.div
         initial={false}
@@ -69,9 +76,9 @@ function Landing() {
         </motion.span>
       </motion.div>
 
-      <AnimDisplay isOpen={showRecuitementAnimation} src={Recuitement}/>
-      <AnimDisplay isOpen={showElearningAnimation} src={LaptopPeople}/>
-      <AnimDisplay isOpen={showOilAndGasAnimation} src={OilAndGas}/>
+      <AnimDisplay isOpen={showRecuitementAnimation} src={RecuitementSteps}/>
+      <AnimDisplay isOpen={showElearningAnimation} src={Learning}/>
+      <AnimDisplay isOpen={showOilAndGasAnimation} src={Refinery}/>
 
       <motion.ul initial={{
         opacity: 0,

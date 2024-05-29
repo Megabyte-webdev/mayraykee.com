@@ -3,16 +3,24 @@ import MainLogo from "../../assets/pngs/main-logo-white.png";
 import { landingNavOptions } from "../../utils/constants";
 import { motion } from "framer-motion";
 
-function NavBar() {
+function NavBar({ navOptions }) {
   const navigate = useNavigate();
 
   const navigateToLogin = () => navigate("login");
+  const navigateToLandingTwo = () => navigate("/landing_two");
+  const navigateToLanding = () => navigate("/");
 
   const getOptions = () => {
-    return landingNavOptions.map((currentOption, index) => {
+    return navOptions.map((currentOption, index) => {
       const handleNavigate = () => {
-        if (currentOption === landingNavOptions[0]) {
-            navigate('dashboard/home')
+        if (currentOption === navOptions[0]) {
+          navigate("/dashboard/home");
+        } else if (currentOption === navOptions[4]) {
+          if (navOptions[4] === "Landing Two") {
+            navigateToLandingTwo();
+          } else {
+            navigateToLanding();
+          }
         }
       };
 
@@ -46,7 +54,7 @@ function NavBar() {
     >
       <img className="h-[80%]" src={MainLogo} />
 
-      <div className="flex w-[50%] items-center">
+      <div className="flex w-[60%] items-center">
         <ul className="flex w-[80%] items-center gap-[8%]">{getOptions()}</ul>
         <button
           onClick={navigateToLogin}
