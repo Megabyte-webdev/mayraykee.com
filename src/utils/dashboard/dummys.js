@@ -1,5 +1,10 @@
 import { categories } from "../constants";
 import Laptop from "../../assets/jpgs/lappy.jpg";
+import PersonOne from "../../assets/pngs/person-1.png";
+import PersonTwo from "../../assets/pngs/person-2.png";
+import PersonThree from "../../assets/pngs/person-3.png";
+import PersonFour from "../../assets/pngs/person-4.png";
+
 
 export const assigentDummy = [
   {
@@ -1115,3 +1120,34 @@ export const countriesDummy = [
 
 
 export const timeScheduleDummy = ['07 AM', '08 AM', '09 AM', '10 AM', '11 AM', '12 AM', '01 PM', '02 PM', '03 PM', '04 PM', '05 PM']
+
+export const liveGuestsDummy = [
+  {
+    profileImg: PersonOne,
+    name: 'Phillip'
+  },
+  {
+    profileImg: PersonTwo,
+    name: 'Phillip'
+  },
+  {
+    profileImg: PersonThree,
+    name: 'Phillip'
+  },
+  {
+    profileImg: PersonFour,
+    name: 'Phillip'
+  },
+  {
+    profileImg: PersonFour,
+    name: 'Phillip'
+  },
+  {
+    profileImg: PersonFour,
+    name: 'Phillip'
+  },
+  {
+    profileImg: PersonFour,
+    name: 'Phillip'
+  },
+]

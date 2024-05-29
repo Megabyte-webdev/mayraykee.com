@@ -20,6 +20,7 @@ import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 const Login = lazy(() => import('./pages/Login')) ;
 const ForgotPassword = lazy(() => import("../src/pages/ForgotPassword"));
 const Landing = lazy(() => import("../src/pages/Landing"));
+const LandingTwo = lazy(() => import("../src/pages/LandingTwo"));
 
 function App() {
   const registrationRoute = useRegistrationRoute();
@@ -34,6 +35,7 @@ function App() {
             <Routes>
               
               <Route path="/" element={<Landing/>}/>
+              <Route path="/landing_two" element={<LandingTwo/>}/>
               <Route path="/login" element={<Login />} />
               <Route path="/forgot_password" element={<ForgotPassword />} />
 
