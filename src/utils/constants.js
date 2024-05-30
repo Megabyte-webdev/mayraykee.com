@@ -21,9 +21,20 @@ import MindAnatomy from "../assets/pngs/mind-anatomy.png";
 import Microscope from "../assets/pngs/microscope.png";
 import CameraWhite from "../assets/pngs/camera-white.png";
 
-
-export const landingNavOptions = ['Home', 'About Us', 'Services', 'Contact Us', 'Landing Two']
-export const landingNavOptionsTwo = ['Home', 'About Us', 'Services', 'Contact Us', 'Landing One']
+export const landingNavOptions = [
+  "Home",
+  "About Us",
+  "Services",
+  "Contact Us",
+  "Landing Two",
+];
+export const landingNavOptionsTwo = [
+  "Home",
+  "About Us",
+  "Services",
+  "Contact Us",
+  "Landing One",
+];
 
 export const registration_steps_keys = {
   create_account: {
@@ -146,23 +157,64 @@ export const categories = [
 export const activityNavStates = {
   following: "Following",
   you: "You",
-  myCourses: 'My Courses'
+  myCourses: "My Courses",
+  meetingHistory: "Meeting History",
 };
 
 export const courseOverviewOptions = {
-    about: 'About',
-    curriculum: 'Curriculum',
-    objective: 'Objectives',
-    outline: 'Outline'
-}
+  about: "About",
+  curriculum: "Curriculum",
+  objective: "Objectives",
+  outline: "Outline",
+};
 
 export const courseDisplayOptions = {
-    about: 'About',
-    review: 'Reviews',
-    discussion: 'Discussion'
-}
+  about: "About",
+  review: "Reviews",
+  discussion: "Discussion",
+};
 
 export const paymentOptions = {
-  card: 'Credit/Debit Card',
-  paypal: 'Paypal'
-}
+  card: "Credit/Debit Card",
+  paypal: "Paypal",
+};
+
+export const titlesOption = [
+  { id: 2000, name: "--select title--" },
+  { id: 1, name: "Mr" },
+  { id: 2, name: "Mrs" },
+  { id: 3, name: "Ms" },
+  { id: 4, name: "Miss" },
+  { id: 6, name: "Engr" },
+  { id: 7, name: "Dr" },
+  { id: 8, name: "Prof" },
+];
+
+export const professionsOption = [
+  { id: 2000, name: "--select profession--" },
+  { id: 1, name: "Professor" },
+  { id: 2, name: "Doctor" },
+  { id: 3, name: "Engineer" },
+  { id: 4, name: "Teacher" },
+  { id: 5, name: "Lawyer" },
+  { id: 6, name: "Accountant" },
+  { id: 7, name: "Architect" },
+  { id: 8, name: "Pharmacist" },
+  { id: 9, name: "Dentist" },
+  { id: 10, name: "Scientist" },
+  { id: 11, name: "Psychologist" },
+  { id: 12, name: "Economist" },
+  { id: 13, name: "Sociologist" },
+  { id: 14, name: "Historian" },
+  { id: 15, name: "Anthropologist" },
+  { id: 16, name: "Biologist" },
+  { id: 17, name: "Chemist" },
+  { id: 18, name: "Physicist" },
+  { id: 19, name: "Mathematician" },
+  { id: 20, name: "Political Scientist" },
+  { id: 21, name: "Linguist" },
+  { id: 22, name: "Geologist" },
+  { id: 23, name: "Veterinarian" },
+  { id: 24, name: "Environmental Scientist" },
+  { id: 25, name: "Clinical Researcher" },
+];

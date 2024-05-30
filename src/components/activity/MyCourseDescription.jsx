@@ -1,16 +1,13 @@
 import Vector from "../../assets/pngs/vector.png";
-import ClassInfo from "./ClassInfo";
 
-function CourseDescription({ data }) {
-  return (
-    <li className="w-[75%] flex flex-col first:pt-0 pt-[3%] gap-[3%] ">
-      <div className=" w-full border-r-[15px] p-[3%] justify-between flex items-start border-green bg-gray-300">
-        <img src={Vector} className="h-[20%]" />
-        <div className="w-[93%] flex flex-col gap-[10px]">
+function MyCourseDescription() {
+    return ( <div className="w-[100vh] border-r-[15px] h-fit p-[3%] justify-between flex items-start border-green bg-gray-300">
+        <img src={Vector} className="h-[20px]" />
+        <div className="w-[95%] flex flex-col gap-[15px]">
           <h3 className="font-semibold text-[15px]">
             Understanding and Managing Global Business
           </h3>
-          <p className="text-small">
+          <p className="text-small truncate">
             The course aims to equip participants with a broad understanding of
             the breadth and scope of international business and a solid
             foundation upon which to advance their careers and interests. This
@@ -25,21 +22,7 @@ function CourseDescription({ data }) {
           </p>
         </div>
       </div>
-
-      <div className="w-full flex flex-col gap-[20px]">
-        <span className="bg-gray-300 px-[10px] py-[5px] w-fit rounded-[15px] text-sm">
-          Class Schedules
-        </span>
-
-        <ul className="w-full gap-y-2 grid pl-[1%] grid-cols-2">
-          <ClassInfo active={true} />
-          <ClassInfo active={false} />
-          <ClassInfo active={false} />
-          <ClassInfo active={false} />
-        </ul>
-      </div>
-    </li>
-  );
+ );
 }
 
-export default CourseDescription;
+export default MyCourseDescription;
