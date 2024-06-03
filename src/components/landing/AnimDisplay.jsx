@@ -25,7 +25,7 @@ function AnimDisplay({ isOpen, src }) {
       transition={{
         opacity: { duration: 1, ease: 'easeOut', delay: isOpen===0 ? 0 : 1 }
       }}
-      className="absolute bottom-[30%] transition duration-300 h-[45%]"
+      className="absolute bottom-[30%] transition duration-300 h-[40%]"
     >
       <Lottie
         lottieRef={lottieRef}
