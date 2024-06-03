@@ -32,7 +32,6 @@ const handleOnMeetingHistory = () => {
         <button onClick={handleOnMyCourses} className={`border-b-2 pb-[5px] pl-[10px] text-sm font-semibold ${navState === activityNavStates.myCourses ? 'text-[#4cbc9a] border-b-[#4cbc9a]' : 'text-gray-400 border-b-gray-200'}`}>{activityNavStates.myCourses}</button>
         <button onClick={handleOnMeetingHistory} className={`border-b-2 pb-[5px] pl-[10px] text-sm font-semibold ${navState === activityNavStates.meetingHistory ? 'text-[#4cbc9a] border-b-[#4cbc9a]' : 'text-gray-400 border-b-gray-200'}`}>{activityNavStates.meetingHistory}</button>
     </div>
-
   </div>)
 }
 

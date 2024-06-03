@@ -111,6 +111,12 @@ export const sidebar_keys = {
     inactiveIcon: ActivityInactive,
     route: "/dashboard/live_classes",
   },
+  exams: {
+    title: "Exams",
+    activeIcon: CameraWhite,
+    inactiveIcon: ActivityInactive,
+    route: "/dashboard/exams",
+  },
 };
 
 export const courses_two = [

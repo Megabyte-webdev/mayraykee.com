@@ -16,6 +16,10 @@ export function DasboardReducer(state, action) {
         return { ...action.payload };
       case sidebar_keys.activity.title:
         return { ...action.payload };
+      case sidebar_keys.live_classes.title:
+        return { ...action.payload };
+      case sidebar_keys.exams.title:
+        return { ...action.payload };
       default:
         return state;
     }
