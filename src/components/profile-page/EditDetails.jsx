@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import Selector from "../Selector";
 import UploadIcon  from '../../assets/pngs/upload-icon.png'
 import { getImageURL } from "../../utils/DashboardUtilMethods";
+import { professionsOption, titlesOption } from "../../utils/constants";
 
 function EditDetails() {
   const [selected, setSelected] = useState({ id: 1, name: "One" });
+  const [title, setTitle] = useState(titlesOption[0]);
+  const [profession, setProfession] = useState(professionsOption[0]);
   const [photoUrl, setPhotoUrl] = useState(null);
   const data = [
     { id: 1, name: "One" },
     { id: 2, name: "Two" },
   ];
-
-
- 
 
   return (
     <div className="w-full h-full mt-[10px] flex flex-col  gap-[5px] ">
@@ -25,6 +25,17 @@ function EditDetails() {
 
         <form className="flex w-[50%] flex-col gap-[15px] items-center">
         <h4 className="font-semibold place-self-start text-[14px]">Personal Information</h4>
+        
+        <div className="flex flex-col w-full gap-[5px]">
+          <label className="font-semibold text-gray-600 text-sm">
+                Title
+              </label>
+            <Selector
+              selected={title}
+              setSelected={setTitle}
+              data={titlesOption}
+            />
+          </div>
           {/* First Section */}
           <div className="w-full flex justify-between items-center">
             <div className="flex flex-col w-[45%] gap-[5px]">
@@ -49,29 +60,7 @@ function EditDetails() {
             </div>
           </div>
 
-          {/* Second Section */}
-          <div className="w-full flex justify-between items-center">
-            <div className="flex flex-col w-[45%] gap-[5px]">
-              <label className="font-semibold text-gray-600 text-sm">
-                Date of Birth
-              </label>
-              <input
-                type="email"
-                className=" w-full py-[5px] rounded-[5px] focus:outline-none pl-[5%] text-sm"
-                placeholder="alexaandriana@example.com"
-              />
-            </div>
-            <div className="flex flex-col w-[45%] gap-[5px]">
-              <label className="font-semibold text-gray-600 text-sm">
-                Phone No
-              </label>
-              <input
-                type="tel"
-                className=" w-full py-[5px] rounded-[5px] focus:outline-none pl-[5%] text-sm"
-                placeholder="070454589298"
-              />
-            </div>
-          </div>
+        
 
           {/* Second Section */}
           <div className="w-full flex justify-between items-center">
@@ -95,6 +84,17 @@ function EditDetails() {
                 placeholder="070454589298"
               />
             </div>
+          </div>
+      
+          <div className="flex flex-col w-full gap-[5px]">
+          <label className="font-semibold text-gray-600 text-sm">
+                Profession
+              </label>
+            <Selector
+              selected={profession}
+              setSelected={setProfession}
+              data={professionsOption}
+            />
           </div>
 
           <div className="flex flex-col w-full gap-[5px]">
@@ -103,8 +103,19 @@ function EditDetails() {
               </label>
               <input
                 type="text"
-                className=" w-full py-[5px] rounded-[5px] focus:outline-none pl-[5%] text-sm"
-                placeholder="070454589298"
+                className=" w-full py-[5px] rounded-[5px] focus:outline-none pl-[3%] text-sm"
+                placeholder="Santi Nero, Stree II. Pishna City"
+              />
+          </div>
+
+          <div className="flex flex-col w-full gap-[5px]">
+          <label className="font-semibold text-gray-600 text-sm">
+                LinkedIn
+              </label>
+              <input
+                type="text"
+                className=" w-full py-[5px] rounded-[5px] focus:outline-none pl-[3%] text-sm"
+                placeholder="https://linkedIn/example.user"
               />
           </div>
 
@@ -141,18 +152,6 @@ function EditDetails() {
               data={data}
             />
           </div>
-
-          <div className="flex flex-col w-full gap-[5px]">
-          <label className="font-semibold text-gray-600 text-sm">
-                Profession
-              </label>
-              <input
-                type="text"
-                className=" w-full py-[5px] rounded-[5px] focus:outline-none pl-[5%] text-sm"
-                placeholder="070454589298"
-              />
-          </div>
-
 
           <div className="w-full flex justify-between items-center">
             <div className="flex flex-col w-[45%] gap-[5px]">

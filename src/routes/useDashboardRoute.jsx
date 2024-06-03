@@ -14,11 +14,18 @@ const Activity = lazy(() => import('../layout/Activity'))
 const You = lazy(() => import('../pages/You'))
 const Following = lazy(() => import('../pages/Following'))
 const MyCourses = lazy(() => import('../pages/MyCourses'))
+const MeetingHistory = lazy(() => import('../pages/MeetingHistory'))
 
 //Live Classes
 const LiveClasses = lazy(() => import('../layout/LiveClasses'))
 const DisplayLiveClasses = lazy(() => import('../pages/DisplayLiveClasses'))
 const ClassLiveVideo = lazy(() => import('../pages/ClassLiveVideo'))
+
+//Exams
+const Exams = lazy(() => import('../layout/Exams'))
+const ExamsList = lazy(() => import('../pages/ExamsList'))
+const OngoingExam = lazy(() => import('../pages/OngoingExam'))
+
 
 
 const Cart = lazy(() => import('../pages/Cart'))
@@ -50,12 +57,20 @@ function useDashboardRoute() {
                 <Route index element={<You/>} />
                 <Route path='/dashboard/activity/following' element={<Following/>}/>
                 <Route path='/dashboard/activity/my_courses' element={<MyCourses/>}/>
+                <Route path='/dashboard/activity/meeting_history' element={<MeetingHistory/>}/>
             </Route>
 
             <Route path='/dashboard/live_classes' element={<LiveClasses/>} >
                 <Route index element={<DisplayLiveClasses/>} />
                 <Route path='/dashboard/live_classes/:id' element={<ClassLiveVideo/>} />
             </Route>
+
+            <Route path='/dashboard/exams' element={<Exams/>}>
+                <Route index element={<ExamsList/>} />
+                <Route path='/dashboard/exams/:id' element={<OngoingExam/>} />
+            </Route>
+
+          
 
             <Route path='/dashboard/cart' element={<Cart/>} />
 

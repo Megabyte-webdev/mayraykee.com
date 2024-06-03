@@ -10,9 +10,9 @@ function ScheduleCard({current}) {
                 <h6 className='text-sm'>{current.title}</h6>
 
                 <div className='flex gap-[5%] w-full'>
-                    <p className='flex text-small flex items-center gap-[3px]'><img src={Wallet} className='h-[12px]'/>{current.date}</p>
+                    <p className='flex text-small items-center gap-[3px]'><img src={Wallet} className='h-[12px]'/>{current.date}</p>
                     <hr className='border-l h-full border-gray-400'/>
-                    <p className='flex text-small flex items-center gap-[3px]'><img src={Clock} className='h-[12px]'/>{current.time}</p>
+                    <p className='flex text-small items-center gap-[3px]'><img src={Clock} className='h-[12px]'/>{current.time}</p>
                 </div>
 
                 <div className='flex gap-[3px] items-center'>

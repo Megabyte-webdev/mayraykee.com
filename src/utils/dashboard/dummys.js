@@ -4,6 +4,10 @@ import PersonOne from "../../assets/pngs/person-1.png";
 import PersonTwo from "../../assets/pngs/person-2.png";
 import PersonThree from "../../assets/pngs/person-3.png";
 import PersonFour from "../../assets/pngs/person-4.png";
+import PersonFive from "../../assets/pngs/person-5.png";
+import PersonSix from "../../assets/pngs/person-6.png";
+import PersonSeven from "../../assets/pngs/person-7.png";
+import PersonEight from "../../assets/pngs/person-8.png";
 
 
 export const assigentDummy = [
@@ -16,6 +20,37 @@ export const assigentDummy = [
     score: 8,
   },
 ];
+
+export const usersDummyForMeeting= [
+  {
+    initials: "KH",
+    initialsBackground: "bg-[#ffbabf]",
+    name: "Karen Hope",
+    profilePic: PersonFive,
+    isAFriend: true
+  },
+  {
+    initials: "KH",
+    initialsBackground: "bg-[#ffbabf]",
+    name: "Karen Hope",
+    profilePic: PersonSix,
+    isAFriend: false
+  },
+  {
+    initials: "KH",
+    initialsBackground: "bg-[#ffbabf]",
+    name: "Karen Hope",
+    profilePic: PersonSeven,
+    isAFriend: false
+  },
+  {
+    initials: "KH",
+    initialsBackground: "bg-[#ffbabf]",
+    name: "Karen Hope",
+    profilePic: PersonEight,
+    isAFriend: false
+  }
+]
 
 export const scheduleDummy = [
   {
@@ -128,6 +163,54 @@ export const timelineDummy = [
           extraText: `joined ${categories[0].name} Courses`,
         },
         attachments: [],
+      },
+    ],
+  },
+];
+
+export const meetingTimelineDummy = [
+  {
+    date: "Today",
+    events: [
+      {
+        time: "10:10 AM",
+        event: {
+          initials: "KH",
+          initialsBackground: "bg-[#ffbabf]",
+          name: "Prof. Ken Humphrey",
+          extraText: `: Design Thinking & Innovation  Courses`,
+        },
+        users: usersDummyForMeeting
+      },
+      {
+        time: "9:30 AM",
+        event: {
+          initials: "KH",
+          initialsBackground: "bg-[#ffbabf]",
+          name: "Pro. Ken Humphrey",
+          extraText: `: Design Thinking & Innovation  Courses`,
+        },
+        users: usersDummyForMeeting
+      },
+      {
+        time: "09:30 AM",
+        event: {
+          initials: "JA",
+          initialsBackground: "bg-[#4cbc9a]",
+          name: "Dr. Jonny Ahmed",
+          extraText:`: Design Thinking & Innovation  Courses`,
+        },
+        users: usersDummyForMeeting
+      },
+      {
+        time: "09:30 AM",
+        event: {
+          initials: "SW",
+          initialsBackground: "bg-[#3cc2e0]",
+          name: "Dr. Samatha William",
+          extraText: `: Design Thinking & Innovation  Courses`,
+        },
+        users: usersDummyForMeeting
       },
     ],
   },
@@ -1118,7 +1201,6 @@ export const countriesDummy = [
   { id: 54, name: "Zimbabwe" }
 ];
 
-
 export const timeScheduleDummy = ['07 AM', '08 AM', '09 AM', '10 AM', '11 AM', '12 AM', '01 PM', '02 PM', '03 PM', '04 PM', '05 PM']
 
 export const liveGuestsDummy = [
@@ -1151,3 +1233,5 @@ export const liveGuestsDummy = [
     name: 'Phillip'
   },
 ]
+
+

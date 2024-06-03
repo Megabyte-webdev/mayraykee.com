@@ -1,7 +1,6 @@
 import WomanBaby from "../../assets/pngs/woman-with-baby.png";
 import Mic from "../../assets/pngs/mic-black.png";
 import Camera from "../../assets/pngs/camera-red.png";
-import { motion } from "framer-motion";
 
 
 function Participant({ data }) {

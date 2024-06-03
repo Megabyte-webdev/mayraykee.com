@@ -17,7 +17,7 @@ function ViewParticipants() {
     ));
 
   return (
-    <div className="w-[90%] flex flex-col items-center rounded-t-[10px] gap-[20px] bg-white h-fit">
+    <div className="w-[90%] flex flex-col items-center rounded-[10px] gap-[20px] bg-white h-fit">
       <div className="h-[30px] bg-lime-600 w-full flex items-center justify-between rounded-[10px] px-[3%]">
         <h6 className="text-sm text-white">Participants</h6>
 
