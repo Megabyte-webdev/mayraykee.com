@@ -15,6 +15,7 @@ function NavBar({ title }) {
   const navigate = useNavigate()
 
   const navigateToCart = () => navigate('/dashboard/cart')
+  const navigateToInstantChat = () => navigate('/dashboard/instant_chat')
 
 
   return (
@@ -44,7 +45,7 @@ function NavBar({ title }) {
         <ul className="flex h-full items-center gap-[20px]">
           <li className="h-full flex items-center hover:scale-105 duration-500 cursor-pointer relative">
             <div className="h-[5px] top-[30%] right-0 w-[5px] rounded-full absolute bg-lime-400"/>
-            <IoChatbubbleEllipsesSharp className="text-xl text-gray-400"/>
+            <IoChatbubbleEllipsesSharp onClick={navigateToInstantChat} className="text-xl text-gray-400"/>
           </li>
           <li className="h-full flex items-center hover:scale-105 duration-500 cursor-pointer relative">
             <div className="h-[5px] top-[30%] right-0 w-[5px]  rounded-full absolute bg-lime-400"/>

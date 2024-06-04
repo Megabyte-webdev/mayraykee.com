@@ -23,7 +23,7 @@ export const highlightKeyword = (sentence, keyword) => {
 
 export const FormatPrice = (price) => {
 
-  return `$${price.toLocaleString(navigator.language, {minmumFractionDigits: 0})}`;
+  return `N${price.toLocaleString(navigator.language, {minmumFractionDigits: 0})}`;
 
 }
 export const FormatPriceInUsd = (price) => {
