@@ -9,7 +9,6 @@ import PersonSix from "../../assets/pngs/person-6.png";
 import PersonSeven from "../../assets/pngs/person-7.png";
 import PersonEight from "../../assets/pngs/person-8.png";
 
-
 export const assigentDummy = [
   {
     title: "Web Design",
@@ -21,36 +20,89 @@ export const assigentDummy = [
   },
 ];
 
-export const usersDummyForMeeting= [
+export const usersDummyForMeeting = [
   {
+    id: 1,
     initials: "KH",
     initialsBackground: "bg-[#ffbabf]",
     name: "Karen Hope",
     profilePic: PersonFive,
-    isAFriend: true
+    isAFriend: true,
   },
   {
-    initials: "KH",
-    initialsBackground: "bg-[#ffbabf]",
-    name: "Karen Hope",
+    id: 2,
+    initials: "JA",
+    initialsBackground: "bg-[#3cc2e0]",
+    name: "Johny Ahmed",
     profilePic: PersonSix,
-    isAFriend: false
+    isAFriend: true,
   },
   {
-    initials: "KH",
-    initialsBackground: "bg-[#ffbabf]",
-    name: "Karen Hope",
-    profilePic: PersonSeven,
-    isAFriend: false
+    id: 3,
+    initials: "JN",
+    initialsBackground: "bg-[#fec64f]",
+    name: "Jordan Nico",
+    profilePic: PersonTwo,
+    isAFriend: true,
   },
   {
+    id: 4,
     initials: "KH",
     initialsBackground: "bg-[#ffbabf]",
     name: "Karen Hope",
     profilePic: PersonEight,
-    isAFriend: false
-  }
+    isAFriend: false,
+  },
+];
+
+export const dummyChats = [
+  {
+    chat: 'I was wondering why Danny still works on Sketch when Figma is now cheap and accessible. This could really boost our process.',
+    isCurrentUser: false,
+    time: '12:17pm'
+  },
+  {
+    chat: 'Not really sure about why, but he certainly has good reasons. Anyway, why should he switch?',
+    isCurrentUser: true,
+    time: '12:18pm'
+  },
+  {
+    chat: 'I was wondering why Danny still works on Sketch when Figma is now cheap and accessible. This could really boost our process.',
+    isCurrentUser: false,
+    time: '12:19pm'
+  },
+  {
+    chat: 'Not really sure about why, but he certainly has good reasons. Anyway, why should he switch?',
+    isCurrentUser: true,
+    time: '12:20pm'
+  },
+
 ]
+
+export const currentUser = {
+  id: 2,
+  initials: "CJ",
+  initialsBackground: "bg-[#3cc2e0]",
+  name: "Carl Jung",
+  profilePic: PersonThree,
+  isAFriend: true,
+}
+
+export const usersWithPost = () => {
+  return usersDummyForMeeting.map(currentUser => {
+    return {
+        currentUser: currentUser,
+        postDetail: {
+           post: 'How do you know your learners are retaining knowledge in appropriate volumes and timeframes? That’s right: You throw in assessments, and see if the students “catch your drift”. Obviously, there is a boring We could use many eloquent metaphors, yet it all boils down to the same: Keep your message ',
+           comments:[
+             {name: 'Kimberly Moses', comment: 'Yess, good job' },
+             {name: 'John Davis', comment: 'Going to try that now!!' }
+           ],
+           likes: ['Kimberly Moses','John Davis','John Davis']
+          }
+    }
+  })
+}
 
 export const scheduleDummy = [
   {
@@ -180,7 +232,7 @@ export const meetingTimelineDummy = [
           name: "Prof. Ken Humphrey",
           extraText: `: Design Thinking & Innovation  Courses`,
         },
-        users: usersDummyForMeeting
+        users: usersDummyForMeeting,
       },
       {
         time: "9:30 AM",
@@ -190,7 +242,7 @@ export const meetingTimelineDummy = [
           name: "Pro. Ken Humphrey",
           extraText: `: Design Thinking & Innovation  Courses`,
         },
-        users: usersDummyForMeeting
+        users: usersDummyForMeeting,
       },
       {
         time: "09:30 AM",
@@ -198,9 +250,9 @@ export const meetingTimelineDummy = [
           initials: "JA",
           initialsBackground: "bg-[#4cbc9a]",
           name: "Dr. Jonny Ahmed",
-          extraText:`: Design Thinking & Innovation  Courses`,
+          extraText: `: Design Thinking & Innovation  Courses`,
         },
-        users: usersDummyForMeeting
+        users: usersDummyForMeeting,
       },
       {
         time: "09:30 AM",
@@ -210,7 +262,7 @@ export const meetingTimelineDummy = [
           name: "Dr. Samatha William",
           extraText: `: Design Thinking & Innovation  Courses`,
         },
-        users: usersDummyForMeeting
+        users: usersDummyForMeeting,
       },
     ],
   },
@@ -1142,7 +1194,6 @@ export const relatedCoursesDummy = [
   },
 ];
 
-
 export const countriesDummy = [
   { id: 2000, name: "--Select Country--" },
   { id: 1, name: "Algeria" },
@@ -1198,40 +1249,50 @@ export const countriesDummy = [
   { id: 51, name: "Tunisia" },
   { id: 52, name: "Uganda" },
   { id: 53, name: "Zambia" },
-  { id: 54, name: "Zimbabwe" }
+  { id: 54, name: "Zimbabwe" },
 ];
 
-export const timeScheduleDummy = ['07 AM', '08 AM', '09 AM', '10 AM', '11 AM', '12 AM', '01 PM', '02 PM', '03 PM', '04 PM', '05 PM']
+export const timeScheduleDummy = [
+  "07 AM",
+  "08 AM",
+  "09 AM",
+  "10 AM",
+  "11 AM",
+  "12 AM",
+  "01 PM",
+  "02 PM",
+  "03 PM",
+  "04 PM",
+  "05 PM",
+];
 
 export const liveGuestsDummy = [
   {
     profileImg: PersonOne,
-    name: 'Phillip'
+    name: "Phillip",
   },
   {
     profileImg: PersonTwo,
-    name: 'Phillip'
+    name: "Phillip",
   },
   {
     profileImg: PersonThree,
-    name: 'Phillip'
+    name: "Phillip",
   },
   {
     profileImg: PersonFour,
-    name: 'Phillip'
+    name: "Phillip",
   },
   {
     profileImg: PersonFour,
-    name: 'Phillip'
+    name: "Phillip",
   },
   {
     profileImg: PersonFour,
-    name: 'Phillip'
+    name: "Phillip",
   },
   {
     profileImg: PersonFour,
-    name: 'Phillip'
+    name: "Phillip",
   },
-]
-
-
+];

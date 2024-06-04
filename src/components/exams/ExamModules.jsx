@@ -31,7 +31,7 @@ function ExamModule() {
           )}
         </button>
         {viewModules && (
-          <ul className="flex flex-col gap-[20px] overflow-y-auto scroll-m-5">
+          <ul className="flex flex-col gap-[20px] overflow-y-auto scr">
             <Module />
             <Module />
             <Module />

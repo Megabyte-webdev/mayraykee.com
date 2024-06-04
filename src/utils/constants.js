@@ -165,6 +165,7 @@ export const activityNavStates = {
   you: "You",
   myCourses: "My Courses",
   meetingHistory: "Meeting History",
+  forumGroups: "Forums/Groups",
 };
 
 export const courseOverviewOptions = {
