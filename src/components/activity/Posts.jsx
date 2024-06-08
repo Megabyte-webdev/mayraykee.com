@@ -21,7 +21,7 @@ function Posts() {
     <div className="flex flex-col w-full h-fit relative gap-[5px]">
       <h3 className="font-semibold text-black">Posts</h3>
 
-      <div className="flex flex-col w-full bg-white h-[70%] py-[3%] rounded-[10px]">
+      <div className="flex flex-col w-full bg-white h-[70   %] py-[3%] rounded-[10px]">
         <ul className="flex flex-col gap-[15px] bg-white overflow-y-auto px-[5%] divide-y-[1px] ">
           {getPostCard()}
         </ul>

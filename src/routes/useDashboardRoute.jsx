@@ -46,11 +46,6 @@ const ExamsList = lazy(() => import('../pages/ExamsList'))
 const OngoingExam = lazy(() => import('../pages/OngoingExam'))
 
 
-
-
-
-
-
 function useDashboardRoute() {
     return (
         <Route path='dashboard' element={<DashboardLayout/>}>

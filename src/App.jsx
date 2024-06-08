@@ -16,6 +16,7 @@ import useRegistrationRoute from "./routes/useRegistrationRoute";
 import useDashboardRoute from "./routes/useDashboardRoute";
 import FallbackComponent from "./utils/FallbackComponent";
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
+import useAdminDashboardRoute from "./routes/useAdminDashboardRoute";
 
 const Login = lazy(() => import('./pages/Login')) ;
 const ForgotPassword = lazy(() => import("../src/pages/ForgotPassword"));
@@ -24,6 +25,10 @@ const LandingTwo = lazy(() => import("../src/pages/LandingTwo"));
 
 function App() {
   const registrationRoute = useRegistrationRoute();
+
+  const isAdmin = true
+
+  const adminDashboardRoute = useAdminDashboardRoute()
   const dashboardRoute = useDashboardRoute();
 
   return (
@@ -40,6 +45,7 @@ function App() {
               <Route path="/forgot_password" element={<ForgotPassword />} />
 
               {registrationRoute}
+              {adminDashboardRoute} 
               {dashboardRoute}
             </Routes>
           </Router>

@@ -21,6 +21,8 @@ function NavBar({ navOptions }) {
           } else {
             navigateToLanding();
           }
+        } else if(currentOption === navOptions[1]){
+          navigate("/admin/dashboard/home");
         }
       };
 
