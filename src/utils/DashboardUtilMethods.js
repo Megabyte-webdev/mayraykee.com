@@ -1,5 +1,5 @@
 import SideBarOptionCard from "../components/dashboard/SideBarOptionCard";
-import { sidebar_keys } from "./constants";
+import { admin_sidebar_keys, sidebar_keys } from "./constants";
 
 // export const getSideBarOptions = (state, dispatch) => {
 //   return Object.keys(sidebar_keys).map((currentKey) => {
@@ -35,7 +35,20 @@ export const getInitialDashboardState = (extractedRoute, intialDashboardState) =
 
   Object.keys(sidebar_keys).map((currentKey) => {
     const currentOption = sidebar_keys[currentKey];
+    if (extractedRoute.includes(currentOption.route)) {
+      stateToReturn = currentOption;
+      return;
+    }
+  });
 
+  return stateToReturn ? stateToReturn : intialDashboardState;
+};
+
+export const getInitialAdminDashboardState = (extractedRoute, intialDashboardState) => {
+  let stateToReturn = null;
+
+  Object.keys(admin_sidebar_keys).map((currentKey) => {
+    const currentOption = admin_sidebar_keys[currentKey];
     if (extractedRoute.includes(currentOption.route)) {
       stateToReturn = currentOption;
       return;

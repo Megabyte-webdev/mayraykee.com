@@ -1,7 +1,7 @@
 import { highlightKeyword } from "../utils/UtilMethods";
 import { categories } from "../utils/constants";
 
-function NameTag({initials, initialsBackground, name, extraText}) {
+function NameTag({initials, initialsBackground = 'bg-lime-600/70', name, extraText}) {
 
 
   const editExtraText = () => {

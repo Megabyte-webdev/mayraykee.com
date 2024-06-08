@@ -118,6 +118,56 @@ export const sidebar_keys = {
     route: "/dashboard/exams",
   },
 };
+export const admin_sidebar_keys = {
+  dashboard: {
+    title: "Dashboard",
+    activeIcon: Dashboard,
+    inactiveIcon: DashboardInactive,
+    route: "/admin/dashboard/home",
+  },
+  courses: {
+    title: "Courses",
+    activeIcon: Courses,
+    inactiveIcon: CoursesInactive,
+    route: "/admin/dashboard/courses",
+  },
+  schedules: {
+    title: "Schedule",
+    activeIcon: Schedule,
+    inactiveIcon: ScheduleInactive,
+    route: "/admin/dashboard/schedule",
+  },
+  instructor: {
+    title: "Students",
+    activeIcon: PersonWithBoard,
+    inactiveIcon: InstructorsInactive,
+    route: "/admin/dashboard/students",
+  },
+  profile: {
+    title: "Profile",
+    activeIcon: PersonActive,
+    inactiveIcon: Person,
+    route: "/dashboard/account_profile",
+  },
+  activity: {
+    title: "Activity",
+    activeIcon: Activity,
+    inactiveIcon: ActivityInactive,
+    route: "/dashboard/activity",
+  },
+  live_classes: {
+    title: "Live Classes",
+    activeIcon: CameraWhite,
+    inactiveIcon: ActivityInactive,
+    route: "/dashboard/live_classes",
+  },
+  exams: {
+    title: "Exams",
+    activeIcon: CameraWhite,
+    inactiveIcon: ActivityInactive,
+    route: "/dashboard/exams",
+  },
+};
 
 export const courses_two = [
   {
