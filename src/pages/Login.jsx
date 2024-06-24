@@ -44,11 +44,7 @@ function Login() {
    const handleOnSubmit = (e) => {
     e.preventDefault()
      console.log(loginDetails)
-   }
-
-
-  
-
+   }  
 
     return (
         <main id='login-Wrapper' className={`h-screen w-screen flex bg-center items-start justify-center relative `}>

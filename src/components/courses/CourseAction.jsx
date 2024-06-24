@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import VideoImg from "../../assets/pngs/video.png";
 import { FormatPrice } from "../../utils/UtilMethods";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 import Tick from "../../assets/pngs/tick.png";
 import { useLocation, useNavigate } from "react-router-dom";
+import useCart from "../../hooks/useCart";
+import Spinner from "../Spinner";
 
 function CourseAction({ data }) {
   const [addToWishList, setAddToWishList] = useState(false);
+  const { checkCartForCourse, cartItems, addCourseToCart, loading } = useCart();
+  const [isInCart, setIsInCart] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   const toogleAddToWishList = () => setAddToWishList(!addToWishList);
 
   const navigateToCheckoutPage = () => {
-    
-
-   
-     let routeId = ` ${data.id} ${data.name}`;
-   
+    let routeId = ` ${data.id} ${data.title}`;
 
     navigate(`/dashboard/courses/checkout_session/${routeId}`, {
       state: { data: [data] },
@@ -25,13 +25,13 @@ function CourseAction({ data }) {
   };
 
   const testNavigate = () =>
-    navigate(`/dashboard/courses/display/${data.id} ${data.name}`, {
+    navigate(`/dashboard/courses/display/${data?.id} ${data?.title}`, {
       state: { data: data, previousPath: location.pathname },
     });
 
   const getThingsToLearn = () => {
     if (data.things_to_learn?.length === 0 || !data.things_to_learn) {
-      return "No Data Found";
+      return <span className="text-small">No Data Found</span>;
     }
 
     return data?.things_to_learn?.map((currentThing, index) => (
@@ -44,6 +44,10 @@ function CourseAction({ data }) {
       </li>
     ));
   };
+
+  useEffect(() => {
+    checkCartForCourse(data?.id, setIsInCart);
+  }, [cartItems]);
 
   return (
     <div className="w-[45%] h-fit px-[2%] py-[3%] gap-[20px] flex flex-col bg-white rounded-[10px]">
@@ -60,12 +64,6 @@ function CourseAction({ data }) {
             <h3 className="font-bold text-2xl text-gray-700">{`${FormatPrice(
               Number(data?.price)
             )}.00`}</h3>
-            <span className=" text-sm line-through text-gray-400">{`${FormatPrice(
-              99
-            )}.00`}</span>
-            <p className=" py-[3px] rounded-[5px] border text-red-300 border-red-300 px-[5px]">
-              Save 50%
-            </p>
           </div>
           <div className="flex items-center gap-[5px]">
             {addToWishList ? (
@@ -94,10 +92,18 @@ function CourseAction({ data }) {
 
         <div className="w-full flex justify-between ">
           <button
-            onClick={testNavigate}
-            className="border w-[45%] rounded-[10px] border-black hover:scale-105 duration-100 font-semibold py-[10px]"
+            onClick={() => addCourseToCart(data?.id)}
+            disabled={isInCart}
+            className={`border flex items-center justify-center gap-[10px] ${
+              isInCart
+                ? "bg-gray300 hover:scale-100 "
+                : "bg-none hover:scale-105 duration-100 "
+            } w-[45%] rounded-[10px] border-black font-semibold py-[10px]`}
           >
-            Add to Cart
+            {isInCart && !loading && "Already in Cart" }
+            {!isInCart && !loading && "Add to Cart"}
+            {isInCart && !loading && <img src={Tick} className="h-[15px]" />}
+            {loading && <span className="animate-pulse text-small">procesing...</span>}
           </button>
           <button
             onClick={navigateToCheckoutPage}

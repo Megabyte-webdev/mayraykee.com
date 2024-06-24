@@ -17,7 +17,7 @@ function CourseCheckout() {
     return ( 
     <section className="w-full flex justify-between h-[90%] py-[2%] px-[2%]">
         <CheckoutCard checkoutCourses={checkoutCourses} country={country} setCountry={setCountry} chosenPaymentOption={chosenPaymentOption} setPaymentOption={setPaymentOption}/>
-        <CheckoutSummary termsStatus={termsStatus} toogleTermsStatus={toogleTermsStatus} checkoutCourses={checkoutCourses}/>
+        <CheckoutSummary termsStatus={termsStatus} toogleTermsStatus={toogleTermsStatus} chosenPaymentOption={chosenPaymentOption} checkoutCourses={checkoutCourses}/>
     </section> );
 }
 

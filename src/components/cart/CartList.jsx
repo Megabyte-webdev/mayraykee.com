@@ -3,14 +3,16 @@ import { IoCheckbox } from "react-icons/io5";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import CartItem from "./CartItem";
 import { cartDummy } from "../../utils/dashboard/dummys";
-function CartList({selectedItems, setSelectedItems}) {
+function CartList({ selectedItems, setSelectedItems, cartItems }) {
   const [isAllChecked, setIsAllChecked] = useState(false);
- 
 
   const toogleIsAllChecked = () => setIsAllChecked(!isAllChecked);
 
   const getCartItems = () => {
-    return cartDummy.map((currentItem, index) => (
+    if(cartItems?.length == 0){
+      return
+    }
+    return cartItems.map((currentItem, index) => (
       <CartItem
         key={index}
         isAllChecked={isAllChecked}
@@ -23,9 +25,12 @@ function CartList({selectedItems, setSelectedItems}) {
   };
 
   const addAllItemsToCart = () => {
-    cartDummy.map((currentItem) => {
+    if(cartItems?.length == 0){
+      return
+    }
+    cartItems.map((currentItem) => {
       const isFound = selectedItems?.filter(
-        (current) => current.id === currentItem.id
+        (current) => current?.cartsId === currentItem?.cartsId
       );
       console.log(isFound);
       if (typeof isFound === "undefined" || isFound?.length === 0) {
@@ -36,8 +41,8 @@ function CartList({selectedItems, setSelectedItems}) {
   };
 
   const removeAllItemsToCart = () => {
-      setSelectedItems([])
-      toogleIsAllChecked();
+    setSelectedItems([]);
+    toogleIsAllChecked();
   };
 
   return (

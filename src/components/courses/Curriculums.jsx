@@ -11,8 +11,10 @@ function Curriculums({ data }) {
   }
  
   return (
-    <ul className="w-full items-center flex-col gap-[10px] justify-center flex ">
-       {getCurriculums()}
+    <ul className="w-full items-start justify-center flex flex-col">
+      <h2 className="font-bold text-lg text-gray-700">Coure Curriculum</h2>
+       {data?.curriculum &&  <div className='text-gray-600 flex text-sm flex-col gap-[5px]' dangerouslySetInnerHTML={{ __html: data?.curriculum }} />}
+       {!data?.curriculum && <p className="text-sm text-gray-400">Opps.. nothing to display</p>}
     </ul>
   );
 }

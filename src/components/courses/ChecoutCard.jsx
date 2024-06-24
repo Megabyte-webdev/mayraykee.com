@@ -42,14 +42,9 @@ function CheckoutCard({
         <h3 className="text-md font-semibold">Billing Address</h3>
 
         <div className="flex flex-col gap-[5px] ">
-          <span className="font-semibold text-[14px]">Country</span>
-          <CountrySelector
-            data={countriesDummy}
-            selected={country}
-            setSelected={setCountry}
-          />
+      
           <p className="w-full text-small text-gray-400 font-normal">
-            Rotterdam business school is required by law to collect applicable
+            Mayrahkee E-Learning is required by law to collect applicable
             transaction taxes for purchases made in certain tax jurisdictions.
           </p>
         </div>

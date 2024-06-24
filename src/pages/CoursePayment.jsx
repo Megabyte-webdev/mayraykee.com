@@ -6,7 +6,7 @@ function CoursePayment() {
 
     const location = useLocation()
 
-    const checkoutCourses = location?.state?.data
+    const data = location?.state?.data
     
 
   return (
@@ -20,14 +20,14 @@ function CoursePayment() {
         </div>
 
         <p className="text-small text-gray-400"> 
-          Thank you for choosing to book with My More Travels ! Your Reservation
-          is Confirmed. If there's anything you need before your arrival, please
+          Thank you for purchasing on Meerahkee E-learning Platform! 
+          Your Payment has Confirmed. If there's anything you need before your arrival, please
           don't hesitate to reach out to your host!
         </p>
-        <span className='flex gap-[10px] text-sm font-semibold items-center'><img className='h-[20px]' src={Todo} alt="" />Order id : MMT786636612 </span>
-        <Link to='/' className='border-b w-fit text-sm hover:scale-105 duration-100 hover:text-green border-black font-tnormal'>Go Back to Home</Link>
+        <span className='flex gap-[10px] text-sm font-semibold items-center'><img className='h-[20px]' src={Todo} alt="" />Order id : {data.reference.reference} </span>
+        <Link to='/dashboard/home' className='border-b w-fit text-sm hover:scale-105 duration-100 hover:text-green border-black font-tnormal'>Go Back to Home</Link>
       </div>
-        <PaymentStatus checkoutCourses={checkoutCourses}/>
+        <PaymentStatus checkoutCourses={data.checkoutCourses}/>
     </section>
   );
 }

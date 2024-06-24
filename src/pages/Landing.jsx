@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import NavBar from "../components/landing/NavBar";
 import "../css/extras.css";
 import { motion } from "framer-motion";
@@ -11,6 +11,7 @@ import Learning from "../assets/anim/learning.json";
 import AnimDisplay from "../components/landing/AnimDisplay";
 import {useNavigate} from 'react-router-dom'
 import { landingNavOptions } from "../utils/constants";
+import useFetchWithSessionStorage from "../utils/useFetchWithSessionStorage";
 
 function Landing() {
 

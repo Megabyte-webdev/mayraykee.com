@@ -1,13 +1,13 @@
 import { toast } from "react-toastify";
 import { MdCancel} from "react-icons/md";
 
-export const onFailure = (message) => {
+export const onFailure = (error) => {
   const failureComponent = (
-    <div className="flex items-center text-red-500 gap-[10px]">
+    <div className="flex items-center w-fit text-red-600 gap-[10px]">
       <MdCancel className="text-[25px] " />
       <div className="flex flex-col">
-       <strong className="text-[14px] ">Failure Message</strong>
-       <p className="text-small ">{message}</p>
+       <strong className="text-[14px] ">{error.message}</strong>
+       <p className="text-small text-gray-500 ">{error.error}</p>
       </div>
        
     </div>

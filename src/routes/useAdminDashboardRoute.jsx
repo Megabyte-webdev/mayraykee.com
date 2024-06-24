@@ -16,6 +16,10 @@ const Courses = lazy(() => import('../admin/pages/AdminCoursesPage'))
 const Schedule = lazy(() => import('../admin/pages/AdminSchedule'))
 
 
+//Students
+const Students = lazy(() => import('../admin/pages/Students'))
+
+
 // //NavBar Routes
 // const Cart = lazy(() => import('../pages/Cart'))
 // const Chat = lazy(() => import('../pages/InstantChat'))
@@ -32,7 +36,12 @@ const Schedule = lazy(() => import('../admin/pages/AdminSchedule'))
 // const Profile = lazy(() => import('../layout/ProfileDetails'))
 
 // //Activity
-// const Activity = lazy(() => import('../layout/Activity'))
+const ActivityLayout = lazy(() => import('../admin/layout/ActivityLayout'))
+const ActivityMeeting = lazy(() => import('../admin/pages/ActivityMeeting'))
+
+
+
+
 // const You = lazy(() => import('../pages/You'))
 // const Following = lazy(() => import('../pages/Following'))
 // const MyCourses = lazy(() => import('../pages/MyCourses'))
@@ -51,6 +60,13 @@ function useAdminDashboardRoute() {
             <Route path='/admin/dashboard/home' element={<Dashboard/>} />
             <Route path='/admin/dashboard/courses' element={<Courses/>} />
             <Route path='/admin/dashboard/schedule' element={<Schedule/>} />
+
+            <Route path='/admin/dashboard/activity' element={<ActivityLayout/>}>
+              <Route index element={<ActivityMeeting/>}/>
+            </Route>
+
+            <Route path='/admin/dashboard/students' element={<Students/>}/>
+
         </Route>
     )
 }

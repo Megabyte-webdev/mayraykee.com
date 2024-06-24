@@ -3,10 +3,13 @@ import CartList from "../components/cart/CartList";
 import OrderSummary from "../components/cart/OrderSummary";
 import RelatedCourses from "../components/courses/RelatedCourses";
 import {Helmet} from 'react-helmet'
+import useCart from "../hooks/useCart";
 
 
 function Cart() {
     const [selectedItems, setSelectedItems] = useState([]);
+    const {cartItems} = useCart()
+
   return (
     <section className="w-full px-[2%] pt-[10px] h-fit overflow-y-auto pb-[20px] flex flex-col gap-[25px]">
       <Helmet>
@@ -22,7 +25,7 @@ function Cart() {
       <div className="w-full flex gap-[5%] justify-start">
         <div className="flex flex-col w-[60%] gap-[15px]">
         <h2 className="text-black text-sm">Showing 3 products you added</h2>
-        <CartList selectedItems={selectedItems} setSelectedItems={setSelectedItems}/>
+        <CartList cartItems={cartItems} selectedItems={selectedItems} setSelectedItems={setSelectedItems}/>
         </div>
         <OrderSummary data={selectedItems} />
       </div>

@@ -13,10 +13,10 @@ function PaymentStatus({checkoutCourses}) {
       return;
     }
     const listComponent = checkoutCourses.map((currentCourse, index) => {
-      const discountPrice = Number(currentCourse?.price) * 0.2; //default discount of 20%
+      const discountPrice = Number(currentCourse?.price) * 0; //default discount of 20%
       courseTotal =
         courseTotal +
-        (Number(currentCourse?.price) - Number(currentCourse?.price) * 0.2);
+        (Number(currentCourse?.price));
       return (
         <li
           key={index}
@@ -48,7 +48,7 @@ function PaymentStatus({checkoutCourses}) {
     checkoutCourses.map((currentCourse) => {
       courseTotal =
         courseTotal +
-        (Number(currentCourse?.price) - Number(currentCourse?.price) * 0.2);
+        (Number(currentCourse?.price));
     });
     setTotalPrice(courseTotal);
   };

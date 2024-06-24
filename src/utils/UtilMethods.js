@@ -1,3 +1,5 @@
+import { responseKeys } from "./constants";
+
 export const handleOnChange = (e, setDetails) => {
   const { name, value } = e.target;
 
@@ -37,3 +39,44 @@ export const FormatPriceInUsd = (price) => {
     minmumFractionDigits: 0,
   })}`;
 };
+
+export const FormatError = (error, setError, message) => {
+  console.log(error);
+  if (error instanceof Error && !error?.response?.data) {
+    setError({
+      message: message,
+      error: error.message,
+    });
+  } else if (error?.response?.data) {
+    const errorsFromResponse = error?.response?.data?.errors;
+    let errorMessage = "";
+    if (errorsFromResponse) {
+      Object.keys(errorsFromResponse).map((currentErrorKey) => {
+        const currentError = errorsFromResponse[currentErrorKey];
+        errorMessage = errorMessage + currentError[0] + "\n";
+      });
+    }else if(error?.response?.data?.response){
+      errorMessage = error?.response?.data?.response;
+    } else{
+      errorMessage = error?.response?.data?.message;
+    }
+
+    setError({
+      message: message,
+      error: errorMessage,
+    });
+  } else {
+    setError({
+      message: "Unknown",
+      error: "Something went wrong",
+    });
+  }
+};
+
+
+export const formatResponse = (response, setDatum, responseType) => {
+     const key = Object.keys(responseKeys).find(current => responseKeys[current] === responseType)  
+     
+     return setDatum(response.data[key])
+
+}

@@ -21,6 +21,13 @@ import MindAnatomy from "../assets/pngs/mind-anatomy.png";
 import Microscope from "../assets/pngs/microscope.png";
 import CameraWhite from "../assets/pngs/camera-white.png";
 
+
+export const formErrorMessages = {
+  passwordMismatch: 'Password mismatch',
+  selectTitle: 'Please select a title',
+  accountType: 'Please select an account type'
+}
+
 export const landingNavOptions = [
   "Home",
   "About Us",
@@ -153,7 +160,7 @@ export const admin_sidebar_keys = {
     title: "Activity",
     activeIcon: Activity,
     inactiveIcon: ActivityInactive,
-    route: "/dashboard/activity",
+    route: "/admin/dashboard/activity",
   },
   live_classes: {
     title: "Live Classes",
@@ -275,3 +282,10 @@ export const professionsOption = [
   { id: 24, name: "Environmental Scientist" },
   { id: 25, name: "Clinical Researcher" },
 ];
+
+
+
+export const responseKeys = {
+  allCourses: 'All Courses',
+  Faculty: 'Single Faculty'
+}

@@ -30,7 +30,7 @@ const localizer = dayjsLocalizer(dayjs);
 function Calender() {
 
 
-  const eventWrapper = () => <div className="h-[100px] w-[100px] bg-red-300"></div>
+
 
   return (
     <div className="w-[70%] h-full flex flex-col px-[2%] py-[1%] gap-[2%] rounded-[10px] bg-white">

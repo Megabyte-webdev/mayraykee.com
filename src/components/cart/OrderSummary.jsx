@@ -29,7 +29,7 @@ function OrderSummary({ data }) {
     let routeId = "";
 
     data.map((currentCourse) => {
-      routeId = `${routeId} ${currentCourse.id} ${currentCourse.name}`;
+      routeId = `${routeId} ${currentCourse?.id} ${currentCourse?.title}`;
     });
 
     navigate(`/dashboard/courses/checkout_session/${routeId}`, {

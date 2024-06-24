@@ -5,10 +5,19 @@ import { IoCheckbox } from "react-icons/io5";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { onFailure } from "../../utils/notifications/OnFailure";
 import { useNavigate } from "react-router-dom";
+import usePayment from "../../hooks/usePayment";
+import { paymentOptions } from "../../utils/constants";
+import { PaystackConsumer } from "react-paystack";
+import FormButton from "../FormButton";
 
-function CheckoutSummary({ checkoutCourses, termsStatus, toogleTermsStatus }) {
+function CheckoutSummary({
+  checkoutCourses,
+  termsStatus,
+  toogleTermsStatus,
+  chosenPaymentOption,
+}) {
   const [totalPrice, setTotalPrice] = useState(0);
-  const navigate = useNavigate()
+  const { config, makePaymentCheck, onClose, loading } = usePayment(checkoutCourses);
 
   const getItemsSummary = () => {
     let courseTotal = 0;
@@ -16,7 +25,7 @@ function CheckoutSummary({ checkoutCourses, termsStatus, toogleTermsStatus }) {
       return;
     }
     const listComponent = checkoutCourses.map((currentCourse, index) => {
-      const discountPrice = Number(currentCourse?.price) * 0.2; //default discount of 20%
+      const discountPrice = Number(currentCourse?.price) * 0; //default discount of 20%
       courseTotal =
         courseTotal +
         (Number(currentCourse?.price) - Number(currentCourse?.price) * 0.2);
@@ -26,7 +35,7 @@ function CheckoutSummary({ checkoutCourses, termsStatus, toogleTermsStatus }) {
           className="flex last:border-b-0 border-b pb-[5px] border-black border-dotted flex-col gap-[5px] w-full"
         >
           <p className="text-small font-semibold">
-            Title: {currentCourse.name}
+            Title: {currentCourse?.title}
           </p>
           <div className="flex flex-col gap-[8px] w-full">
             <span className="justify-between text-small flex w-full">
@@ -46,18 +55,24 @@ function CheckoutSummary({ checkoutCourses, termsStatus, toogleTermsStatus }) {
 
   const navigateToPaymentPage = () => {
     if (!termsStatus) {
-      onFailure("Accpet terms and conditions to continue");
+      onFailure({
+        message: "Agreements Error",
+        error: "Accpet terms and conditions to continue",
+      });
       return;
     }
-    let routeId = "";
 
-    checkoutCourses.map((currentCourse) => {
-      routeId = `${routeId} ${currentCourse.id} ${currentCourse.name}`;
-    });
-
-    navigate(`/dashboard/courses/payment_session/${routeId}`, {
-      state: { data: checkoutCourses },
-    });
+    // switch (chosenPaymentOption) {
+    //   case paymentOptions.card:
+    //     initializePayment(onSuccess, onClose);
+    //     break;
+    //   case paymentOptions.paypal:
+    //     onFailure({
+    //       message: "Payment Error",
+    //       error: "Paystack is not available yet",
+    //     });
+    //     break;
+    // }
   };
 
   const getItemsTotal = () => {
@@ -68,11 +83,10 @@ function CheckoutSummary({ checkoutCourses, termsStatus, toogleTermsStatus }) {
     checkoutCourses.map((currentCourse) => {
       courseTotal =
         courseTotal +
-        (Number(currentCourse?.price) - Number(currentCourse?.price) * 0.2);
+        (Number(currentCourse?.price) - Number(currentCourse?.price) * 0);
     });
     setTotalPrice(courseTotal);
   };
-
 
   useEffect(() => getItemsTotal(), []);
 
@@ -114,9 +128,48 @@ function CheckoutSummary({ checkoutCourses, termsStatus, toogleTermsStatus }) {
           </span>
         </div>
 
-        <button onClick={navigateToPaymentPage} className="py-[8px] bg-green w-full rounded-[5px] text-sm text-white font-semibold duration-100 hover:scale-105">
-         Pay for Course
-        </button>
+        {chosenPaymentOption === paymentOptions.paypal && (
+          <FormButton
+          loading={loading}
+            onClick={() => {
+              if (!termsStatus) {
+                onFailure({
+                  message: "Agreements Error",
+                  error: "Accpet terms and conditions to continue",
+                });
+                return;
+              }
+              onFailure({
+                message: "Payment Error",
+                error: "Paypal not supported",
+              });
+            }}
+          >
+            Pay for course
+          </FormButton>
+        )}
+
+        {chosenPaymentOption === paymentOptions.card && (
+          <PaystackConsumer {...config(totalPrice)}>
+            {({ initializePayment }) => (
+              <FormButton
+              loading={loading}
+                onClick={() => {
+                  if (!termsStatus) {
+                    onFailure({
+                      message: "Agreements Error",
+                      error: "Accpet terms and conditions to continue",
+                    });
+                    return;
+                  }
+                  initializePayment(makePaymentCheck, onClose);
+                }}
+              >
+                Pay for course
+              </FormButton>
+            )}
+          </PaystackConsumer>
+        )}
       </div>
     </div>
   );

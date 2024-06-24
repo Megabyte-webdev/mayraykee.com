@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import MainLogo from "../../assets/svgs/main-logo.svg";
 import InviteComponent from "./InviteComponent";
 
-function SideBar({children }) {
+function SideBar({children}) {
 
 
   return (
