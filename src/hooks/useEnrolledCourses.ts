@@ -13,7 +13,7 @@ function useEnrolledCourses() {
     message: "",
     error: "",
   });
-  const [loading, setIsLoading] = useState(false);
+  const [loading, setIsLoading] = useState(false)
 
   const getCourses = useCallback(async () => {
     setIsLoading(true);

@@ -112,7 +112,7 @@ function useRegistration() {
       onRegistrationSuccessful(handleOnSuccess);
     } catch (error) {
       FormatError(error, setError, "Registration error");
-    }
+    };
   };
 
   const resendOtp = async (resetTimer: () => void) => {
