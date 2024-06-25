@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function LiveClassInfo({ active, context }) {
+function LiveClassInfo({ active, context, currentSchedule }) {
   const newState = { new_video: "Current Session" };
   const navigate = useNavigate();
   const [doesExist, setDoesExist] = useState();
@@ -59,7 +59,10 @@ function LiveClassInfo({ active, context }) {
             Join
           </button>
         </div>
-        <p className="text-small">8:00 Am - 9:00 PM</p>
+        <div className="flex gap-[10%]">
+        <p className="text-small">Time: {`${currentSchedule.start_time} - ${currentSchedule.end_time}`}</p>
+        <p className="text-small">Date: {`${currentSchedule.day}`}</p>
+        </div>
       </div>
     </li>
   );

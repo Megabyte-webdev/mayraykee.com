@@ -5,18 +5,27 @@ import Camera from "../../assets/pngs/camera-white.png";
 import Comment from "../../assets/pngs/comment.png";
 import Upload from "../../assets/pngs/upload.png";
 import { useState } from "react";
+import { useMeeting } from "@videosdk.live/react-sdk";
 
-function VideoComponent() {
+function VideoComponent({participants}) {
   const [isMicEnabled, setIsMicEnabled] = useState(true);
   const [isCameraEnabled, setIsCameraEnabled] = useState(true);
+  const { leave, toggleMic, toggleWebcam } = useMeeting();
+
 
   const getGuests = () =>
-    liveGuestsDummy.map((currentGuest, index) => (
-      <Guest key={index} data={currentGuest} />
+    [...participants.keys()].map((currentParticipant, index) => (
+      <Guest key={index} data={currentParticipant} />
     ));
 
-  const toogleMic = () => setIsMicEnabled(!isMicEnabled);
-  const toogleCamera = () => setIsCameraEnabled(!isCameraEnabled);
+  const toogleMic = () => {
+    setIsMicEnabled(!isMicEnabled);
+    toggleMic();
+  };
+  const toogleCamera = () => {
+    setIsCameraEnabled(!isCameraEnabled);
+    toggleWebcam();
+  };
 
   return (
     <div className="w-[60%]  flex flex-col items-center  gap-[5%]">
@@ -57,7 +66,9 @@ function VideoComponent() {
           <li
             className={`h-[80%] cursor-pointer hover:scale-105 duration-100 w-[14%] items-center rounded-full bg-red-700/20 justify-center flex`}
           >
-            <span className="h-[50%] rounded-full bg-red-400 p-[5px] text-[8px] flex items-center justify-center">Rec</span>
+            <span className="h-[50%] rounded-full bg-red-400 p-[5px] text-[8px] flex items-center justify-center">
+              Rec
+            </span>
           </li>
           <li
             className={`h-[80%] cursor-pointer hover:scale-105 duration-100 w-[14%] items-center rounded-full bg-gray-300 justify-center flex`}
@@ -65,6 +76,7 @@ function VideoComponent() {
             <img src={Upload} className="h-[50%]" />
           </li>
           <li
+            onClick={leave}
             className={`h-[80%] cursor-pointer hover:scale-105 duration-100 w-[14%] items-center rounded-full bg-gray-300 justify-center flex`}
           >
             <span className="font-bold text-md pb-[8px]">...</span>
