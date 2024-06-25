@@ -3,15 +3,12 @@ import NavBar from "../components/landing/NavBar";
 import "../css/extras.css";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import ScienceTools from "../assets/anim/science-tools.json";
 import Refinery from "../assets/anim/refinery.json";
 import RecuitementSteps from "../assets/anim/recuitment-steps.json";
-import LaptopPeople from "../assets/anim/laptop-people.json";
 import Learning from "../assets/anim/learning.json";
 import AnimDisplay from "../components/landing/AnimDisplay";
 import {useNavigate} from 'react-router-dom'
 import { landingNavOptions } from "../utils/constants";
-import useFetchWithSessionStorage from "../utils/useFetchWithSessionStorage";
 
 function Landing() {
 
