@@ -1,13 +1,18 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { axiosClient } from "../services/axios-client";
 import { onFailure } from "../utils/notifications/OnFailure";
 import { onSuccess } from "../utils/notifications/OnSuccess";
 import { json } from "react-router-dom";
 import { FormatError } from "../utils/UtilMethods";
 import { formErrorMessages } from "../utils/constants";
+import {AuthenticationContext} from '../context/AuthenticationContext'
+
 
 function useRegistration() {
   const client = axiosClient(null);
+  const {authDetails} = useContext(AuthenticationContext);
+  const [profileDetails, setProfilDetails] = useState(authDetails.user)
+
 
   const getFromSessionId = () => {
     const details = sessionStorage.getItem("registration details");
@@ -47,6 +52,13 @@ function useRegistration() {
     const { name, value } = e.target;
     setRegistrationDetails({ ...registrationDetails, [name]: value });
   };
+
+  const onProfileTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setProfilDetails({ ...profileDetails, [name]: value });
+  };
+
+
   const onOtpChange = (value: React.ChangeEvent<HTMLInputElement>) => {
     console.log(value);
     setOtp({ otp: value, email: registrationDetails?.email });
@@ -181,6 +193,8 @@ function useRegistration() {
     onOtpChange,
     resendOtp,
     verifyOtp,
+    profileDetails, 
+    onProfileTextChange
   };
 }
 

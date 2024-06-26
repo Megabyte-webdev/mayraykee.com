@@ -11,7 +11,6 @@ function LiveClasses() {
   });
   const [navState, setNavState] = useState(navStates.live_classes);
 
- 
   return (
     
     <section className="flex flex-col w-full h-full gap-[3%] mb-[10px] py-[2%] overflow-y-auto px-[2%] items-start ">

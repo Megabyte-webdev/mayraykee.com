@@ -80,3 +80,19 @@ export const formatResponse = (response, setDatum, responseType) => {
      return setDatum(response.data[key])
 
 }
+
+export const setSelectedData = (dataList, setData, value) => {
+    if(!value){
+      setData(dataList[0])
+      return
+    } else if(value){
+      const newData = dataList.find(currentData => currentData.name = value)
+      if(newData){
+        setData(newData)
+        return
+      }else{
+        setData(dataList[0])
+        return
+      }
+    }
+}

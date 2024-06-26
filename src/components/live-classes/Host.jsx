@@ -1,81 +1,68 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import Mic from "../../assets/pngs/mic.png";
-import { useParticipant } from "@videosdk.live/react-sdk";
-import ReactPlayer from "react-player";
+import React, { useEffect, useMemo, useRef } from 'react';
+import ReactPlayer from 'react-player';
+import { useParticipant } from 'your-participant-hook'; // replace with actual import
 
-function Host({ data }) {
+function ParticipantView(props) {
   const micRef = useRef(null);
   const { webcamStream, micStream, webcamOn, micOn, isLocal, displayName } =
-    useParticipant(data.participantId);
+    useParticipant(props.participantId);
 
-  const videoStream = useMemo(() => {
+  const videoStreamURL = useMemo(() => {
     if (webcamOn && webcamStream) {
       const mediaStream = new MediaStream();
       mediaStream.addTrack(webcamStream.track);
-      return mediaStream;
+      return URL.createObjectURL(mediaStream);
     }
+    return null;
   }, [webcamStream, webcamOn]);
-  const [isMicEnabled, setIsMicEnabled] = useState(false);
-
-  const toogleMic = () => setIsMicEnabled(!isMicEnabled);
 
   useEffect(() => {
     if (micRef.current) {
       if (micOn && micStream) {
         const mediaStream = new MediaStream();
         mediaStream.addTrack(micStream.track);
-
         micRef.current.srcObject = mediaStream;
-        micRef.current
-          .play()
-          .catch((error) =>
-            console.error("videoElem.current.play() failed", error)
-          );
+        micRef.current.play().catch((error) =>
+          console.error('micRef.current.play() failed', error)
+        );
       } else {
         micRef.current.srcObject = null;
       }
     }
   }, [micStream, micOn]);
 
+  useEffect(() => {
+    return () => {
+      if (videoStreamURL) {
+        URL.revokeObjectURL(videoStreamURL);
+      }
+    };
+  }, [videoStreamURL]);
+
   return (
-    <div className="w-full h-[70%] rounded-[10px] bg-gray-400">
-      {/* <img
-        src={data.profileImg}
-        className="h-full object-cover object-center rounded-[10px] w-full"
-      /> */}
-
+    <div>
+      <p>
+        Participant: {displayName} | Webcam: {webcamOn ? 'ON' : 'OFF'} | Mic: {micOn ? 'ON' : 'OFF'}
+      </p>
       <audio ref={micRef} autoPlay playsInline muted={isLocal} />
-
       {webcamOn && (
         <ReactPlayer
-          //
           playsinline // extremely crucial prop
           pip={false}
           light={false}
           controls={false}
           muted={true}
           playing={true}
-          //
-          url={videoStream}
-          //
-          height={"300px"}
-          width={"300px"}
+          url={videoStreamURL}
+          height="300px"
+          width="300px"
           onError={(err) => {
-            console.log(err, "participant video error");
+            console.log(err, 'participant video error');
           }}
         />
       )}
-
-      {/* <div
-        onClick={toogleMic}
-        className={`absolute cursor-pointer hover:scale-105 duration-100 flex items-center justify-center left-2 bottom-2 ${
-          isMicEnabled ? "bg-green" : "bg-red-700"
-        } rounded-full h-[20px] w-[20px]`}
-      >
-        <img src={Mic} className="h-[10px]" />
-      </div> */}
     </div>
   );
 }
 
-export default Host;
+export default ParticipantView;
