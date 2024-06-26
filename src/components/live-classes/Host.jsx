@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo, useRef } from 'react';
-import ReactPlayer from 'react-player';
-import { useParticipant } from 'your-participant-hook'; // replace with actual import
+import { useEffect, useMemo, useRef, useState } from "react";
+import Mic from "../../assets/pngs/mic.png";
+import { useParticipant } from "@videosdk.live/react-sdk";
+import ReactPlayer from "react-player"; // replace with actual import
 
 function ParticipantView(props) {
   const micRef = useRef(null);
