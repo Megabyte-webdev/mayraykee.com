@@ -40,7 +40,6 @@ export const landingNavOptionsTwo = [
   "About Us",
   "Services",
   "Contact Us",
-  "Landing One",
 ];
 
 export const registration_steps_keys = {

@@ -41,7 +41,7 @@ function App() {
             <Suspense fallback={<FallbackComponent />}>
               <Router>
                 <Routes>
-                  <Route path="/" element={<Landing />} />
+                  <Route path="/" element={<LandingTwo />} />
                   <Route path="/landing_two" element={<LandingTwo />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/forgot_password" element={<ForgotPassword />} />

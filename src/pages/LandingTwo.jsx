@@ -5,11 +5,14 @@ import { landingNavOptionsTwo } from "../utils/constants";
 import Elearning from "../assets/pngs/laptop-2.png";
 import Recuitement from "../assets/pngs/wallet-2.png";
 import Oil from "../assets/pngs/factory.png";
+import WomanInOrange from '../assets/jpgs/woman-in-orange.jpg'
 
 function LandingTwo() {
   return (
-    <main className="w-full flex bg-landing-image bg-cover bg-center">
-      <div className="w-full flex relative flex-col items-center justify-between h-screen bg-green/85">
+    <main className="w-full flex bg-cover bg-center relative">
+      <img src={WomanInOrange} className="absolute object-cover w-full z-10 h-screen" alt="" />
+
+      <div className="w-full flex relative flex-col z-20 items-center justify-between h-screen bg-green/85">
         <NavBar navOptions={landingNavOptionsTwo} />
 
         <motion.div

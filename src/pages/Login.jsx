@@ -49,7 +49,7 @@ function Login() {
     return (
         <main id='login-Wrapper' className={`h-screen w-screen flex bg-center items-start justify-center relative `}>
             <img className='w-full h-full object-cover object-top absolute' src={version.background}/>
-            <div className='flex gap-[15px] pt-[10px] text-white text-sm z-10 font-semibold'>
+            {/* <div className='flex gap-[15px] pt-[10px] text-white text-sm z-10 font-semibold'>
                 <button onClick={() => setVersion(getLoginVersion(1))} className='py-[5px] bg-green rounded-[10px] px-[5px]'>
                     Version One
                 </button>
@@ -59,7 +59,7 @@ function Login() {
                 <button onClick={() => setVersion(getLoginVersion(3))} className='py-[5px] bg-green rounded-[10px] px-[5px]'>
                     Version Three
                 </button>
-            </div>
+            </div> */}
             <LoginForm
             version={version}
             rememberMe={rememberMe}
