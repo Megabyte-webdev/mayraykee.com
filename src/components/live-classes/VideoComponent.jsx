@@ -6,11 +6,14 @@ import Comment from "../../assets/pngs/comment.png";
 import Upload from "../../assets/pngs/upload.png";
 import { useState } from "react";
 import { useMeeting } from "@videosdk.live/react-sdk";
+import Host from "./Host";
 
 function VideoComponent({participants}) {
   const [isMicEnabled, setIsMicEnabled] = useState(true);
   const [isCameraEnabled, setIsCameraEnabled] = useState(true);
   const { leave, toggleMic, toggleWebcam } = useMeeting();
+
+  const host = [...participants.keys()][0]
 
 
   const getGuests = () =>
@@ -27,9 +30,12 @@ function VideoComponent({participants}) {
     toggleWebcam();
   };
 
+  console.log('Participanst', [...participants.keys()])
   return (
     <div className="w-[60%]  flex flex-col items-center  gap-[5%]">
-      <hr className="w-full h-[70%] rounded-[10px] bg-gray-300" />
+      {/* <hr className="w-full h-[70%] rounded-[10px] bg-gray-400" /> */}
+
+      {host &&  <Host data={host}/>}
 
       <div className="w-full  gap-[10px] p-[10px] flex rounded-[10px] h-[25%] bg-white">
         <ul className="w-full  overflow-x-auto gap-[10px] flex rounded-[10px] h-full bg-white">
