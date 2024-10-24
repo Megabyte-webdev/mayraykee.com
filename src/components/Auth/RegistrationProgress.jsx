@@ -11,7 +11,7 @@ function RegistrationProgress({ state, dispatch }) {
       const icon = isSelected ? currentStep.activeIcon : currentStep.inactiveIcon;
 
       return (
-        <li key={currentStep.title} className="w-full flex flex-col sm:flex-row items-center gap-4 bg-red-400">
+        <li key={currentStep.title} className="w-full flex flex-col sm:flex-row items-center gap-4">
           <div className="flex flex-col items-center sm:w-[25%]">
             <div
               className={`bg-white rounded-md p-[10px] sm:p-[15px] ${
@@ -36,7 +36,7 @@ function RegistrationProgress({ state, dispatch }) {
 
   return (
     <div className="w-full h-full bg-green flex items-center justify-center">
-      <ul className="w-max sm:w-[60%] flex flex-col gap-3 sm:gap-6">{getSteps()}</ul>
+      <ul className="w-max bg-red-600 sm:w-[60%] flex flex-col gap-3 sm:gap-6">{getSteps()}</ul>
     </div>
   );
 }
