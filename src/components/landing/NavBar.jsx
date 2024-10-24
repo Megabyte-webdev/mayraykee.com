@@ -53,9 +53,9 @@ function NavBar({ navOptions }) {
         },
       }}
       viewport={{ once: true }}
-      className="h-[10%] w-full overflow-hidden flex justify-between items-center px-[5%]"
+      className="h-[90px] w-full overflow-hidden flex justify-between items-center px-[5%]"
     >
-      <img className="h-40 md:h-60" src={MainLogo} />
+      <img className="w-40 md:w-60" src={MainLogo} />
 
       <div className="flex w-[60%] items-center">
         <ul className="hidden md:flex w-[80%] items-center gap-[8%]">{getOptions()}</ul>
