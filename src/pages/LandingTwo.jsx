@@ -50,7 +50,7 @@ function LandingTwo() {
               },
             }}
             viewport={{ once: true }}
-            className="font-meduim w-[50%] text-center text-md text-white"
+            className="font-meduim w-[80%] md:w-[50%] text-center text-sm md:text-md text-white"
           >
             We help people and companies build online visibility - from a
             business card website to an online superstore.
@@ -69,7 +69,7 @@ function LandingTwo() {
               duration: 1,
             },
           }}
-          className="w-[80%] *:cursor-pointer flex flex-col md:flex-row pb-[15px] items-center gap-2 md:gap-0 md:justify-between"
+          className="w-[80%] *:cursor-pointer flex flex-col md:flex-row pb-[15px] items-center gap-2 md:gap-0 md:justify-between my-2 md:my-0"
         >
           <li className="flex w-60 md:w-[30%] hover:scale-105 duration-100 items-center gap-[15%] text-white">
             <div className="flex group flex-col items-center gap-[10px]">
