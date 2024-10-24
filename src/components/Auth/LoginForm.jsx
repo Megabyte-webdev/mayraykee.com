@@ -20,7 +20,7 @@ function LoginForm({ rememberMe, toogleRememberMe, version }) {
       id="login-form"
       className={`bg-white absolute rounded-md ${version.position} px-4 py-4 
         w-[90%] max-w-[400px] h-auto sm:w-[50%] md:w-[30%]`}
-      style={{ minHeight: "60%" }}
+      style={{ minHeight: "400px" }}
     >
       <img src={MainLogo} className="w-[50%] mx-auto mb-4" alt="Main Logo" />
 
