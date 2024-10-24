@@ -30,7 +30,7 @@ function RegistrationProgress({state, dispatch}) {
 
   return (
     <div className="w-full h-full bg-green flex items-center justify-center">
-      <ul className="h-[70%] w-[60%]">{getSteps()}</ul>
+      <ul className="flex flex-row sm:flex-col w-full sm:w-[60%]">{getSteps()}</ul>
     </div>
   );
 }
