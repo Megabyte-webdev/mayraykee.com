@@ -14,7 +14,7 @@ function RegistrationProgress({state, dispatch}) {
         <li key={currentStep.title} className={`w-full flex `}>
           <div className="flex flex-col items-center w-[25%]">
             <div className={`bg-white rounded-md p-[10px] md:p-[15px] ${isSelectecd && 'border-2 border-gray-800 transition duration-1000'}`}>
-              <img className="w-[20px] h-[20px] md:h-[25px] md:w-[25px] block" src={icon} />
+              <img className="md:h-[25px] md:w-[25px]" src={icon} />
             </div>
             {currentStep.title !== registration_steps_keys.welcome_video.title && <hr className="h-[25px] border-dashed border w-0 hidden md:block" />}
           </div>
@@ -31,7 +31,7 @@ function RegistrationProgress({state, dispatch}) {
 
   return (
     <div className="w-full h-full bg-green flex items-center justify-center">
-      <ul className="flex md:flex-col md:w-full md:w-[60%]">{getSteps()}</ul>
+      <ul className="flex md:flex-col md:w-full md:w-[60%] h-[100px] md:h-screen">{getSteps()}</ul>
     </div>
   );
 }
