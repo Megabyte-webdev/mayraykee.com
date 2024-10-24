@@ -50,7 +50,7 @@ function LandingTwo() {
               },
             }}
             viewport={{ once: true }}
-            className="font-meduim w-[80%] md:w-[50%] text-center text-sm md:text-md text-white"
+            className="font-meduim w-[95%] md:w-[50%] text-center text-sm md:text-md text-white mb-2"
           >
             We help people and companies build online visibility - from a
             business card website to an online superstore.
