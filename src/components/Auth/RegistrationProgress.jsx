@@ -13,14 +13,14 @@ function RegistrationProgress({state, dispatch}) {
       return (
         <li key={currentStep.title} className={`w-full flex `}>
           <div className="flex flex-col items-center w-[25%]">
-            <div className={`bg-white rounded-md p-[15px] ${isSelectecd && 'border-2 border-gray-800 transition duration-1000'}`}>
-              <img className="h-[25px] w-[25px]  " src={icon} />
+            <div className={`bg-white rounded-md p-[10px] md:p-[15px] ${isSelectecd && 'border-2 border-gray-800 transition duration-1000'}`}>
+              <img className=w-[20px] h-[20px] md:h-[25px] md:w-[25px]  " src={icon} />
             </div>
             {currentStep.title !== registration_steps_keys.welcome_video.title && <hr className="h-[25px] border-dashed border w-0" />}
           </div>
 
-          <div>
-            <p className="font-semibold text-[15px] text-white hidden md:block">{currentStep.title}</p>
+          <div className='hidden md:block'>
+            <p className="font-semibold text-[15px] text-white">{currentStep.title}</p>
             <p className="font-meduim text-small text-gray-400">{currentStep.desc}</p>
           </div>
         </li>
