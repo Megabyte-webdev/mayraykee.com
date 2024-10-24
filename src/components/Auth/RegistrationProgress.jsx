@@ -11,12 +11,12 @@ function RegistrationProgress({ state }) {
       return (
         <li 
           key={currentStep.title} 
-          className="flex items-center gap-4 p-2 rounded-md w-full"
+          className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 p-2 rounded-md w-full"
         >
           <div className="flex items-center justify-center w-10 h-10 bg-white rounded-md">
             <img className="h-6 w-6" src={icon} alt={`${currentStep.title} icon`} />
           </div>
-          <div className="text-left">
+          <div className="text-center sm:text-left">
             <p className="font-semibold text-xs sm:text-sm text-white">
               {currentStep.title}
             </p>
@@ -31,7 +31,7 @@ function RegistrationProgress({ state }) {
 
   return (
     <div className="w-full h-full bg-green-600 p-4">
-      <ul className="flex flex-col gap-3">{getSteps()}</ul>
+      <ul className="flex flex-row sm:flex-col flex-wrap gap-3">{getSteps()}</ul>
     </div>
   );
 }
