@@ -1,33 +1,28 @@
-
 import React from "react";
 import { registration_steps_keys } from "../../utils/constants";
 
-function RegistrationProgress({ state, dispatch }) {
+function RegistrationProgress({ state }) {
   const getSteps = () => {
     return Object.keys(registration_steps_keys).map((key) => {
       const currentStep = registration_steps_keys[key];
-
       const isSelected = currentStep.title === state.title;
       const icon = isSelected ? currentStep.activeIcon : currentStep.inactiveIcon;
 
       return (
-        <li key={currentStep.title} className="w-full flex flex-col sm:flex-row items-center gap-4">
-          <div className="flex flex-col items-center sm:w-[25%]">
-            <div
-              className={`bg-white rounded-md p-[10px] sm:p-[15px] ${
-                isSelected && "border-2 border-gray-800 transition duration-1000"
-              }`}
-            >
-              <img className="h-[20px] w-[20px] sm:h-[25px] sm:w-[25px]" src={icon} />
-            </div>
-            {currentStep.title !== registration_steps_keys.welcome_video.title && (
-              <hr className="hidden sm:block h-[20px] sm:h-[25px] border-dashed border w-0" />
-            )}
+        <li 
+          key={currentStep.title} 
+          className="flex items-center gap-4 p-2 rounded-md w-full"
+        >
+          <div className="flex items-center justify-center w-10 h-10 bg-white rounded-md">
+            <img className="h-6 w-6" src={icon} alt={`${currentStep.title} icon`} />
           </div>
-
-          <div className="text-center sm:text-left hidden sm:block">
-            <p className="font-semibold text-[10px] sm:text-[15px] text-white">{currentStep.title}</p>
-            <p className="font-medium text-small text-gray-400">{currentStep.desc}</p>
+          <div className="text-left">
+            <p className="font-semibold text-xs sm:text-sm text-white">
+              {currentStep.title}
+            </p>
+            <p className="text-xs text-gray-400 hidden sm:block">
+              {currentStep.desc}
+            </p>
           </div>
         </li>
       );
@@ -35,8 +30,8 @@ function RegistrationProgress({ state, dispatch }) {
   };
 
   return (
-    <div className="w-full h-[100px] sm:w-full sm:h-full bg-green flex items-center justify-center">
-      <ul className="w-max sm:w-[60%] flex flex-row md:flex-col gap-3 sm:gap-6">{getSteps()}</ul>
+    <div className="w-full h-full bg-green-600 p-4">
+      <ul className="flex flex-col gap-3">{getSteps()}</ul>
     </div>
   );
 }
