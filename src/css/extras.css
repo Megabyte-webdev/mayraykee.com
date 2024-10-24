@@ -1,0 +1,23 @@
+svg.star-svg {
+    display: inline;
+   
+}
+
+
+.film-grain {
+    position: relative;
+  }
+  
+  .film-grain:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAK3RFWHRDcmVhdGlvbiBUaW1lAAfWBElEQVRoge2deVQcRbHH7+52f7Oe6bKAggYBACXsRZYAdgACBGWAgAgYBAGAAGQAAgRlgIYGgAAiGAAAYwDQoIgAAYwBZxhmAgBgCmIoAIGAAGAGhAAgRlgIgYAACBGAABgABoQAIGYAgBYiAAGMA0KCIABjAFnGGYCAAYApqLjx6jEJMAU8BAZMUMRAAkKDhh1HsAHCwWtBEAkLCGh5XACQgIP8ARLAX8TMQJGAYIgYdx3IAgAoLBK2AOsHBywRtwkYIuCAwBd2GBiAIqDR5fACwUFy0E8D+EokILAVcBgCRgAYwDQoIgBjAFnGGYCAQ2AQzgAv//Z");
+    pointer-events: none;
+    opacity: 0.1; /* Adjust opacity to control the intensity of the film grain effect */
+    mix-blend-mode: overlay;
+  }
+  
