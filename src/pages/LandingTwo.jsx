@@ -11,10 +11,10 @@ function LandingTwo() {
   return (
     <main className="h-max w-full flex bg-cover bg-center relative">
       <img src={WomanInOrange} className="absolute object-cover w-full z-10 h-full" alt="" />
+ <NavBar navOptions={landingNavOptionsTwo} />
 
-      <div className="w-full flex relative flex-col z-20 items-center justify-around min-h-screen bg-green/85">
-        <NavBar navOptions={landingNavOptionsTwo} />
-
+      <div className="w-full flex relative flex-col z-20 items-center min-h-screen bg-green/85">
+       
         <motion.div
           className="flex flex-col items-center gap-[10px]"
         >
