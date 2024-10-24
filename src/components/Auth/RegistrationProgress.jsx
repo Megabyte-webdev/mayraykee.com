@@ -21,13 +21,13 @@ function RegistrationProgress({ state, dispatch }) {
               <img className="h-[20px] w-[20px] sm:h-[25px] sm:w-[25px]" src={icon} />
             </div>
             {currentStep.title !== registration_steps_keys.welcome_video.title && (
-              <hr className="h-[20px] sm:h-[25px] border-dashed border w-0" />
+              <hr className="hidden sm:block h-[20px] sm:h-[25px] border-dashed border w-0" />
             )}
           </div>
 
-          <div className="text-center sm:text-left">
+          <div className="text-center sm:text-left hidden sm:block">
             <p className="font-semibold text-[10px] sm:text-[15px] text-white">{currentStep.title}</p>
-            <p className="hidden sm:block font-medium text-small text-gray-400">{currentStep.desc}</p>
+            <p className="font-medium text-small text-gray-400">{currentStep.desc}</p>
           </div>
         </li>
       );
@@ -36,7 +36,7 @@ function RegistrationProgress({ state, dispatch }) {
 
   return (
     <div className="w-full h-full bg-green flex items-center justify-center">
-      <ul className="w-full sm:w-[60%] flex flex-col gap-3 sm:gap-6">{getSteps()}</ul>
+      <ul className="w-max sm:w-[60%] flex flex-col gap-3 sm:gap-6">{getSteps()}</ul>
     </div>
   );
 }
