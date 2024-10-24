@@ -3,6 +3,7 @@ import MainLogo from "../../assets/pngs/main-logo-white.png";
 import { landingNavOptions } from "../../utils/constants";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function NavBar({ navOptions }) {
   const navigate = useNavigate();
@@ -59,7 +60,7 @@ function NavBar({ navOptions }) {
 
       <div className="flex w-[60%] items-center">
         <ul className="hidden md:flex w-[80%] items-center gap-[8%]">{getOptions()}</ul>
-        <ul className={`fixed top-[90px] bottom-0 h-full w-60 ${menu ? 'right-0':'right-[-100%]'} bg-green-600 flex flex-col gap-4 md:hidden transition-all duration-500`}>{getOptions()}</ul>
+        <ul className={`fixed top-[80px] bottom-0 h-full w-60 ${menu ? 'right-0':'right-[-100%]'} bg-green-600 flex flex-col gap-4 md:hidden transition-all duration-500`}>{getOptions()}</ul>
         
         <button
           onClick={navigateToLogin}
@@ -67,9 +68,14 @@ function NavBar({ navOptions }) {
         >
           Login/Register
         </button>
-        <div onClick={()=>setMenu(!menu)} className='block md:hidden ml-2'>
-          Menu
-        </div>
+        <div
+        onClick={() => {
+          setMenu(!menu);
+        }}
+        className="mx-2 block md:hidden transition-all ease-in-out duration-300"
+      >
+        {menu ? <FaBars size={24} /> : <FaTimes size={24} />}
+      </div>
       </div>
     </motion.nav>
   );
