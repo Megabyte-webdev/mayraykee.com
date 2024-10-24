@@ -17,7 +17,7 @@ function LandingTwo() {
 
        
         <motion.div
-          className="flex flex-col items-center gap-[10px]"
+          className="flex flex-col items-center justify-evenly gap-[10px]"
         >
           <motion.h1
             initial={{
