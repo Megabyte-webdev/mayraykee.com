@@ -20,7 +20,7 @@ function RegistrationProgress({state, dispatch}) {
           </div>
 
           <div>
-            <p className="font-semibold text-[15px] text-white">{currentStep.title}</p>
+            <p className="font-semibold text-[15px] text-white hidden md:block">{currentStep.title}</p>
             <p className="font-meduim text-small text-gray-400">{currentStep.desc}</p>
           </div>
         </li>
@@ -31,7 +31,7 @@ function RegistrationProgress({state, dispatch}) {
 
   return (
     <div className="w-full h-full bg-green flex items-center justify-center">
-      <ul className="flex flex-col md:w-full md:w-[60%]">{getSteps()}</ul>
+      <ul className="flex md:flex-col md:w-full md:w-[60%]">{getSteps()}</ul>
     </div>
   );
 }
