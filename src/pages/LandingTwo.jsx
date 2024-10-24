@@ -12,7 +12,7 @@ function LandingTwo() {
     <main className="h-max w-full flex bg-cover bg-center relative">
       <img src={WomanInOrange} className="absolute object-cover w-full z-10 h-full" alt="" />
 
-      <div className="w-full flex relative flex-col z-20 items-center justify-between min-h-screen bg-green/85">
+      <div className="w-full flex relative flex-col z-20 items-center justify-around min-h-screen bg-green/85">
         <NavBar navOptions={landingNavOptionsTwo} />
 
         <motion.div
@@ -31,7 +31,7 @@ function LandingTwo() {
               },
             }}
             viewport={{ once: true }}
-            className="font-bold text-4xl text-white"
+            className="font-bold text-4xl text-white text-center"
           >
            The minimalist that offers maximalist
           </motion.h1>
