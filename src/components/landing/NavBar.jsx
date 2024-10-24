@@ -60,7 +60,7 @@ function NavBar({ navOptions }) {
 
       <div className="flex w-[60%] items-center">
         <ul className="hidden md:flex w-[80%] items-center gap-[8%]">{getOptions()}</ul>
-        <ul className={`fixed z-[100000] pt-[50px] top-0 bottom-0 h-full w-60 ${menu ? 'right-0':'right-[-100%]'} bg-green-700 flex flex-col gap-4 md:hidden p-4 transition-all duration-500`}>
+        <ul className={`fixed z-[100000] pt-[30px] top-0 bottom-0 h-full w-60 ${menu ? 'right-0':'right-[-100%]'} bg-green-700 flex flex-col gap-4 md:hidden p-4 transition-all duration-500`}>
  <div
         onClick={() => {
           setMenu(!menu);
