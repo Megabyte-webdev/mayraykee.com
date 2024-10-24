@@ -54,7 +54,7 @@ function NavBar({ navOptions }) {
         },
       }}
       viewport={{ once: true }}
-      className="h-[90px] w-full overflow-hidden flex justify-between items-center px-[5%]"
+      className="sticky top-0 h-[90px] w-full overflow-hidden flex justify-between items-center px-[5%]"
     >
       <img className="w-32 md:w-60" src={MainLogo} />
 
