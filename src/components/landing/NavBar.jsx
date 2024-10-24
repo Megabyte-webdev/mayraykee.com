@@ -55,11 +55,11 @@ function NavBar({ navOptions }) {
       viewport={{ once: true }}
       className="h-[90px] w-full overflow-hidden flex justify-between items-center px-[5%]"
     >
-      <img className="w-40 md:w-60" src={MainLogo} />
+      <img className="w-32 md:w-60" src={MainLogo} />
 
       <div className="flex w-[60%] items-center">
         <ul className="hidden md:flex w-[80%] items-center gap-[8%]">{getOptions()}</ul>
-        <ul className={`fixed top-0 bottom-0 h-full w-60 ${menu ? 'right-0':'right-full'} bg-green-600 flex flex-col gap-4 md:hidden transition-all duration-500`}>{getOptions()}</ul>
+        <ul className={`fixed top-[90px] bottom-0 h-full w-60 ${menu ? 'right-0':'right-[-100%]'} bg-green-600 flex flex-col gap-4 md:hidden transition-all duration-500`}>{getOptions()}</ul>
         
         <button
           onClick={navigateToLogin}
