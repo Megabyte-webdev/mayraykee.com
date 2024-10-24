@@ -11,17 +11,23 @@ function RegistrationProgress({state, dispatch}) {
       const icon = isSelectecd ? currentStep.activeIcon : currentStep.inactiveIcon
 
       return (
-        <li key={currentStep.title} className={`w-full flex `}>
-          <div className="flex flex-col items-center w-[25%]">
-            <div className={`bg-white rounded-md p-[10px] md:p-[15px] ${isSelectecd && 'border-2 border-gray-800 transition duration-1000'}`}>
-              <img className="md:h-[25px] md:w-[25px]" src={icon} />
+        <li key={currentStep.title} className="w-full flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex flex-col items-center sm:w-[25%]">
+            <div
+              className={`bg-white rounded-md p-[10px] sm:p-[15px] ${
+                isSelected && "border-2 border-gray-800 transition duration-1000"
+              }`}
+            >
+              <img className="h-[20px] w-[20px] sm:h-[25px] sm:w-[25px]" src={icon} />
             </div>
-            {currentStep.title !== registration_steps_keys.welcome_video.title && <hr className="h-[25px] border-dashed border w-0 hidden md:block" />}
+            {currentStep.title !== registration_steps_keys.welcome_video.title && (
+              <hr className="hidden sm:block h-[20px] sm:h-[25px] border-dashed border w-0" />
+            )}
           </div>
 
-          <div className='hidden md:block'>
-            <p className="font-semibold text-[15px] text-white">{currentStep.title}</p>
-            <p className="font-meduim text-small text-gray-400">{currentStep.desc}</p>
+          <div className="text-center sm:text-left hidden sm:block">
+            <p className="font-semibold text-[10px] sm:text-[15px] text-white">{currentStep.title}</p>
+            <p className="font-medium text-small text-gray-400">{currentStep.desc}</p>
           </div>
         </li>
       );
@@ -31,7 +37,7 @@ function RegistrationProgress({state, dispatch}) {
 
   return (
     <div className="w-full h-full bg-green flex items-center justify-center">
-      <ul className="flex md:flex-col md:w-full md:w-[60%] h-[100px] md:h-screen">{getSteps()}</ul>
+      <ul className="flex md:flex-col justify-center items-center md:w-full md:w-[60%] h-[100px] md:h-screen">{getSteps()}</ul>
     </div>
   );
 }
