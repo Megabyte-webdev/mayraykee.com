@@ -14,7 +14,7 @@ function RegistrationProgress({ state, dispatch }) {
         <li key={currentStep.title} className="w-full flex flex-col sm:flex-row items-center gap-4">
           <div className="flex flex-col items-center w-max sm:w-[25%]">
             <div
-              className={`bg-white rounded-md p-[10px] sm:p-[15px] ${
+              className={`bg-white rounded-md p-1 sm:p-[15px] ${
                 isSelected && "border-2 border-gray-800 transition duration-1000"
               }`}
             >
