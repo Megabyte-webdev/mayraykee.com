@@ -11,7 +11,7 @@ function RegistrationLayout() {
 
     return (
         <main className='w-full h-screen flex flex-col sm:flex-row'>
-            <div className='w-full sm:w-[50%] h-screen'>
+            <div className='sticky top-0 z-[10000] w-full sm:w-[50%] h-screen'>
             <RegistrationProgress
             state={state}
             dispatch={dispatch}
