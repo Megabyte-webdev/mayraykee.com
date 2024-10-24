@@ -78,7 +78,7 @@ function NavBar({ navOptions }) {
         onClick={() => {
           setMenu(!menu);
         }}
-        className="mx-2 block md:hidden transition-all ease-in-out duration-300 text-white"
+        className="ml-auto block md:hidden transition-all ease-in-out duration-300 text-white"
       >
         {!menu ? <FaBars size={24} /> : <FaTimes size={24} />}
       </div>
