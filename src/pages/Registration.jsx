@@ -46,7 +46,7 @@ function Registration() {
   useEffect(() => {}, [state]);
 
   return (
-    <div className="w-full max-w-[600px] px-6 sm:px-12 pt-4 flex flex-col items-center mx-auto">
+    <div className="w-full max-w-[600px] px-3 sm:px-6 pt-4 flex flex-col items-center mx-auto">
       <img src={MainIcon} className="w-[60%] max-w-[200px] mb-4" />
 
       <div className="flex flex-col items-center gap-2 w-full">
@@ -127,7 +127,7 @@ function Registration() {
           onChange={onTextChange}
         />
 
-        <p className="text-gray-400 flex gap-2 items-center text-sm">
+        <p className="text-gray-400 flex gap-2 items-center text-xs sm:text-sm">
           {isTrained ? (
             <IoMdCheckbox
               onClick={toggleIsTrained}
