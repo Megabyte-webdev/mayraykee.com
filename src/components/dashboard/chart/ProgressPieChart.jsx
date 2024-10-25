@@ -4,8 +4,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 function ProgressPieChart() {
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+ 
   return (
     <div className="w-full max-w-[300px] h-auto rounded-[10px] bg-white flex flex-col items-center p-[10px] mt-[20px]"> {/* Updated styles for responsiveness */}
       <div className="w-full h-[60%] flex justify-center items-center"> {/* Centering the chart */}
