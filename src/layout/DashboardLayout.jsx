@@ -28,7 +28,7 @@ function DashboardLayout() {
       };
     return (
         <main className='w-full h-screen flex overflow-hidden'>
-       
+
             <SideBar>
             {getSideBarOptions(state, dispatch)}
             </SideBar>
@@ -37,7 +37,7 @@ function DashboardLayout() {
             <NavBar title={state.title}/>
             <Outlet/>
             </section>
-            
+
         </main>
     )
 }
