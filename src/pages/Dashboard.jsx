@@ -66,7 +66,7 @@ function Dashboard() {
       </section>
 
       {/* Right Section */}
-      <section className="w-full md:w-[30%] flex flex-col gap-6">
+      <section className="my-3 md:my-0 w-full md:w-[30%] flex flex-col gap-6">
         <div className="bg-gray-400 h-[300px] md:h-[55%] w-full rounded-[10px]">
           <Calendar
             value={preselectedDates}
