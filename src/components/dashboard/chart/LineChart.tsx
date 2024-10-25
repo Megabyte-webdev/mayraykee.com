@@ -1,3 +1,4 @@
+// LineChart.js
 import ResizableBox from "./ResizableBox";
 import useDemoConfig from "./useDemoConfig";
 import React, { memo } from "react";
@@ -53,15 +54,15 @@ function LineChart() {
   )
 
   return (
-    <div className="w-full h-[300px]">
+    <div className="w-full h-[300px] overflow-hidden"> {/* Added overflow-hidden */}
       <ResizableBox style={{ width: '100%', height: '100%' }}>
         <Chart
           options={{
-responsive: true,
-
             data,
             primaryAxis,
             secondaryAxes,
+            // Setting responsive: true directly inside the Chart component options
+            responsive: true,
           }}
           style={{ height: '100%', width: '100%' }}
         />
