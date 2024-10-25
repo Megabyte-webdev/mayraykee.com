@@ -54,14 +54,15 @@ function Dashboard() {
           </li>
         </ul>
 
-        <div className="flex flex-wrap gap-4 justify-between">
-          <div className="max-w-[200px] md: min-w-[200px]">
-            <LineChart />
-          </div>
-          <div className="w-[200px]">
-            <ProgressPieChart />
-          </div>
-        </div>
+       <div className="flex flex-wrap gap-4 justify-between">
+  <div className="w-full md:w-[70%] max-w-[400px] h-[300px]">
+    <LineChart />
+  </div>
+  <div className="w-full md:w-[30%]">
+    <ProgressPieChart />
+  </div>
+</div>
+
       </section>
 
       {/* Right Section */}
