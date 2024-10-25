@@ -1,20 +1,8 @@
-import React, { memo, useState } from "react";
+import React, { memo } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 function ProgressPieChart() {
-const [textSize, setTextSize] = useState("20px");
-// Adjust text size based on the screen width
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 640) setTextSize("50%"); // Small screens (mobile)
-      else if (width < 1024) setTextSize("16px"); // Medium screens (tablet)
-      else setTextSize("20px"); // Large screens (desktop)
-    };
-
-    handleResize(); // Set the initial text size
-    window.addEventListener("resize", handleResize); // Update on window resize
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -29,7 +17,7 @@ const [textSize, setTextSize] = useState("20px");
             pathColor: "#313131",
             trailColor: "#f3f4f6",
           })}
-          text={`${textSize}`}
+          text={`${50}%`}
         />
       </div>
 
