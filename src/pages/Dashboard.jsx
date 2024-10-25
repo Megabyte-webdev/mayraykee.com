@@ -24,14 +24,14 @@ function Dashboard() {
   }, [date]);
 
   return (
-    <div className="bg-black flex flex-col gap-4 md:gap-0 md:flex-row w-full h-full px-4 md:px-[2%] overflow-x-auto pt-[1%]">
+    <div className="flex flex-col gap-4 md:gap-0 md:flex-row w-full h-full px-4 md:px-[2%] overflow-x-auto pt-[1%]">
       <Helmet>
         <title>Mayrahkee - Africa | Dashboard</title>
       </Helmet>
 
       <section className="w-full md:w-[70%] flex flex-col gap-6 md:gap-[5%] pt-[3%]">
         <ul className="grid gap-4 md:grid-cols-2">
-          <div className="h-[190px] w-full md:w-[350px] rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 duration-150">
+          <div className="h-[190px] w-[200px] md:w-[350px] rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 duration-150">
             <img
               src={BoardMen}
               alt="Board Men"
@@ -39,17 +39,17 @@ function Dashboard() {
             />
           </div>
 
-          <div className="w-full md:w-[350px] cursor-pointer group hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-white">
+          <div className="w-[200px] md:w-[350px] cursor-pointer group hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-white">
             <img className="w-[80px] md:w-[100px]" src={Computer} alt="" />
             <span className="text-green text-sm">Enter Class Room</span>
           </div>
 
-          <div className="w-full md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-customBrown">
+          <div className="w-[200px] md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-customBrown">
             <img className="w-[80px] md:w-[100px]" src={Dialog} alt="" />
             <span className="text-white text-sm">Forum</span>
           </div>
 
-          <div className="w-full md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-green">
+          <div className="w-[200px] md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-green">
             <img className="w-[80px] md:w-[90px]" src={Calenderr} alt="" />
             <span className="text-white text-sm">
               Course Schedule / Time Table
