@@ -1,8 +1,23 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 function ProgressPieChart() {
+const [textSize, setTextSize] = useState("20px");
+// Adjust text size based on the screen width
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) setTextSize("50%"); // Small screens (mobile)
+      else if (width < 1024) setTextSize("16px"); // Medium screens (tablet)
+      else setTextSize("20px"); // Large screens (desktop)
+    };
+
+    handleResize(); // Set the initial text size
+    window.addEventListener("resize", handleResize); // Update on window resize
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="w-full max-w-[300px] h-auto rounded-[10px] bg-white flex flex-col items-center p-[10px] mt-[20px]"> {/* Updated styles for responsiveness */}
       <div className="w-full h-[60%] flex justify-center items-center"> {/* Centering the chart */}
@@ -14,7 +29,7 @@ function ProgressPieChart() {
             pathColor: "#313131",
             trailColor: "#f3f4f6",
           })}
-          text={`${70}%`}
+          text={`${textSize}`}
         />
       </div>
 
