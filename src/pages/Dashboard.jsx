@@ -55,7 +55,7 @@ function Dashboard() {
         </ul>
 
        <div className="flex flex-wrap gap-4 justify-between">
-  <div className="w-full md:w-[70%] max-w-[400px] h-[300px]">
+  <div className="w-full md:w-[70%] max-w-[400px] min-h-[300px]">
     <LineChart />
   </div>
   <div className="w-full md:w-[30%]">
