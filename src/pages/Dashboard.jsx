@@ -14,7 +14,6 @@ const preselectedDates = [new Date(2024, 5, 15), new Date(2024, 5, 16)];
 
 function Dashboard() {
   const [date, setDate] = useState(null);
-  const [highlightedDays, setHighlightedDays] = useState([1, 2, 15]);
 
   useEffect(() => {
     console.log("Date:", date);
@@ -28,8 +27,8 @@ function Dashboard() {
 
       {/* Left Section */}
       <section className="w-full md:w-[70%] flex flex-col gap-6 pt-[3%]">
-        <ul className="grid gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
-          <li className="h-[190px] max-w-full md:w-[350px] rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 duration-150">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <li className="h-[190px] w-full rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
             <img
               src={BoardMen}
               alt="Board Men"
@@ -37,17 +36,17 @@ function Dashboard() {
             />
           </li>
 
-          <li className="h-[190px] max-w-full md:w-[350px] bg-white rounded-[10px] overflow-hidden flex flex-col items-center justify-center cursor-pointer group hover:scale-105 duration-150">
+          <li className="h-[190px] w-full bg-white rounded-[10px] flex flex-col items-center justify-center overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-150">
             <img className="w-[80px] md:w-[100px]" src={Computer} alt="" />
             <span className="text-green text-sm">Enter Class Room</span>
           </li>
 
-          <li className="h-[190px] max-w-full md:w-[350px] bg-customBrown rounded-[10px] overflow-hidden flex flex-col items-center justify-center cursor-pointer hover:scale-105 duration-150">
+          <li className="h-[190px] w-full bg-customBrown rounded-[10px] flex flex-col items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
             <img className="w-[80px] md:w-[100px]" src={Dialog} alt="" />
             <span className="text-white text-sm">Forum</span>
           </li>
 
-          <li className="h-[190px] max-w-full md:w-[350px] bg-green rounded-[10px] overflow-hidden flex flex-col items-center justify-center cursor-pointer hover:scale-105 duration-150">
+          <li className="h-[190px] w-full bg-green rounded-[10px] flex flex-col items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
             <img className="w-[80px] md:w-[90px]" src={Calenderr} alt="" />
             <span className="text-white text-sm">
               Course Schedule / Time Table
@@ -55,9 +54,13 @@ function Dashboard() {
           </li>
         </ul>
 
-        <div className="flex flex-wrap w-full gap-4 min-h-[100px] justify-between">
-          <LineChart />
-          <ProgressPieChart />
+        <div className="flex flex-wrap gap-4 justify-between">
+          <div className="flex-1 min-w-[200px]">
+            <LineChart />
+          </div>
+          <div className="flex-1 min-w-[200px]">
+            <ProgressPieChart />
+          </div>
         </div>
       </section>
 
