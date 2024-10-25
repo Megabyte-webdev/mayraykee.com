@@ -18,7 +18,7 @@ function NavBar({ title }) {
   const navigateToInstantChat = () => navigate('/dashboard/instant_chat');
 
   return (
-    <nav className="min-h-[100px] px-[3%] flex items-center justify-between bg-white shadow-md md:shadow-none">
+    <nav className="h-[90px] px-[3%] flex items-center justify-between bg-white shadow-md md:shadow-none">
       {/* Title */}
       <h1 className="font-bold text-gray-600 text-sm md:text-[25px] truncate">
         {title}
