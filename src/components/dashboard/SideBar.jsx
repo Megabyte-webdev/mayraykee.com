@@ -6,13 +6,22 @@ function SideBar({children}) {
 
 
   return (
-    <section className="w-[16%] relative h-full flex justify-start flex-col items-center gap-[5%]  py-[0.8%]">
+<>
+    <section className="hidden w-[16%] relative h-full md:flex justify-start flex-col items-center gap-[5%]  py-[0.8%]">
       <img className="w-[90%] " src={MainLogo} />
 
       <ul className="flex flex-col w-full pl-[2%] items-center gap-[5%] h-[80%]">{children}</ul>
 
       <InviteComponent/>
     </section>
+ <section className="md:hidden fixed left-[-100%] w-[16%] relative h-full flex justify-start flex-col items-center gap-[5%]  py-[0.8%]">
+      <img className="w-[90%] " src={MainLogo} />
+
+      <ul className="flex flex-col w-full pl-[2%] items-center gap-[5%] h-[80%]">{children}</ul>
+
+      <InviteComponent/>
+    </section>
+</>
   );
 }
 
