@@ -58,7 +58,7 @@ function Dashboard() {
           <div className="flex-1 min-w-[200px]">
             <LineChart />
           </div>
-          <div className="flex-1 min-w-[200px]">
+          <div className="w-[200px]">
             <ProgressPieChart />
           </div>
         </div>
