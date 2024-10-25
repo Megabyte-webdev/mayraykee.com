@@ -1,7 +1,12 @@
+
 import React, { memo } from "react";
 import SearchIcon from '../../assets/pngs/search.png';
 import UsFlag from '../../assets/pngs/us-flag.png';
+import Cloud from '../../assets/pngs/cloud.png';
 import ArrowDown from '../../assets/pngs/arrow-down.png';
+import Notification from '../../assets/pngs/notification.png';
+import Settings from '../../assets/pngs/settings.png';
+import ProfilePic from '../../assets/pngs/profile-pic.png';
 import { FaCartShopping, FaBell } from "react-icons/fa6";
 import { IoChatbubbleEllipsesSharp, IoSettings } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +18,7 @@ function NavBar({ title }) {
   const navigateToInstantChat = () => navigate('/dashboard/instant_chat');
 
   return (
-    <nav className="h-[120px] px-[3%] flex items-center justify-between bg-white shadow-md md:shadow-none">
+    <nav className="min-h-[100px] px-[3%] flex items-center justify-between bg-white shadow-md md:shadow-none">
       {/* Title */}
       <h1 className="font-bold text-gray-600 text-sm md:text-[25px] truncate">
         {title}
@@ -74,4 +79,4 @@ function NavBar({ title }) {
   );
 }
 
-export default memo(NavBar);
+export default memo(NavBar); 
