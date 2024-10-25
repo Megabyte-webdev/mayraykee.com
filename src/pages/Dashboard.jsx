@@ -24,40 +24,40 @@ function Dashboard() {
   }, [date]);
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-full px-4 md:px-[2%] overflow-hidden pt-[1%]">
+    <div className="bg-black flex flex-col gap-4 md:gap-0 md:flex-row w-full h-full px-4 md:px-[2%] overflow-x-auto pt-[1%]">
       <Helmet>
         <title>Mayrahkee - Africa | Dashboard</title>
       </Helmet>
 
       <section className="w-full md:w-[70%] flex flex-col gap-6 md:gap-[5%] pt-[3%]">
-        <ul className="grid gap-4 md:grid-cols-2 w-full">
-          <li className="h-[190px] w-full max-w-full md:w-[350px] rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 duration-150">
+        <ul className="grid gap-4 md:grid-cols-2">
+          <div className="h-[190px] w-full md:w-[350px] rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 duration-150">
             <img
               src={BoardMen}
               alt="Board Men"
               className="h-full w-full object-cover"
             />
-          </li>
+          </div>
 
-          <li className="w-full max-w-full md:w-[350px] cursor-pointer group hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-white">
+          <div className="w-full md:w-[350px] cursor-pointer group hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-white">
             <img className="w-[80px] md:w-[100px]" src={Computer} alt="" />
             <span className="text-green text-sm">Enter Class Room</span>
-          </li>
+          </div>
 
-          <li className="w-full max-w-full md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-customBrown">
+          <div className="w-full md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-customBrown">
             <img className="w-[80px] md:w-[100px]" src={Dialog} alt="" />
             <span className="text-white text-sm">Forum</span>
-          </li>
+          </div>
 
-          <li className="w-full max-w-full md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-green">
+          <div className="w-full md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-green">
             <img className="w-[80px] md:w-[90px]" src={Calenderr} alt="" />
             <span className="text-white text-sm">
               Course Schedule / Time Table
             </span>
-          </li>
+          </div>
         </ul>
 
-        <div className="flex flex-wrap w-full justify-between gap-4 min-h-[100px]">
+        <div className="flex flex-wrap w-full justify-between pr-0 md:pr-[8%] min-h-[100px] gap-4">
           <LineChart />
           <ProgressPieChart />
         </div>
