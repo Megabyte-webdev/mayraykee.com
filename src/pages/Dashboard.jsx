@@ -20,7 +20,7 @@ function Dashboard() {
   }, [date]);
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-full px-4 md:px-[2%] pt-[1%]">
+    <div className="flex flex-col md:flex-row w-[100vw] min-h-full px-4 md:px-[2%] pt-[1%]">
       <Helmet>
         <title>Mayrahkee - Africa | Dashboard</title>
       </Helmet>
