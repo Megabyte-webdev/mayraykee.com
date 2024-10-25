@@ -33,7 +33,7 @@ function DashboardLayout() {
             {getSideBarOptions(state, dispatch)}
             </SideBar>
 
-            <section className='flex-1 w-full md:w-[85%] h-full bg-gray-100 flex flex-col'>
+            <section className='flex-1 md:w-[85%] h-full bg-gray-100 flex flex-col'>
             <NavBar title={state.title}/>
             <Outlet/>
             </section>
