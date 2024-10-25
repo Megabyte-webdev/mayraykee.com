@@ -64,7 +64,7 @@ function LineChart() {
             // Setting responsive: true directly inside the Chart component options
             responsive: true,
           }}
-          style={{ height: '100%', width: '100%' }}
+          style={{ height: '300px', width: '300px' }}
         />
       </ResizableBox>
     </div>
