@@ -19,7 +19,7 @@ function NavBar({ title }) {
 
 
   return (
-    <nav className="h-60 items-center px-[3%] flex justify-between bg-white">
+    <nav className="h-[80px] items-center px-[3%] flex justify-between bg-white">
       <h1 className="font-bold text-gray-600 text-xs md:text-[25px]">{title}</h1>
 
       <div className="w-[40%] h-[60%] flex items-center pl-[10px] gap-[10px] bg-gray-200 rounded-[16px] overflow-hidden border-[1.5px]">
