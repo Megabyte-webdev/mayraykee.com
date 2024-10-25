@@ -17,32 +17,20 @@ const data: Series[] = [
   {
     label: 'Series 1',
     data: [
-      {
-        date: new Date(2024,4,2),
-        stars: 130,
-      },
-      {
-        date: new Date(2024,4,5),
-        stars: 150,
-      },
+      { date: new Date(2024, 4, 2), stars: 130 },
+      { date: new Date(2024, 4, 5), stars: 150 },
     ],
   },
   {
     label: 'Series 2',
     data: [
-      {
-        date: new Date(2024,3,2),
-        stars: 200,
-      },
-      {
-        date: new Date(2024,3,4),
-        stars: 250,
-      },
+      { date: new Date(2024, 3, 2), stars: 200 },
+      { date: new Date(2024, 3, 4), stars: 250 },
     ],
   },
 ]
 
- function LineChart() {
+function LineChart() {
   const { randomizeData } = useDemoConfig({
     series: 10,
     dataType: "time",
@@ -65,20 +53,19 @@ const data: Series[] = [
   )
 
   return (
-
-      <ResizableBox>
+    <div className="w-full h-[300px]">
+      <ResizableBox style={{ width: '100%', height: '100%' }}>
         <Chart
           options={{
             data,
             primaryAxis,
             secondaryAxes,
           }}
+          style={{ height: '100%', width: '100%' }}
         />
       </ResizableBox>
-
-    
+    </div>
   );
 }
 
-
-export default memo(LineChart)
+export default memo(LineChart);
