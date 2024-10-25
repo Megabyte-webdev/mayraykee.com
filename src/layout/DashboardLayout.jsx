@@ -27,7 +27,7 @@ function DashboardLayout() {
         });
       };
     return (
-        <main className='w-full h-screen flex overflow-hidden'>
+        <main className='w-screen h-screen flex overflow-hidden'>
 
             <SideBar>
             {getSideBarOptions(state, dispatch)}
