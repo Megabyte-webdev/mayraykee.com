@@ -39,17 +39,17 @@ function Dashboard() {
             />
           </div>
 
-          <div className="w-[200px] md:w-[350px] cursor-pointer group hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-white">
+          <div className="w-full md:w-[350px] cursor-pointer group hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-white">
             <img className="w-[80px] md:w-[100px]" src={Computer} alt="" />
             <span className="text-green text-sm">Enter Class Room</span>
           </div>
 
-          <div className="w-[200px] md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-customBrown">
+          <div className="w-full md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-customBrown">
             <img className="w-[80px] md:w-[100px]" src={Dialog} alt="" />
             <span className="text-white text-sm">Forum</span>
           </div>
 
-          <div className="w-[200px] md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-green">
+          <div className="w-full md:w-[350px] cursor-pointer hover:scale-105 duration-150 flex flex-col gap-2 justify-center items-center rounded-[10px] overflow-hidden h-[190px] bg-cover bg-green">
             <img className="w-[80px] md:w-[90px]" src={Calenderr} alt="" />
             <span className="text-white text-sm">
               Course Schedule / Time Table
