@@ -57,6 +57,8 @@ function LineChart() {
       <ResizableBox style={{ width: '100%', height: '100%' }}>
         <Chart
           options={{
+responsive= true,
+
             data,
             primaryAxis,
             secondaryAxes,
