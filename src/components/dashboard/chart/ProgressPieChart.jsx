@@ -1,11 +1,11 @@
-import React, {memo} from "react";
+import React, { memo } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 function ProgressPieChart() {
   return (
-    <div className="w-full h-[250px] rounded-[10px] bg-white justify-start flex px-[10px] pt-[10px] flex-col items-center center mt-[120px]">
-      <div className="w-[80%] h-[45%]">
+    <div className="w-full max-w-[300px] h-auto rounded-[10px] bg-white flex flex-col items-center p-[10px] mt-[20px]"> {/* Updated styles for responsiveness */}
+      <div className="w-full h-[60%] flex justify-center items-center"> {/* Centering the chart */}
         <CircularProgressbar
           value={70}
           styles={buildStyles({
@@ -14,17 +14,18 @@ function ProgressPieChart() {
             pathColor: "#313131",
             trailColor: "#f3f4f6",
           })}
-          className="text-green "
           text={`${70}%`}
         />
       </div>
 
-      <div className="flex flex-col items-center gap-[8px] ">
+      <div className="flex flex-col items-center gap-[8px] text-center"> {/* Center text elements */}
         <h6 className="font-semibold text-md text-customBrown">My Progress</h6>
-        <p className="font-normal text-center text-customBrown text-[10px]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+        <p className="font-normal text-customBrown text-sm px-2"> {/* Changed to text-sm for better responsiveness */}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
         </p>
-        <button className="py-[3px] w-[80%] bg-[#4cbc9a] text-white text-[12px] rounded-[5px] hover:scale-105 duration-150 font-meduim">More Details</button>
+        <button className="py-[5px] w-[80%] bg-[#4cbc9a] text-white text-sm rounded-[5px] hover:scale-105 duration-150 font-medium"> {/* Adjusted button size */}
+          More Details
+        </button>
       </div>
     </div>
   );
