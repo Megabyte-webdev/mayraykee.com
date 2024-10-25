@@ -23,13 +23,13 @@ function Dashboard() {
     console.log("Date:", date);
   }, [date]);
   return (
-    <div className="flex w-full h-full px-[2%] overflow-x-auto pt-[1%]">
+    <div className="flex flex-col gap-4 md:gap-0 md:flex-row w-full h-full px-[2%] overflow-x-auto pt-[1%]">
          <Helmet>
           <title>Mayrahkee - Africa | Dashboard</title>
           </Helmet>
           
-      <section className="w-[70%] h-full flex flex-col  gap-[5%] pt-[3%]">
-        <ul className="h-[50%]  w-full grid grid-cols-2 gap-[10px] ">
+      <section className="w-[70%] min-h-max flex flex-col  gap-[5%] pt-[3%]">
+        <ul className="h-max  w-full grid md:grid-cols-2 gap-[10px] ">
         <div className="h-[190px] w-[350px] rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 duration-150">
         <img
           src={BoardMen}
@@ -61,7 +61,7 @@ function Dashboard() {
             </span>
           </div>
         </ul>
-        <div className="flex w-full justify-between pr-[8%] h-[100px]">
+        <div className="flex flex-wrap w-full justify-between pr-[8%] min-h-[100px]">
         <LineChart/>
        <ProgressPieChart/>
         </div>

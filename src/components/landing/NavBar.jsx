@@ -65,7 +65,7 @@ function NavBar({ navOptions }) {
         onClick={() => {
           setMenu(!menu);
         }}
-        className="block md:hidden transition-all ease-in-out duration-300 text-white my-4 mx-2"
+        className="block cursor-pointer md:hidden transition-all ease-in-out duration-300 text-white my-4 mx-2"
       >
         {!menu ? <FaBars size={24} /> : <FaTimes size={24} />}
       </div>
@@ -87,7 +87,7 @@ function NavBar({ navOptions }) {
         onClick={() => {
           setMenu(!menu);
         }}
-        className="ml-auto block md:hidden transition-all ease-in-out duration-300 text-white"
+        className="ml-auto cursor-pointer block md:hidden transition-all ease-in-out duration-300 text-white"
       >
         {!menu ? <FaBars size={24} /> : <FaTimes size={24} />}
       </div>
