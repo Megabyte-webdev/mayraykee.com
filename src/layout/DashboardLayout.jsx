@@ -27,13 +27,13 @@ function DashboardLayout() {
         });
       };
     return (
-        <main className='w-full h-screen flex'>
+        <main className='w-full h-screen flex overflow-hidden'>
        
             <SideBar>
             {getSideBarOptions(state, dispatch)}
             </SideBar>
 
-            <section className='w-[85%] h-full bg-gray-100 flex flex-col'>
+            <section className='md:w-[85%] h-full bg-gray-100 flex flex-col'>
             <NavBar title={state.title}/>
             <Outlet/>
             </section>
