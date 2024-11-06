@@ -6,15 +6,19 @@ import Elearning from "../assets/pngs/laptop-2.png";
 import Recuitement from "../assets/pngs/wallet-2.png";
 import Oil from "../assets/pngs/factory.png";
 import WomanInOrange from '../assets/jpgs/woman-in-orange.jpg'
-
+import LoginModal from "../components/LoginModal";
 function LandingTwo() {
+    const [isOpen, setIsOpen] = useState(false)
+
+  
   return (
     <main className="h-max w-full flex bg-cover bg-center relative">
+              <LoginModal isOpen={isOpen} setIsOpen={setIsOpen}/>
+      
       <img src={WomanInOrange} className="absolute object-cover w-full z-10 h-full" alt="" />
  
       <div className="w-full flex relative flex-col z-20 items-center min-h-screen bg-green/85">
- <NavBar navOptions={landingNavOptionsTwo} />
-
+           <NavBar navOptions={landingNavOptionsTwo} setIsOpen={setIsOpen}  />
        
         <motion.div
           className="flex-1 flex flex-col items-center justify-center gap-[10px] my-2"
