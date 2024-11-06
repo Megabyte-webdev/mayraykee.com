@@ -75,7 +75,7 @@ function LandingTwo() {
             <div className="flex flex-col items-center gap-3">
               <img src={Elearning} className="h-[40px] md:h-[50px] w-[60px] md:w-[70px]" alt="E-Learning" />
               <div className="flex flex-col items-center">
-                <h2 className="text-white font-extrabold text-2xl md:text-3xl">
+                <h2 className="text-white font-extrabold text-2xl md:text-3xl text-center">
                <span className="capitalize text-[#47aa49]">Capacity</span> Building and <span className="capitalize text-[#47aa49]">Development</span>
                 </h2>
                 <span className="font-light text-sm text-center">
