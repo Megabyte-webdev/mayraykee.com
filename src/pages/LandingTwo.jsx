@@ -87,7 +87,7 @@ function LandingTwo() {
 
           <hr className="hidden md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
 
-          <li className="flex w-full md:w-[30%] p-4 hover:scale-105 duration-100 items-center gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
+          <li className="flex w-full md:w-[30%] p-4 hover:scale-105 duration-100 items-center justify-center gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
             <div className="flex flex-col items-center gap-3">
               <img src={Oil} className="h-[40px] md:h-[50px] w-[40px] md:w-[50px]" alt="Oil and Gas" />
               <div className="flex flex-col items-center">
