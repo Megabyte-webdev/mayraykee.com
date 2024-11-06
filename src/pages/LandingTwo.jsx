@@ -57,7 +57,7 @@ function LandingTwo() {
           }}
           className="w-full sm:w-[90%] lg:w-[80%] flex flex-col md:flex-row items-center gap-4 md:gap-6 pb-4 md:pb-6"
         >
-          <li className="flex w-full md:w-[30%] p-4 hover:scale-105 duration-100 items-center gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
+          <li className="flex w-full md:w-[30%] p-4 hover:scale-105 duration-100 items-center justify-center gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
             <div className="flex flex-col items-center gap-3">
               <img src={Recuitement} className="h-[40px] md:h-[50px] w-[40px] md:w-[50px]" alt="Recruitment" />
               <div className="flex flex-col items-center">
@@ -71,7 +71,7 @@ function LandingTwo() {
 
           <hr className="hidden md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
 
-          <li className="flex w-full md:w-[30%] p-4 hover:scale-105 duration-100 items-center gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
+          <li className="flex w-full md:w-[30%] p-4 hover:scale-105 duration-100 items-center justify-center gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
             <div className="flex flex-col items-center gap-3">
               <img src={Elearning} className="h-[40px] md:h-[50px] w-[60px] md:w-[70px]" alt="E-Learning" />
               <div className="flex flex-col items-center">
