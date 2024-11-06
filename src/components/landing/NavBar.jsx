@@ -78,7 +78,7 @@ function NavBar({ navOptions, setIsOpen }) {
         </button></li></ul>
         
         <button
-          onClick={navigateToLogin}
+          onClick={() => setIsOpen(true)}
           className="hidden md:block ml-auto text-sm bg-[#F5F5DC] hover:scale-105 duration-50 p-[8px] text-black font-semibold"
         >
           Login/Register
