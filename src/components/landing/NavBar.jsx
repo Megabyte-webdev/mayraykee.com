@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-function NavBar({ navOptions }) {
+function NavBar({ navOptions, setIsOpen }) {
   const navigate = useNavigate();
   const [menu, setMenu]= useState(false);
   const navigateToLogin = () => navigate("login");
@@ -71,7 +71,7 @@ function NavBar({ navOptions }) {
       </div>
 {getOptions()}
 <li> <button
-          onClick={navigateToLogin}
+        onClick={() => setIsOpen(true)}
           className="block md:hidden text-sm bg-[#F5F5DC] hover:scale-105 duration-50 p-[8px] text-black font-semibold"
         >
           Login/Register
