@@ -1,5 +1,6 @@
 import NavBar from "../components/landing/NavBar";
 import "../css/extras.css";
+import {useState} from 'react'
 import { motion } from "framer-motion";
 import { landingNavOptionsTwo } from "../utils/constants";
 import Elearning from "../assets/pngs/laptop-2.png";
