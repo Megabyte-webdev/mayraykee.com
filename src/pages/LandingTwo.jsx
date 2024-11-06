@@ -76,7 +76,7 @@ function LandingTwo() {
               <img src={Elearning} className="h-[40px] md:h-[50px] w-[60px] md:w-[70px]" alt="E-Learning" />
               <div className="flex flex-col items-center">
                 <h2 className="text-white font-extrabold text-2xl md:text-3xl">
-                  Capacity <span className="capitalize text-[#47aa49]">Building</span> and <span className="capitalize text-[#47aa49]">Development</span>
+               <span className="capitalize text-[#47aa49]">Capacity</span> Building and <span className="capitalize text-[#47aa49]">Development</span>
                 </h2>
                 <span className="font-light text-sm text-center">
                   Transforming lives through learning and training
