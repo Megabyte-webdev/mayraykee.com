@@ -83,7 +83,7 @@ function LandingTwo() {
                   Recruitment
                 </h2>
                 <span className="font-[300]  text-md">
-                  Apply and see available Jobs
+                  Create an account to hire best talent find employment with reputable organisation.
                 </span>
               </div>
             </div>
@@ -93,12 +93,11 @@ function LandingTwo() {
             <div className="flex   flex-col items-center gap-[10px]">
               <img src={Elearning} className="h-[50px] w-[70px]"/>
               <div className="flex flex-col items-center">
-                <h2 className="font-extrabold  text-2xl">
-                  <span className="text-[#47aa49] ">E-</span>learning
+                <h2 className="font-extrabold text-2xl capitalize">
+                  <span className="text-[#47aa49] ">Capacity</span> Building and <span className="text-[#47aa49] ">Development</span>
                 </h2>
                 <span className="font-[300] text-center text-md">
-                  for those who create and develop professional websites on
-                  their own
+                   Transforming lives through learning and training
                 </span>
               </div>
             </div>
@@ -109,11 +108,11 @@ function LandingTwo() {
               <img src={Oil} className="h-[50px] w-[50px]" />
 
               <div className="flex flex-col items-center">
-                <h2 className="font-extrabold  text-3xl">
+                <h2 className="font-extrabold text-3xl">
                   <span className="text-[#47aa49] ">Oil </span>& Gas
                 </h2>
                 <span className="font-[300] text-md text-center">
-                  Enjoy More Live sessions using our platforms
+                  Protect the earth power the future
                 </span>
               </div>
             </div>
