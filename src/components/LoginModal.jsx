@@ -50,7 +50,7 @@ function LoginModal({ isOpen, setIsOpen }) {
               </p>
             </div>
 
-            <div className="w-full flex flex-col sm:flex-row justify-center mt-4 sm:mt-8 gap-4 sm:gap-[30px]">
+            <div className="w-full flex flex-col sm:flex-row justify-center items-center mt-4 sm:mt-8 gap-4 sm:gap-[30px]">
               <button
                 onClick={navigateToElearningLogin}
                 className="h-[80px] sm:h-[100px] hover:scale-105 duration-100 rounded-md w-[130px] sm:w-[150px] items-center justify-center bg-green text-white font-bold flex flex-col"
