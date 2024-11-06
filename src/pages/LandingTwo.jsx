@@ -75,8 +75,8 @@ function LandingTwo() {
             <div className="flex flex-col items-center gap-3">
               <img src={Elearning} className="h-[40px] md:h-[50px] w-[60px] md:w-[70px]" alt="E-Learning" />
               <div className="flex flex-col items-center">
-                <h2 className="text-[#47aa49] font-extrabold text-2xl md:text-3xl">
-                  Capacity <span className="capitalize">Building</span> and <span className="capitalize">Development</span>
+                <h2 className="text-white font-extrabold text-2xl md:text-3xl">
+                  Capacity <span className="capitalize text-[#47aa49]">Building</span> and <span className="capitalize text-[#47aa49]">Development</span>
                 </h2>
                 <span className="font-light text-sm text-center">
                   Transforming lives through learning and training
@@ -91,8 +91,8 @@ function LandingTwo() {
             <div className="flex flex-col items-center gap-3">
               <img src={Oil} className="h-[40px] md:h-[50px] w-[40px] md:w-[50px]" alt="Oil and Gas" />
               <div className="flex flex-col items-center">
-                <h2 className="text-[#47aa49] font-extrabold text-2xl md:text-3xl">
-                  <span className="capitalize">Oil</span> &amp; Gas
+                <h2 className="text-white font-extrabold text-2xl md:text-3xl">
+                  <span className="capitalize text-[#47aa49]">Oil</span> &amp; Gas
                 </h2>
                 <span className="font-light text-sm text-center">
                   Protect the earth, power the future
