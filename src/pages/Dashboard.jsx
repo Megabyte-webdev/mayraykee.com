@@ -26,7 +26,7 @@ function Dashboard() {
       </Helmet>
 
       {/* Left Section */}
-      <section className="w-full md:w-[70%] flex flex-col gap-6 pt-[3%]">
+      <section className="w-full flex-1 md:w-[70%] flex flex-col gap-6 pt-[3%]">
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <li className="h-[190px] w-full rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
             <img
@@ -55,10 +55,10 @@ function Dashboard() {
         </ul>
 
        <div className="flex flex-wrap gap-4 justify-between">
-  <div className="w-full md:w-[70%] max-w-[400px] min-h-[300px]">
+  <div className="flex-1 w-full md:w-[70%] max-w-[400px] min-h-[300px]">
     <LineChart />
   </div>
-  <div className="w-full md:w-[30%]">
+  <div className="flex-1 w-full md:w-[30%]">
     <ProgressPieChart />
   </div>
 </div>
@@ -66,7 +66,7 @@ function Dashboard() {
       </section>
 
       {/* Right Section */}
-      <section className="my-3 md:my-0 w-full md:w-[30%] flex flex-col gap-6">
+      <section className="flex-1 my-3 md:my-0 mx-3 w-full md:w-[200px] flex flex-col gap-6">
         <div className="bg-gray-400 h-[300px] md:h-[55%] w-full rounded-[10px]">
           <Calendar
             value={preselectedDates}
