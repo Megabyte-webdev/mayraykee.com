@@ -50,7 +50,7 @@ function CourseAction({ data }) {
   }, [cartItems]);
 
   return (
-    <div className="w-[45%] h-fit px-[2%] py-[3%] gap-[20px] flex flex-col bg-white rounded-[10px]">
+    <div className="min-w-[45%] h-fit px-[2%] py-[3%] gap-[20px] flex flex-col bg-white rounded-[10px]">
       <div className="h-[250px] bg-gray-300 flex items-center justify-center rounded-[10px]">
         <div className="flex flex-col justify-center items-center gap-[10px]">
           <img className="h-[70px] w-[70px]" src={VideoImg} />

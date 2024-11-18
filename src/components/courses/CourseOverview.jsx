@@ -70,7 +70,7 @@ function CourseOverview({ data }) {
   }, []);
 
   return (
-    <div className="w-[50%] rounded-[10px] bg-white px-[3%] pt-[2%]">
+    <div className="min-w-[50%] rounded-[10px] bg-white px-[3%] pt-[2%]">
       {/* First Section */}
       <div className="h-[150px] w-full text-start items-start flex flex-col  gap-[5%]">
         <h2 className="font-extrabold text-xl">{data?.title}</h2>
@@ -112,7 +112,7 @@ function CourseOverview({ data }) {
       </div>
 
       {/* Second Section */}
-      <div className="h-[300px] w-full flex flex-col gap-[15px]">
+      <div className="min-h-32 w-full flex flex-col gap-[15px]">
         <ul className="w-full flex ">
           {getOverviewOptions()}
         </ul>

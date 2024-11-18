@@ -20,12 +20,12 @@ function AllCourses() {
   }, [])
 
   return (
-    <section className="flex flex-col pt-[2%] pb-[10px] min-h-[90%] px-[2%] overflow-y-auto gap-[10%]">
+    <section className="flex flex-col py-[2%] h-auto px-[2%] overflow-y-auto gap-[10%]">
       <PopularCourses />
 
       {!loading && courses?.length !== 0 && (
         <>
-          <ul className="w-full grid grid-cols-4 gap-y-[5%]">
+          <ul className="w-full min-h-auto grid grid-cols-1 sm:grid-cols-2 min-[900px]:grid-cols-3 min-[1200px]:grid-cols-4 gap-y-[5%] justify-center place-items-center">
             {currentPageContent}
           </ul>
           <PageCount
