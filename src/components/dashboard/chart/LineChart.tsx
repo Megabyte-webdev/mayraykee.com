@@ -54,7 +54,7 @@ function LineChart() {
   )
 
   return (
-    <div className="w-full h-[300px] overflow-hidden"> {/* Added overflow-hidden */}
+    <div className="w-full h-full overflow-hidden"> {/* Added overflow-hidden */}
       <ResizableBox style={{ width: '100%', height: '100%' }}>
         <Chart
           options={{
@@ -62,9 +62,9 @@ function LineChart() {
             primaryAxis,
             secondaryAxes,
             // Setting responsive: true directly inside the Chart component options
-            responsive: true,
+            // responsive: true,
           }}
-          style={{ height: '300px', width: '300px' }}
+          style={{ maxHeight: '100%', width: '100%' }}
         />
       </ResizableBox>
     </div>
