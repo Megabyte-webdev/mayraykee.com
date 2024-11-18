@@ -11,9 +11,9 @@ function SideBarOptionCard({option, state, dispatch}) {
     }
 
     return (
-        <li onClick={handleOnClick} className={`flex w-[80%] cursor-pointer   duration-100 h-[8%] justify-start gap-[10%] pl-[10px] p-[5px] items-center ${state.title === option.title ? 'bg-green text-white shadow-lg font-semibold rounded-[15px]' : 'hover:scale-105'}`}>
+        <li onClick={handleOnClick} className={`flex w-[80%] cursor-pointer duration-100 h-[8%] justify-start gap-[10%] pl-[10px] p-[5px] items-center ${state?.title === option?.title ? 'bg-green text-white shadow-lg font-semibold rounded-[15px]' : 'hover:scale-105 text-gray-800'}`}>
             <img className='h-[25px]' src={state.title === option.title ? option.activeIcon : option.inactiveIcon}/>
-            <span className='hidden md:block'>{option.title}</span>
+            <span>{option.title}</span>
         </li>
     )
 }

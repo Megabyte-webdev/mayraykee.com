@@ -17,7 +17,7 @@ function PopularCourses() {
           <button className="text-sm flex items-center gap-[5px] hover:scale-105 duration-105 text-green">View all<img className="h-[10px]" src={ArrowRight}/></button>
         </div>
 
-        <ul className='flex w-full justify-between'>
+        <ul className='flex flex-wrap w-full justify-between'>
              {getCourses()}
         </ul>
 

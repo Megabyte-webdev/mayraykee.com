@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import BoardMen from "../assets/jpgs/boardroom.jpg";
 import Computer from "../assets/pngs/computer.png";
@@ -21,44 +20,54 @@ function Dashboard() {
   }, [date]);
 
   return (
-    <div className="flex flex-col md:flex-row w-full min-h-screen p-4 md:p-2">
+    <div className="flex flex-wrap gap-5 w-full min-h-full px-4 md:px-[2%] pt-[1%]">
       <Helmet>
         <title>Mayrahkee - Africa | Dashboard</title>
       </Helmet>
 
       {/* Left Section */}
-      <section className="w-full md:w-3/4 lg:w-2/3 flex-1 flex flex-col gap-6 md:pt-0">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <li className="h-48 w-full rounded-lg bg-red-100 overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
-            <img src={BoardMen} alt="Board Men" className="h-full w-full object-cover" />
+      <section className="w-full flex-1 md:w-[70%] flex flex-col gap-6 pt-[3%]">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <li className="h-[190px] w-full rounded-[10px] bg-red-100 overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
+            <img
+              src={BoardMen}
+              alt="Board Men"
+              className="h-full w-full object-cover"
+            />
           </li>
-          <li className="h-48 w-full bg-white rounded-lg flex flex-col items-center justify-center overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-150">
-            <img className="w-20 md:w-24" src={Computer} alt="" />
+
+          <li className="h-[190px] w-full bg-white rounded-[10px] flex flex-col items-center justify-center overflow-hidden cursor-pointer group hover:scale-105 transition-transform duration-150">
+            <img className="w-[80px] md:w-[100px]" src={Computer} alt="" />
             <span className="text-green text-sm">Enter Class Room</span>
           </li>
-          <li className="h-48 w-full bg-customBrown rounded-lg flex flex-col items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
-            <img className="w-20 md:w-24" src={Dialog} alt="" />
+
+          <li className="h-[190px] w-full bg-customBrown rounded-[10px] flex flex-col items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
+            <img className="w-[80px] md:w-[100px]" src={Dialog} alt="" />
             <span className="text-white text-sm">Forum</span>
           </li>
-          <li className="h-48 w-full bg-green rounded-lg flex flex-col items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
-            <img className="w-20 md:w-24" src={Calenderr} alt="" />
-            <span className="text-white text-sm"> Course Schedule / Time Table </span>
+
+          <li className="h-[190px] w-full bg-green rounded-[10px] flex flex-col items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-150">
+            <img className="w-[80px] md:w-[90px]" src={Calenderr} alt="" />
+            <span className="text-white text-sm">
+              Course Schedule / Time Table
+            </span>
           </li>
         </ul>
 
-        <div className="flex flex-wrap gap-4 justify-between">
-          <div className="flex-1 w-full md:w-3/4 lg:w-2/3 max-w-md min-h-72">
+        <div className="flex flex-wrap gap-4 justify-center items-end">
+          <div className="flex-1 w-full md:w-[70%] max-w-[400px] min-h-[300px]">
             <LineChart />
           </div>
-          <div className="flex-1 w-full md:w-1/4 lg:w-1/3">
+          <div className="flex-1 w-full md:w-[30%]">
             <ProgressPieChart />
           </div>
         </div>
+
       </section>
 
       {/* Right Section */}
-      <section className="flex-1 my-3 md:my-0 mx-3 w-full md:w-80 lg:w-64 flex flex-col gap-6">
-        <div className="bg-gray-400 h-80 md:h-96 w-full rounded-lg">
+      <section className="my-3 md:my-0 mx-3 md:max-w-[300px] flex flex-col gap-6">
+        <div className="bg-gray-400 h-[300px] md:h-[55%] w-full rounded-[10px]">
           <Calendar
             value={preselectedDates}
             selectionMode="multiple"

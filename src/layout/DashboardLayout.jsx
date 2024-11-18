@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 import NavBar from '../components/dashboard/NavBar'
 import SideBar from '../components/dashboard/SideBar'
 import { DasboardReducer, intialDashboardState } from '../reducers/DasboardReducer'
@@ -12,7 +12,7 @@ function DashboardLayout() {
 
     const location = useLocation()
     const [state,dispatch] = useReducer(DasboardReducer, getInitialDashboardState(location.pathname, intialDashboardState))
-
+    const [menu, setMenu] = useState(false);
     const getSideBarOptions = () => {
         return Object.keys(sidebar_keys).map((currentKey) => {
           const currentOption = sidebar_keys[currentKey];
@@ -28,13 +28,12 @@ function DashboardLayout() {
       };
     return (
         <main className='w-[100vw] h-screen flex overflow-hidden'>
-
-            <SideBar>
+            <SideBar menu={menu} setMenu={setMenu}>
             {getSideBarOptions(state, dispatch)}
             </SideBar>
 
             <section className='flex-1 w-full min-h-full overflow-y-auto bg-gray-100 flex flex-col'>
-            <NavBar title={state.title}/>
+            <NavBar title={state.title} menu={menu} setMenu={setMenu} />
             <Outlet/>
             </section>
 
