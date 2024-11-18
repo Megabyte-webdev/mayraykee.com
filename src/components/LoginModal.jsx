@@ -34,9 +34,9 @@ function LoginModal({ isOpen, setIsOpen }) {
             },
           }}
           viewport={{ once: true }}
-          className="fixed flex z-[999] top-0 left-0 items-center justify-center w-full h-screen"
+          className="fixed flex z-[999] top-0 left-0 items-center justify-center w-full h-full"
         >
-          <div className="w-[90%] sm:w-[75%] md:w-[60%] lg:w-[45%] h-auto max-h-[90%] sm:max-h-[70%] md:max-h-[50%] items-center rounded-lg p-4 sm:p-6 bg-white flex flex-col overflow-y-auto">
+          <div className="w-[90%] sm:w-[75%] md:w-[60%] lg:w-[45%] h-auto items-center rounded-lg p-4 sm:p-6 bg-white flex flex-col overflow-y-auto">
             <IoIosCloseCircle
               onClick={() => setIsOpen(false)}
               className="place-self-end cursor-pointer text-2xl sm:text-lg"
