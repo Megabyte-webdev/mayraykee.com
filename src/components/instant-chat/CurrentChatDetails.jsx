@@ -32,7 +32,7 @@ function CurrentChatDetails({ selectedUser, openDetails, setOpenDetails}) {
         <div className="flex text-small flex-col w-full items-center gap-[20px]">
             <span className="text-gray-500">Shared Photos</span>
 
-            <ul className="flex flex-wrap gap-4 w-full">
+            <ul className="flex flex-wrap justify-center gap-4 w-full">
               <li>
                 <img src={SharedOne} className='h-14 w-14'/>
               </li>
