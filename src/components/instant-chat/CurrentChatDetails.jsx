@@ -1,6 +1,6 @@
 import SharedOne from '../../assets/pngs/shared-1.png'
 import SharedTwo from '../../assets/pngs/shared-2.png'
-q
+
 function CurrentChatDetails({ selectedUser, openDetails, setOpenDetails}) {
   return (
     selectedUser && (
