@@ -9,7 +9,7 @@ function ChatCard({ currentChat, selectedUser, setSelectedUser }) {
           src={currentChat.profilePic}
           className="h-[45px] rounded-full w-[45px]"
         />
-        <div className="flex flex-col ">
+        <div className="hidden md:flex flex-col ">
           <span className="text-sm font-semibold">{currentChat.name}</span>
           <span className="text-small">3 minutes ago</span>
         </div>
