@@ -33,7 +33,7 @@ function InstantChat() {
       </div>
             {/* Current Chat Details small screens */}
             <div
-        className={`h-full ${
+        className={`h-screen ${
           openDetails ? "block w-[300px] absolute top-0 bottom-0 right-0" : "hidden"
         } min-[900px]:block min-[900px]:relative min-[900px]:w-1/4`}
       >
