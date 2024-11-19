@@ -6,7 +6,7 @@ function ConversationTimeline({ currentConversation, user }) {
       }`}
     >
       <div
-        className={`w-[50%] items-start gap-[10px] ${
+        className={`w-2/3 items-start gap-[10px] ${
           currentConversation.isCurrentUser ? "flex flex-row-reverse" : "flex"
         }`}
       >
