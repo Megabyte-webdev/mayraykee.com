@@ -15,3 +15,4 @@ function InputBar() {
     </div>
   );
 }
+export default InputBar;
