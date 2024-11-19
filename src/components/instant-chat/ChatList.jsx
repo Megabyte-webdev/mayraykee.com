@@ -8,7 +8,7 @@ function ChatList({selectedUser,setSelectedUser}) {
 
 
     const getUsers = () => {
-        return usersDummyForMeeting.map((currentChat, index) => <li key={index}><ChatCard selectedUser={selectedUser} setSelectedUser={setSelectedUser} currentChat={currentChat} /></li>)
+        return usersDummyForMeeting.map((currentChat, index) =><ChatCard selectedUser={selectedUser} setSelectedUser={setSelectedUser} currentChat={currentChat} />)
     }
 
   return (
