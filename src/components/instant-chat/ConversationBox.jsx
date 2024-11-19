@@ -12,20 +12,18 @@ function ConversationBox({ selectedUser, currentUser }) {
     ));
 
   return (
-    <div className="w-full h-full min-h-full">
+    <div className="w-full min-h-full">
       {selectedUser && currentUser && (
         <>
-          <ul className="w-full flex flex-col py-[20px] px-[3%] gap-[15px] h-full overflow-y-auto pb-[70px]">
+          <ul className="w-full flex flex-col py-[20px] px-[3%] gap-[15px] h-full overflow-y-auto">
             {getConversations()}
           </ul>
-          <InputBar />
+          <InputBar/>
         </>
       )}
       {(!selectedUser || !currentUser) && (
         <div className="w-full h-full flex flex-col items-center justify-center">
-          <h3 className="text-center text-md font-semibold">
-            No chats to display
-          </h3>
+          <h3 className="text-center text-md font-semibold ">No chats to display</h3>
           <span className="text-center text-small text-gray-500">
             Please select or add a conversation
           </span>
