@@ -17,7 +17,7 @@ function InstantChat() {
       </div>
 
       {/* Conversation Box */}
-      <div className="w-full md:w-2/4 h-full">
+      <div className="w-full md:w-2/4 min-h-screen">
         <ConversationBox currentUser={currentUser} selectedUser={selectedUser} />
       </div>
 
@@ -33,7 +33,7 @@ function InstantChat() {
       </div>
             {/* Current Chat Details small screens */}
             <div
-        className={`h-screen ${
+        className={`min-h-screen ${
           openDetails ? "block w-[300px] absolute top-0 bottom-0 right-0" : "hidden"
         } min-[900px]:block min-[900px]:relative min-[900px]:w-1/4`}
       >
