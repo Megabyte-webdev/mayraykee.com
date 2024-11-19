@@ -11,7 +11,7 @@ const preselectedDates = [
 
 function Schedule() {
   return (
-    <section className="w-full bg-red-100 flex flex-wrap gap-3 py-[1%] overflow-y-auto justify-between h-[90%] px-[2%]">
+    <section className="w-full flex flex-wrap gap-3 py-[1%] overflow-y-auto justify-between h-[90%] px-[2%]">
       <Helmet>
         <title>Mayrahkee - Africa | Schedule</title>
       </Helmet>
@@ -19,7 +19,7 @@ function Schedule() {
       <div className="flex-1 w-2/3 flex flex-col gap-[15px]">
         <div className="flex flex-col gap-[15px]">
           <h3 className="font-bold text-gray-700">Ongoing Class</h3>
-          <div className="w-full flex flex-wrap gap-2 justify-between">
+          <div className="w-full flex gap-2 justify-between overflow-x-auto">
             <ClassProgress
               colorOpaque={"bg-green/50"}
               text={"UI Design Basic"}
