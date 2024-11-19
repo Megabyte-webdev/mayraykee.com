@@ -15,7 +15,7 @@ function ConversationBox({ selectedUser, currentUser }) {
     <div className="w-full md:w-[58%] h-full relative">
       {selectedUser && currentUser && (
         <>
-          <ul className="w-full flex flex-col pt-[20px] px-[3%] gap-[15px] h-full overflow-y-auto">
+          <ul className="w-full flex flex-col pt-[20px] px-[3%] gap-[15px] min-h-full overflow-y-auto">
             {getConversations()}
           </ul>
           <InputBar/>
