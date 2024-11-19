@@ -3,16 +3,57 @@ import ChatList from "../components/instant-chat/ChatList";
 import CurrentChatDetails from "../components/instant-chat/CurrentChatDetails";
 import { currentUser } from "../utils/dashboard/dummys";
 import ConversationBox from "../components/instant-chat/ConversationBox";
+import { FaBars, FaTimes } from "react-icons/fa"; // Correctly specify the 'fa' family
 
 function InstantChat() {
-    const [selectedUser,setSelectedUser] = useState();
-const [openDetails, setOpenDetails]=useState(false);
+  const [selectedUser, setSelectedUser] = useState();
+  const [openDetails, setOpenDetails] = useState(false);
+
   return (
-    <div className="w-full h-full px-[2%] py-[1%] justify-start gap-[1%] flex flex-col md:flex-row relative">{
-(!openDetails && selectedUser) && <p className="block md:hidden" onClick={()=>setOpenDetails(true)}>open</p>}
-      <ChatList selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
-      <ConversationBox currentUser={currentUser} selectedUser={selectedUser}/>
-      <CurrentChatDetails selectedUser={selectedUser} openDetails={openDetails} setOpenDetails={setOpenDetails} />
+    <div className="w-full h-full px-[2%] py-[1%] flex flex-col md:flex-row gap-4 relative">
+      {/* Chat List */}
+      <div className="w-full md:w-1/4 h-full">
+        <ChatList selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
+      </div>
+
+      {/* Conversation Box */}
+      <div className="w-full md:w-2/4 h-full">
+        <ConversationBox currentUser={currentUser} selectedUser={selectedUser} />
+      </div>
+
+      {/* Current Chat Details */}
+      <div
+        className={`min-[900px]:block min-[900px]:relative min-[900px]:w-1/4`}
+      >
+        <CurrentChatDetails
+          selectedUser={selectedUser}
+          openDetails={openDetails}
+          setOpenDetails={setOpenDetails}
+        />
+      </div>
+            {/* Current Chat Details small screens */}
+            <div
+        className={`h-full ${
+          openDetails ? "block w-[300px] absolute top-0 bottom-0 right-0" : "hidden"
+        } min-[900px]:block min-[900px]:relative min-[900px]:w-1/4`}
+      >
+        <CurrentChatDetails
+          selectedUser={selectedUser}
+          openDetails={openDetails}
+          setOpenDetails={setOpenDetails}
+        />
+      </div>
+
+
+      {/* Mobile Toggle for Details */}
+      {selectedUser && (
+        <div
+          onClick={() => setOpenDetails(!openDetails)}
+          className="min-[900px]:hidden block absolute top-4 right-4 cursor-pointer z-50"
+        >
+          {!openDetails ? <FaBars size="24" /> : <FaTimes size="24" />}
+        </div>
+      )}
     </div>
   );
 }

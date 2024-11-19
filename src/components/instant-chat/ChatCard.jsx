@@ -2,14 +2,20 @@ function ChatCard({ currentChat, selectedUser, setSelectedUser }) {
   return (
     <div
       onClick={() => setSelectedUser(currentChat)}
-      className={`w-auto flex ${(currentChat.id === selectedUser?.id) ? 'border-l-[3px] border-b border-l-green' : 'border-l-0 border-b border-b-gray-400'}  px-[7.5%]  items-center pb-[10px] cursor-pointer hover:bg-gray-100`}
+      className={`w-full flex justify-center md:justify-start ${
+        currentChat.id === selectedUser?.id
+          ? 'bg-gray-100 md:border-l-[3px] md:border-l-green md:border-b-0 border-b-[3px] border-b-green'
+          : 'md:border-l-0 border-b border-b-gray-400'
+      } px-[7.5%] items-center pb-[10px] cursor-pointer hover:bg-gray-100`}
     >
       <div className="flex items-center gap-[10px] py-[10px]">
-        <img
-          src={currentChat.profilePic}
-          className="h-[45px] rounded-full w-[45px]"
-        />
-        <div className="hidden md:flex flex-col ">
+        <div className="h-20 w-20 rounded-full overflow-hidden">
+          <img
+            src={currentChat.profilePic}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="hidden md:flex flex-col">
           <span className="text-sm font-semibold">{currentChat.name}</span>
           <span className="text-small">3 minutes ago</span>
         </div>
