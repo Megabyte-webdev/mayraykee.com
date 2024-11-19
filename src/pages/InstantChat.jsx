@@ -4,7 +4,7 @@ import CurrentChatDetails from "../components/instant-chat/CurrentChatDetails";
 import { currentUser } from "../utils/dashboard/dummys";
 import ConversationBox from "../components/instant-chat/ConversationBox"; 
 import { RiUserSharedLine, RiUserSharedFill } from "react-icons/ri";
-
+import { MdOutlineCancelPresentation } from "react-icons/md";
 function InstantChat() {
   const [selectedUser, setSelectedUser] = useState();
   const [openDetails, setOpenDetails] = useState(false);
@@ -51,7 +51,7 @@ function InstantChat() {
           onClick={() => setOpenDetails(!openDetails)}
           className="min-[900px]:hidden block absolute top-4 right-4 cursor-pointer z-50"
         >
-          {!openDetails ? <RiUserSharedLine size="24" /> : <RiUserSharedFill size="24" />}
+          {!openDetails ? <RiUserSharedLine size="24" /> : <MdOutlineCancelPresentation size="24" />}
         </div>
       )}
     </div>
