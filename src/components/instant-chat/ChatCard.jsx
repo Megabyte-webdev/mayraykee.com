@@ -2,7 +2,7 @@ function ChatCard({ currentChat, selectedUser, setSelectedUser }) {
   return (
     <div
       onClick={() => setSelectedUser(currentChat)}
-      className={`w-full flex justify-center md:justify-start ${
+      className={`w-full flex flex-col md: flex-row justify-center md:justify-start ${
         currentChat.id === selectedUser?.id
           ? 'bg-gray-100 md:border-l-[3px] md:border-l-green md:border-b-0 border-b-[3px] border-b-green'
           : 'md:border-l-0 border-b border-b-gray-400'
