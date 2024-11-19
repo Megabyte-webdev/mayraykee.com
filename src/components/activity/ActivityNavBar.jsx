@@ -5,11 +5,6 @@ import { memo } from "react";
 function ActivityNavBar({ navState, setNavState }) {
   const navigate = useNavigate();
 
-  const handleNavigation = (state, path) => {
-    setNavState(state);
-    navigate(path);
-  };
-
   const navItems = [
     { label: "You", state: activityNavStates.you, path: "/dashboard/activity" },
     { label: "Following", state: activityNavStates.following, path: "/dashboard/activity/following" },
@@ -18,21 +13,23 @@ function ActivityNavBar({ navState, setNavState }) {
     { label: activityNavStates.forumGroups, state: activityNavStates.forumGroups, path: "/dashboard/activity/forums_groups" },
   ];
 
+  const handleNavigation = (state, path) => {
+    setNavState(state);
+    navigate(path);
+  };
+
   return (
-    <div className="w-full overflow-x-auto">
-      <div className="flex space-x-4 px-4 py-2">
-        {navItems.map((item) => (
+    <div className="w-full">
+      <div className="w-full md:w-[50%] divide-x-2 flex flex-wrap">
+        {navItems.map(({ label, state, path }) => (
           <button
-            key={item.state}
-            onClick={() => handleNavigation(item.state, item.path)}
-            className={`border-b-2 pb-1 text-sm font-semibold whitespace-nowrap ${
-              navState === item.state
-                ? "text-[#4cbc9a] border-b-[#4cbc9a]"
-                : "text-gray-400 border-b-gray-200"
-            } hover:text-[#4cbc9a] transition-colors duration-200`}
-            aria-current={navState === item.state ? "page" : undefined}
+            key={state}
+            onClick={() => handleNavigation(state, path)}
+            className={`border-b-2 pb-[5px] px-[10px] text-sm font-semibold ${
+              navState === state ? "text-[#4cbc9a] border-b-[#4cbc9a]" : "text-gray-400 border-b-gray-200"
+            }`}
           >
-            {item.label}
+            {label}
           </button>
         ))}
       </div>
