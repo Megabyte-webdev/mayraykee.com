@@ -2,7 +2,7 @@ import { FaPlus } from "react-icons/fa6";
 
 function InputBar() {
   return (
-    <div className="w-full flex px-[3%] items-center gap-[3%] absolute rounded-[30px] border border-gray-300 py-[5px] bg-white bottom-0">
+    <div className="w-full flex px-[3%] items-center gap-[3%] sticky rounded-[30px] border border-gray-300 py-[5px] bg-white bottom-0">
       <FaPlus className="text-[14px] text-gray-800 cursor-pointer" />
 
       <input
