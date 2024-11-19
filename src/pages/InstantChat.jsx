@@ -2,8 +2,8 @@ import { useState } from "react";
 import ChatList from "../components/instant-chat/ChatList";
 import CurrentChatDetails from "../components/instant-chat/CurrentChatDetails";
 import { currentUser } from "../utils/dashboard/dummys";
-import ConversationBox from "../components/instant-chat/ConversationBox";
-import { FaBars, FaTimes } from "react-icons/fa"; // Correctly specify the 'fa' family
+import ConversationBox from "../components/instant-chat/ConversationBox"; 
+import { RiUserSharedLine, RiUserSharedFill } from "react-icons/ri";
 
 function InstantChat() {
   const [selectedUser, setSelectedUser] = useState();
@@ -51,7 +51,7 @@ function InstantChat() {
           onClick={() => setOpenDetails(!openDetails)}
           className="min-[900px]:hidden block absolute top-4 right-4 cursor-pointer z-50"
         >
-          {!openDetails ? <FaBars size="24" /> : <FaTimes size="24" />}
+          {!openDetails ? <RiUserSharedLine size="24" /> : <RiUserSharedFill size="24" />}
         </div>
       )}
     </div>
