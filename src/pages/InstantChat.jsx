@@ -9,7 +9,7 @@ function InstantChat() {
 const [openDetails, setOpenDetails]=useState(false);
   return (
     <div className="w-full h-full px-[2%] py-[1%] justify-start gap-[1%] flex flex-col md:flex-row relative">{
-!openDetails && <p className="block md:hidden" onClick={()=>setOpenDetails (true)}>open</p>}
+!openDetails && <p className="block md:hidden" onClick={()=>setOpenDetails(true)}>open</p>}
       <ChatList selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
       <ConversationBox currentUser={currentUser} selectedUser={selectedUser}/>
       <CurrentChatDetails selectedUser={selectedUser} openDetails={openDetails} setOpenDetails={setOpenDetails} />
