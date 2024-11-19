@@ -11,7 +11,7 @@ function MyCourseOverview({ data }) {
           Class Schedules
         </span>
 
-        <ul className="w-full flex flex-wrap gap-3">
+        <ul className="w-full flex flex-wrap justify-center md: justify-between gap-3">
           <ClassInfo active={true} />
           <ClassInfo active={false} />
           <ClassInfo active={false} />
