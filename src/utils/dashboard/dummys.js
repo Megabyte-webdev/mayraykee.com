@@ -44,9 +44,16 @@ export const usersDummyForMeeting = [
     name: "Jordan Nico",
     profilePic: PersonTwo,
     isAFriend: true,
+  }, {
+    id: 4,
+    initials: "JN",
+    initialsBackground: "bg-[#fec64d]",
+    name: "Nelson Mandela",
+    profilePic: PersonTwo,
+    isAFriend: true,
   },
   {
-    id: 4,
+    id: 5,
     initials: "KH",
     initialsBackground: "bg-[#ffbabf]",
     name: "Karen Hope",
