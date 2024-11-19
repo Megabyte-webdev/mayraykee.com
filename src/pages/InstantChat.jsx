@@ -23,7 +23,7 @@ function InstantChat() {
 
       {/* Current Chat Details */}
       <div
-        className={`min-[900px]:block min-[900px]:relative min-[900px]:w-1/4`}
+        className={`hidden min-[900px]:block min-[900px]:relative min-[900px]:w-1/4`}
       >
         <CurrentChatDetails
           selectedUser={selectedUser}
