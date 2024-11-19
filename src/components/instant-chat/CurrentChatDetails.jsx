@@ -1,11 +1,12 @@
 import SharedOne from '../../assets/pngs/shared-1.png'
 import SharedTwo from '../../assets/pngs/shared-2.png'
-
-function CurrentChatDetails({ selectedUser }) {
+q
+function CurrentChatDetails({ selectedUser, openDetails, setOpenDetails}) {
   return (
     selectedUser && (
-      <div className="absolute top-0 left-0 bottom-0 w-[300px] md:w-1/4 flex flex-col items-center h-full gap-[8%] px-[3%] pt-[3%] shadow-sm shadow-gray-300 py-[1%]  bg-white">
+      <div className={`absolute top-0 ${openDetails ? 'left-0':'left-[-100%]'} bottom-0 w-[300px] md:relative md:w-1/4 flex flex-col items-center h-full gap-[8%] px-[3%] pt-[3%] shadow-sm shadow-gray-300 py-[1%]  bg-white`}>
         <div className="flex flex-col justify-center items-center gap-[5px]">
+   openDetails && <p onClick={()=>setOpenDetails (false)}>close</p>
           <img
             src={selectedUser.profilePic}
             className="rounded-full h-[100px] w-[100px] object-center"
