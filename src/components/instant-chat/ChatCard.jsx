@@ -9,13 +9,13 @@ function ChatCard({ currentChat, selectedUser, setSelectedUser }) {
       } px-[7.5%] items-center pb-[10px] cursor-pointer hover:bg-gray-100`}
     >
       <div className="flex items-center gap-[10px] py-[10px]">
-        <div className="h-20 w-20 rounded-full overflow-hidden">
+        <div className="w-16 h-16 md:h-20 md:w-20 rounded-full overflow-hidden">
           <img
             src={currentChat.profilePic}
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="hidden md:flex flex-col">
+        <div className="flex flex-col">
           <span className="text-sm font-semibold">{currentChat.name}</span>
           <span className="text-small">3 minutes ago</span>
         </div>
