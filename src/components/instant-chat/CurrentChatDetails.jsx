@@ -4,7 +4,7 @@ import SharedTwo from '../../assets/pngs/shared-2.png'
 function CurrentChatDetails({ selectedUser }) {
   return (
     selectedUser && (
-      <div className="w-[20%] flex flex-col items-center h-full gap-[8%] px-[3%] pt-[3%] shadow-sm shadow-gray-300 py-[1%]  bg-white">
+      <div className="absolute top-0 left-0 bottom-0 w-[300px] md:w-1/4 flex flex-col items-center h-full gap-[8%] px-[3%] pt-[3%] shadow-sm shadow-gray-300 py-[1%]  bg-white">
         <div className="flex flex-col justify-center items-center gap-[5px]">
           <img
             src={selectedUser.profilePic}
