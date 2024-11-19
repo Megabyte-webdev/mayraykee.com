@@ -1,35 +1,23 @@
+import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import { usersDummyForMeeting } from "../../utils/dashboard/dummys";
+import { usersDummyForMeeting} from "../../utils/dashboard/dummys";
 import ChatCard from "./ChatCard";
 
-function ChatList({ selectedUser, setSelectedUser }) {
-  const getUsers = () => {
-    return usersDummyForMeeting.map((currentChat, index) => (
-      <ChatCard
-        key={index}
-        selectedUser={selectedUser}
-        setSelectedUser={setSelectedUser}
-        currentChat={currentChat}
-      />
-    ));
-  };
+function ChatList({selectedUser,setSelectedUser}) {
+
+
+
+    const getUsers = () => {
+        return usersDummyForMeeting.map((currentChat, index) => <ChatCard selectedUser={selectedUser} setSelectedUser={setSelectedUser} currentChat={currentChat} />)
+    }
 
   return (
-    <div className="w-full flex flex-col md:flex-row md:w-1/4 items-center md:items-start md:gap-4 gap-2 shadow-sm shadow-gray-300 p-4 bg-white">
-      {/* Header */}
-      <h3 className="font-semibold text-start w-full md:w-auto text-md text-gray-500">
-        Chat
-      </h3>
-
-      {/* New Conversation Button */}
-      <button className="flex text-small gap-2 justify-center hover:scale-105 duration-75 items-center text-white rounded-full w-full md:w-auto bg-green-500 px-4 py-2">
-        <FaPlus /> New Conversation
-      </button>
-
-      {/* Chat List */}
-      <ul className="flex flex-row md:flex-col gap-2 w-full overflow-x-auto md:overflow-y-auto">
-        {getUsers()}
-      </ul>
+    <div className="h-max w-full md:w-1/4 flex flex-col items-center gap-[3%] shadow-sm shadow-gray-300 py-[1%]  bg-white">
+        <h3 className="font-semibold text-start w-full text-md px-[7.5%] text-gray-500">Chat</h3>
+        <button className="flex text-small gap-[5px] justify-center  hover:scale-105 duration-75 items-center text-white rounded-[30px] w-[85%] bg-green px-[5px] py-[5px]"><FaPlus/> New Conversation</button>
+       <ul className="min-h-20 w-full flex flex-row md:flex-col py-2 overflow-x-auto overflow-y-hidden md:overflow-y-auto">
+          {getUsers()}
+       </ul>
     </div>
   );
 }
