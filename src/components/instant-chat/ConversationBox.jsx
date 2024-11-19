@@ -22,7 +22,7 @@ function ConversationBox({ selectedUser, currentUser }) {
         </>
       )}
       {(!selectedUser || !currentUser) && (
-        <div className="w-full h-full flex flex-col items-center justify-center">
+        <div className="w-full min-h-28 flex flex-col items-center justify-center">
           <h3 className="text-center text-md font-semibold ">No chats to display</h3>
           <span className="text-center text-small text-gray-500">
             Please select or add a conversation
