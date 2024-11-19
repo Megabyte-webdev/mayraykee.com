@@ -5,12 +5,13 @@ import { currentUser } from "../utils/dashboard/dummys";
 import ConversationBox from "../components/instant-chat/ConversationBox";
 
 function InstantChat() {
-    const [selectedUser,setSelectedUser] = useState()
+    const [selectedUser,setSelectedUser] = useState();
+const [openDetails, setOpenDetails]=useState(false);
   return (
     <div className="w-full h-full px-[2%] py-[1%] justify-start gap-[1%] flex flex-col md:flex-row relative">
       <ChatList selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
       <ConversationBox currentUser={currentUser} selectedUser={selectedUser}/>
-      <CurrentChatDetails selectedUser={selectedUser}/>
+      <CurrentChatDetails selectedUser={selectedUser} openDetails={openDetails} setOpenDetails={setOpenDetails} />
     </div>
   );
 }
