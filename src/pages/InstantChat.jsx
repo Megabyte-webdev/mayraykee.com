@@ -17,7 +17,7 @@ function InstantChat() {
       </div>
 
       {/* Conversation Box */}
-      <div className="w-full md:w-2/4 h-full flex-1 md:flex-0">
+      <div className="w-full md:w-2/4 h-full">
         <ConversationBox currentUser={currentUser} selectedUser={selectedUser} />
       </div>
 
