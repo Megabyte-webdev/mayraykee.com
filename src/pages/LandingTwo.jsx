@@ -55,13 +55,20 @@ function LandingTwo() {
             y: 0,
             transition: { duration: 1 },
           }}
-          className="w-full sm:w-[90%] lg:w-[80%] flex flex-col md:flex-row items-center gap-4 md:gap-6 pb-4 md:pb-6"
+          className="w-full sm:w-[90%] lg:w-[80%] grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 pb-4 md:pb-6"
         >
-          <li className="flex w-full md:w-[30%] p-4 hover:scale-105 duration-100 items-center justify-center gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
+          {/* Recruitment */}
+          <li className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
             <div className="flex flex-col items-center gap-3">
-              <img src={Recuitement} className="h-[40px] md:h-[50px] w-[40px] md:w-[50px]" alt="Recruitment" />
+              <img
+                src={Recuitement}
+                className="h-[40px] md:h-[50px] w-[40px] md:w-[50px]"
+                alt="Recruitment"
+              />
               <div className="flex flex-col items-center">
-                <h2 className="text-[#47aa49] font-extrabold text-2xl md:text-3xl">Recruitment</h2>
+                <h2 className="text-[#47aa49] font-extrabold text-2xl md:text-3xl">
+                  Recruitment
+                </h2>
                 <span className="font-light text-sm text-center">
                   Create an account to hire best talent find employment with reputable organisations.
                 </span>
@@ -69,14 +76,20 @@ function LandingTwo() {
             </div>
           </li>
 
+          {/* Divider */}
           <hr className="hidden md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
 
-          <li className="flex w-full md:w-[30%] p-4 hover:scale-105 duration-100 items-center justify-center gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
+          {/* Capacity Building */}
+          <li className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
             <div className="flex flex-col items-center gap-3">
-              <img src={Elearning} className="h-[40px] md:h-[50px] w-[60px] md:w-[70px]" alt="E-Learning" />
+              <img
+                src={Elearning}
+                className="h-[40px] md:h-[50px] w-[60px] md:w-[70px]"
+                alt="E-Learning"
+              />
               <div className="flex flex-col items-center">
                 <h2 className="text-white font-extrabold text-2xl md:text-3xl text-center">
-               <span className="capitalize text-[#47aa49]">Capacity</span> Building and <span className="capitalize text-[#47aa49]">Development</span>
+                  <span className="capitalize text-[#47aa49]">Capacity</span> Building and <span className="capitalize text-[#47aa49]">Development</span>
                 </h2>
                 <span className="font-light text-sm text-center">
                   Transforming lives through learning and training
@@ -85,11 +98,17 @@ function LandingTwo() {
             </div>
           </li>
 
+          {/* Divider */}
           <hr className="hidden md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
 
-          <li className="flex w-full md:w-[30%] p-4 hover:scale-105 duration-100 items-center justify-center gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
+          {/* Oil and Gas */}
+          <li className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
             <div className="flex flex-col items-center gap-3">
-              <img src={Oil} className="h-[40px] md:h-[50px] w-[40px] md:w-[50px]" alt="Oil and Gas" />
+              <img
+                src={Oil}
+                className="h-[40px] md:h-[50px] w-[40px] md:w-[50px]"
+                alt="Oil and Gas"
+              />
               <div className="flex flex-col items-center">
                 <h2 className="text-white font-extrabold text-2xl md:text-3xl">
                   <span className="capitalize text-[#47aa49]">Oil</span> &amp; Gas
@@ -101,6 +120,7 @@ function LandingTwo() {
             </div>
           </li>
         </motion.ul>
+
       </div>
     </main>
   );

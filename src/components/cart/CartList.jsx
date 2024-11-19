@@ -2,15 +2,15 @@ import { useState } from "react";
 import { IoCheckbox } from "react-icons/io5";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import CartItem from "./CartItem";
-import { cartDummy } from "../../utils/dashboard/dummys";
+
 function CartList({ selectedItems, setSelectedItems, cartItems }) {
   const [isAllChecked, setIsAllChecked] = useState(false);
 
-  const toogleIsAllChecked = () => setIsAllChecked(!isAllChecked);
+  const toggleIsAllChecked = () => setIsAllChecked(!isAllChecked);
 
   const getCartItems = () => {
-    if(cartItems?.length == 0){
-      return
+    if (cartItems?.length === 0) {
+      return <span className="text-gray-500 text-sm">No items in the cart.</span>;
     }
     return cartItems.map((currentItem, index) => (
       <CartItem
@@ -25,33 +25,33 @@ function CartList({ selectedItems, setSelectedItems, cartItems }) {
   };
 
   const addAllItemsToCart = () => {
-    if(cartItems?.length == 0){
-      return
+    if (cartItems?.length === 0) {
+      return;
     }
-    cartItems.map((currentItem) => {
-      const isFound = selectedItems?.filter(
+    cartItems.forEach((currentItem) => {
+      const isFound = selectedItems?.some(
         (current) => current?.cartsId === currentItem?.cartsId
       );
-      console.log(isFound);
-      if (typeof isFound === "undefined" || isFound?.length === 0) {
+      if (!isFound) {
         setSelectedItems((prev) => [...prev, currentItem]);
       }
     });
-    toogleIsAllChecked();
+    toggleIsAllChecked();
   };
 
-  const removeAllItemsToCart = () => {
+  const removeAllItemsFromCart = () => {
     setSelectedItems([]);
-    toogleIsAllChecked();
+    toggleIsAllChecked();
   };
 
   return (
     <div className="w-full">
-      <div className="py-[10px] border-y gap-[10px] flex justify-start">
+      {/* Select All Section */}
+      <div className="py-2 border-y flex items-center gap-2">
         {isAllChecked ? (
           <IoCheckbox
-            onClick={removeAllItemsToCart}
-            className="text-lg cursor-pointer text-[#4cbc9a] "
+            onClick={removeAllItemsFromCart}
+            className="text-lg cursor-pointer text-[#4cbc9a]"
           />
         ) : (
           <MdOutlineCheckBoxOutlineBlank
@@ -59,10 +59,11 @@ function CartList({ selectedItems, setSelectedItems, cartItems }) {
             className="text-lg cursor-pointer"
           />
         )}
-        <span className="text-small">Select All</span>
+        <span className="text-sm text-gray-700">Select All</span>
       </div>
 
-      <ul className="flex flex-col pb-[10px] ">{getCartItems()}</ul>
+      {/* Cart Items List */}
+      <ul className="flex flex-col gap-2 pb-4">{getCartItems()}</ul>
     </div>
   );
 }
