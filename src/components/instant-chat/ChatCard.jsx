@@ -16,7 +16,8 @@ function ChatCard({ currentChat, selectedUser, setSelectedUser }) {
           />
         </div>
         <div className="flex flex-col">
-          <span className="text-sm font-semibold">{currentChat.name}</span>
+          <span className="hidden md:block text-sm font-semibold">{currentChat.name}</span>
+ <span className="block md:hidden text-sm font-semibold">{currentChat.name.split(" ")[0]}</span>
           <span className="text-small">3 mins ago</span>
         </div>
       </div>
