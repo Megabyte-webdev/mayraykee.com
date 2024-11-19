@@ -12,7 +12,7 @@ function ConversationBox({ selectedUser, currentUser }) {
     ));
 
   return (
-    <div className="relative w-full h-full min-h-full">
+    <div className="w-full h-full min-h-full">
       {selectedUser && currentUser && (
         <>
           <ul className="w-full flex flex-col py-[20px] px-[3%] gap-[15px] h-full overflow-y-auto pb-[70px]">
