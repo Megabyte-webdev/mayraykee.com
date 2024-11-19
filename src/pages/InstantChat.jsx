@@ -10,14 +10,14 @@ function InstantChat() {
   const [openDetails, setOpenDetails] = useState(false);
 
   return (
-    <div className="w-full h-screen px-[2%] py-[1%] flex flex-col md:flex-row gap-4 relative">
+    <div className="w-full h-full px-[2%] py-[1%] flex flex-col md:flex-row gap-4 relative">
       {/* Chat List */}
       <div className="w-full md:w-1/4 h-full">
         <ChatList selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
       </div>
 
       {/* Conversation Box */}
-      <div className="w-full md:w-2/4 h-screen">
+      <div className="w-full md:w-2/4 h-full">
         <ConversationBox currentUser={currentUser} selectedUser={selectedUser} />
       </div>
 
