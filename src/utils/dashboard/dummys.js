@@ -59,6 +59,13 @@ export const usersDummyForMeeting = [
     name: "Karen Hope",
     profilePic: PersonEight,
     isAFriend: false,
+  },{
+    id: 5,
+    initials: "KH",
+    initialsBackground: "bg-[#ffbabf]",
+    name: "Wisdom Eric",
+    profilePic: PersonOne,
+    isAFriend: false,
   },
 ];
 

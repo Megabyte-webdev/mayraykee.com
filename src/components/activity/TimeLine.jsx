@@ -7,12 +7,12 @@ function TimeLine({current}) {
     }
 
     return ( 
-    <div className="w-full flex flex-col gap-2">
+    <div className="w-full flex flex-col gap-3">
         <h2 className="text-lg font-bold text-gray-600">
         {current.date}
         </h2>
 
-        <ul className="flex flex-col gap-[10px]">
+        <ul className="flex flex-col gap-4">
             {getEvents()}
         </ul>
             

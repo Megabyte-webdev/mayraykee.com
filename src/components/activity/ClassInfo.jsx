@@ -1,5 +1,5 @@
 function ClassInfo({active}) {
-  return <li className={`min-w-[200px] h-[80px] flex items-center px-[3%] justify-between   rounded-[10px] ${active? 'bg-green' : 'bg-gray-300'}`}>
+  return <li className={`min-w-[200px] h-[80px] flex items-center px-[3%] justify-between  rounded-[10px] ${active? 'bg-green' : 'bg-gray-300'}`}>
 
     <hr className={`h-[80%]  ${active ? 'bg-white w-[1%]' : 'bg-green w-[1.5%]'} rounded-t-[10px] rounded-b-[10px]`}/>
 

@@ -23,7 +23,7 @@ function EnrolledCourse({ context, data, getCourseSchedule }) {
     courseSchedule.length !== 0 && (
       <div className="w-full flex flex-col gap-[5px] py-[5px]">
         <h1 className="font-bold">{data?.title}</h1>
-        <ul className="flex flex-col gap-[10px]">
+        <ul className="flex flex-wrap gap-[10px]">
           {courseSchedule.map((currentSchedule, index) => (
             <LiveClassInfo key={index} currentSchedule={currentSchedule} context={context} active={true} />
           ))}

@@ -43,7 +43,7 @@ function MeetingTimeEvent({ currentEvent }) {
           className={`w-[80%] ${
             currentEvent.users.length === 0
               ? "hidden"
-              : "flex items-center justify-start gap-[3%]  pl-[10%]"
+              : "flex items-center justify-start gap-[3%] pl-[10%] overflow-x-auto"
           }`}
         >
           {getUsers()}

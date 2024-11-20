@@ -12,14 +12,14 @@ function TimeEvent({ currentEvent }) {
       components.push(
         <li
           key={index}
-          className="bg-black min-h-[50px] w-full rounded-[10px] cursor-pointer group hover:bg-white flex items-end py-[5px] px-[5%] gap-[10px] bg-gray-300"
+          className="min-h-[50px] w-full rounded-[10px] cursor-pointer group hover:bg-white flex items-center py-[5px] px-[5%] gap-[10px] bg-gray-300"
         >
           <img
             src={FileImg}
-            className="h-12 group-hover:scale-105 duration-100"
+            className="h-8 md:h-12 group-hover:scale-105 duration-100"
           />
           <div className="h-full flex group-hover:scale-105 duration-100 flex-col justify-end">
-            <span className="text-small font-semibold truncate">
+            <span className="text-small font-semibold break-all">
               {currentAttachment.name}
             </span>
             <span className="text-[10px] font-gray-400">
@@ -34,13 +34,13 @@ function TimeEvent({ currentEvent }) {
 
   return (
     <li className="w-full flex gap-[25px] last:has-[hr]:h-0 last:min-h-fit min-h-[50px]">
-      <div className="flex-1 flex flex-col h-full">
-        <span className="text-gray-400 text-small place-self-center">
+      <div className="flex flex-col items-center h-full text-center">
+        <span className="text-gray-400 text-small">
           {currentEvent.time}
         </span>
-        <hr className="h-[80%] w-[1px] place-self-center bg-gray-200" />
+        <hr className="h-[80%] w-[1px] bg-gray-200" />
       </div>
-      <div className="flex flex-col gap-[15px] w-[80%] overflow-hidden">
+      <div className="flex flex-col gap-[15px] min-w-[200px] overflow-hidden">
         <NameTag
           initials={currentEvent.event.initials}
           initialsBackground={currentEvent.event.initialsBackground}

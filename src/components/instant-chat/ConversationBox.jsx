@@ -6,22 +6,27 @@ function ConversationBox({ selectedUser, currentUser }) {
   const getConversations = () =>
     dummyChats.map((currentConversation, index) => (
       <ConversationTimeline
+        key={index}
         currentConversation={currentConversation}
         user={currentConversation.isCurrentUser ? currentUser : selectedUser}
       />
     ));
 
   return (
-    <div className="w-full min-h-full">
-      {selectedUser && currentUser && (
+    <div className="w-full h-full relative flex flex-col bg-gray-200">
+      {selectedUser && currentUser ? (
         <>
-          <ul className="w-full flex flex-col py-[20px] px-[3%] gap-[15px] h-full overflow-y-auto">
+          {/* Chat messages container */}
+          <ul className="w-full min-h-full flex flex-col px-[3%] gap-[15px] flex-grow overflow-y-auto">
             {getConversations()}
           </ul>
-          <InputBar/>
+
+          {/* Input bar fixed at the bottom */}
+          <div className="w-full p-2 bg-white sticky bottom-0 left-0">
+            <InputBar />
+          </div>
         </>
-      )}
-      {(!selectedUser || !currentUser) && (
+      ) : (
         <div className="w-full h-full flex flex-col items-center justify-center">
           <h3 className="text-center text-md font-semibold ">No chats to display</h3>
           <span className="text-center text-small text-gray-500">
