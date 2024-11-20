@@ -18,7 +18,7 @@ function TimeEvent({ currentEvent }) {
             src={FileImg}
             className="h-16 group-hover:scale-105 duration-100"
           />
-          <div className="h-full flex group-hover:scale-105 duration-100 flex-col justify-end">
+          <div className="bg-black h-full flex group-hover:scale-105 duration-100 flex-col justify-end">
             <span className="text-small font-semibold overflow-hidden text-ellipsis">
               {currentAttachment.name}
             </span>
