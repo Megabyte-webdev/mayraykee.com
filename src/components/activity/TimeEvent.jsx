@@ -19,7 +19,7 @@ function TimeEvent({ currentEvent }) {
             className="h-12 group-hover:scale-105 duration-100"
           />
           <div className="h-full flex group-hover:scale-105 duration-100 flex-col justify-end">
-            <span className="text-small font-semibold overflow-hidden text-ellipsis">
+            <span className="text-small font-semibold text-wrap">
               {currentAttachment.name}
             </span>
             <span className="text-[10px] font-gray-400">
