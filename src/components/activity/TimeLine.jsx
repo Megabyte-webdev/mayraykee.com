@@ -7,7 +7,7 @@ function TimeLine({current}) {
     }
 
     return ( 
-    <div className="w-full md:w-[60%] flex flex-col gap-[20px]">
+    <div className="w-full md:w-[60%] flex flex-col gap-2">
         <h2 className="text-lg font-bold text-gray-600">
         {current.date}
         </h2>
