@@ -12,7 +12,7 @@ function TimeLine({current}) {
         {current.date}
         </h2>
 
-        <ul className="bg-black flex flex-col gap-[10px]">
+        <ul className="flex flex-col gap-[10px]">
             {getEvents()}
         </ul>
             
