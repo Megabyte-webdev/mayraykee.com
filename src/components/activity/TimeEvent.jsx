@@ -13,11 +13,11 @@ function TimeEvent({ currentEvent }) {
       components.push(
         <li
           key={index}
-          className="h-[50px] rounded-[10px] cursor-pointer group hover:bg-white  flex items-end py-[5px] px-[5%] gap-[10px] bg-gray-300"
+          className="min-h-[50px] rounded-[10px] cursor-pointer group hover:bg-white  flex items-end py-[5px] px-[5%] gap-[10px] bg-gray-300 break-all "
         >
           <img src={FileImg} className="h-[80%] group-hover:scale-105 duration-100" />
 
-          <div className="h-full flex group-hover:scale-105 duration-100 flex-col justify-end">
+          <div className="h-full flex group-hover:scale-105 duration-100 flex-col justify-end text-wrap">
             <span className="text-small  font-semibold">{currentAttachment.name}</span>
             <span className="text-[10px] font-gray-400">{currentAttachment.size}</span>
           </div>
@@ -30,7 +30,7 @@ function TimeEvent({ currentEvent }) {
 
   return (
     <li className="w-full flex gap-[25px] last:has-[hr]:h-0 last:min-h-fit min-h-[50px] ">
-      <div className="flex flex-col w-[10%] h-full">
+      <div className="flex flex-col min-w-60 h-full">
         <span className="text-gray-400 text-small place-self-center">
           {currentEvent.time}
         </span>
