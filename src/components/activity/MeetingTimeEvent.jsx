@@ -21,7 +21,7 @@ function MeetingTimeEvent({ currentEvent }) {
 
   return (
     <li className="w-full flex gap-[25px] mb-[2%] last:has-[hr]:h-0 last:min-h-fit min-h-[50px] ">
-      <div className="flex flex-col w-[10%] h-full">
+      <div className="flex flex-col h-full">
         <span className="text-gray-400 text-small place-self-center">
           {currentEvent.time}
         </span>
