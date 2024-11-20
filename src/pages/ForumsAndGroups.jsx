@@ -5,7 +5,7 @@ import Posts from "../components/activity/Posts";
 function ForumsAndGroups() {
   return (
     <div className="w-full flex flex-wrap justify-start gap-[10%]">
-      <div className="flex flex-col w-[50%] gap-[15px]">
+      <div className="flex flex-col w-full md:w-[50%] gap-[15px]">
         <GeneralPost />
         <Posts />
       </div>
