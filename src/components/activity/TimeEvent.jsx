@@ -48,7 +48,7 @@ function TimeEvent({ currentEvent }) {
           name={currentEvent.event.name}
         />
         <ul
-          className={`w-full gap-[10px] grid grid-cols-2 md:grid-cols-1 flex-wrap ${
+          className={`w-full gap-[10px] grid grid-cols-2 flex-wrap ${
             currentEvent.attachments.length === 0 ? "hidden" : ""
           }`}
         >
