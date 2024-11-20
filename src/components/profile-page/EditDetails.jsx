@@ -59,7 +59,11 @@ function EditDetails() {
         Update your account information
       </p>
 
+<<<<<<< HEAD
       <div className="flex mt-[5px] justify-between gap-[10px]">
+=======
+      <div className="flex  mt-[5px] justify-between gap-[10px]">
+>>>>>>> main
         <form className="flex w-[50%] flex-col gap-[15px] items-center">
           <h4 className="font-semibold place-self-start text-[14px]">
             Personal Information

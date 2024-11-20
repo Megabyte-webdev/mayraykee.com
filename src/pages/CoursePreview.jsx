@@ -22,7 +22,11 @@ function CoursePreview() {
         Back
       </button>
 
+<<<<<<< HEAD
       <div className="w-full flex flex-col md:flex-row md:justify-between gap-2">
+=======
+      <div className="w-full flex justify-between">
+>>>>>>> main
         <CourseOverview data={courseData} />
         <CourseAction data={courseData} />
       </div>

@@ -31,7 +31,11 @@ function LiveClassInfo({ active, context, currentSchedule }) {
 
   return (
     <li
+<<<<<<< HEAD
       className={`min-w-64 h-[80px] flex items-center px-[3%] justify-between   rounded-[10px] ${
+=======
+      className={`w-[98%] h-[80px] flex items-center px-[3%] justify-between   rounded-[10px] ${
+>>>>>>> main
         active ? "bg-green" : "bg-gray-300"
       }`}
     >
@@ -46,7 +50,11 @@ function LiveClassInfo({ active, context, currentSchedule }) {
           active ? "text-white" : "text-black"
         }`}
       >
+<<<<<<< HEAD
         <div className="w-full flex justify-between items-center gap-x-[2px] ">
+=======
+        <div className="w-full flex justify-between items-center">
+>>>>>>> main
           <p className="font-semibold text-small">
             Design Thinking and Innovation
           </p>

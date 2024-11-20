@@ -15,12 +15,20 @@
     "@headlessui/react": "^2.0.3",
     "@heroicons/react": "^2.1.3",
     "@videosdk.live/react-sdk": "^0.1.93",
+<<<<<<< HEAD
+=======
+    "autoprefixer": "^10.4.19",
+>>>>>>> main
     "axios": "^1.7.2",
     "buffer": "^6.0.3",
     "country-state-city": "^3.2.1",
     "dayjs": "^1.11.11",
     "framer-motion": "^11.2.6",
     "lottie-react": "^2.4.0",
+<<<<<<< HEAD
+=======
+    "postcss": "^8.4.38",
+>>>>>>> main
     "primeflex": "^3.3.1",
     "primeicons": "^7.0.0",
     "primereact": "^10.6.5",
@@ -46,13 +54,20 @@
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
+<<<<<<< HEAD
     "autoprefixer": "^10.4.20",
+=======
+>>>>>>> main
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+<<<<<<< HEAD
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
+=======
+    "tailwindcss": "^3.4.3",
+>>>>>>> main
     "vite": "^5.2.0"
   }
 }

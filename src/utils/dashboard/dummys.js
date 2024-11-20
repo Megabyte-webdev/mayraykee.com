@@ -44,6 +44,7 @@ export const usersDummyForMeeting = [
     name: "Jordan Nico",
     profilePic: PersonTwo,
     isAFriend: true,
+<<<<<<< HEAD
   }, {
     id: 4,
     initials: "JN",
@@ -54,11 +55,17 @@ export const usersDummyForMeeting = [
   },
   {
     id: 5,
+=======
+  },
+  {
+    id: 4,
+>>>>>>> main
     initials: "KH",
     initialsBackground: "bg-[#ffbabf]",
     name: "Karen Hope",
     profilePic: PersonEight,
     isAFriend: false,
+<<<<<<< HEAD
   },{
     id: 5,
     initials: "KH",
@@ -66,6 +73,8 @@ export const usersDummyForMeeting = [
     name: "Wisdom Eric",
     profilePic: PersonOne,
     isAFriend: false,
+=======
+>>>>>>> main
   },
 ];
 

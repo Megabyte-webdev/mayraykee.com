@@ -22,7 +22,11 @@ function NameTag({initials, initialsBackground = 'bg-lime-600/70', name, extraTe
 
 
   return (
+<<<<<<< HEAD
     <div className="flex flex-wrap gap-x-2 items-center">
+=======
+    <div className="flex  items-center">
+>>>>>>> main
       <p className={`p-[8px] rounded-[5px] hover:scale-105 duration-100 mr-[10px] peer/initials tracking-wide ${initialsBackground} cursor-pointer flex items-center justify-center text-white font-semibold text-small `}>{initials}</p>
       <button className="font-bold text-gray-700 peer-hover/initials:underline cursor-pointer hover:underline text-small flex mr-[5px] ">{name}</button>
       {editExtraText()}
