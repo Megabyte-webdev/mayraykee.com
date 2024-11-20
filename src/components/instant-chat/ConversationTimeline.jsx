@@ -18,8 +18,8 @@ function ConversationTimeline({ currentConversation, user }) {
           <p
             className={`text-small px-[8px] py-[5px] ${
               currentConversation.isCurrentUser
-                ? "bg-gray-300 text-black rounded-l-[10px] rounded-br-[10px]"
-                : "bg-white text-gray-500 rounded-r-[10px] rounded-bl-[10px]"
+                ? "bg-green-400 text-black rounded-l-[10px] rounded-br-[10px]"
+                : "bg-white text-gray-700 rounded-r-[10px] rounded-bl-[10px]"
             }`}
           >
             {currentConversation.chat}

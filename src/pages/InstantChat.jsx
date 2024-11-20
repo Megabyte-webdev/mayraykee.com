@@ -5,51 +5,50 @@ import { currentUser } from "../utils/dashboard/dummys";
 import ConversationBox from "../components/instant-chat/ConversationBox"; 
 import { RiUserSharedLine, RiUserSharedFill } from "react-icons/ri";
 import { MdOutlineCancelPresentation } from "react-icons/md";
+
 function InstantChat() {
   const [selectedUser, setSelectedUser] = useState();
   const [openDetails, setOpenDetails] = useState(false);
 
   return (
-    <div className="w-full h-full px-[2%] py-[1%] flex flex-col md:flex-row gap-4 relative">
+    <div className="w-full h-[90vh] px-[2%] py-[1%] relative lg:grid lg:grid-cols-12 lg:gap-4 bg-gray-200">
       {/* Chat List */}
-      <div className="w-full md:w-1/4 h-full">
+      <div className="w-full lg:col-span-3 flex-shrink-0 overflow-y-auto max-h-[calc(90vh-2rem)] lg:h-auto">
         <ChatList selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
       </div>
 
       {/* Conversation Box */}
-      <div className="w-full md:w-2/4 h-full">
+      <div className="w-full lg:col-span-6 flex-grow overflow-y-auto h-[calc(90vh-2rem)] pt-3">
         <ConversationBox currentUser={currentUser} selectedUser={selectedUser} />
       </div>
 
-      {/* Current Chat Details */}
-      <div
-        className={`hidden min-[900px]:block min-[900px]:relative min-[900px]:w-1/4`}
-      >
-        <CurrentChatDetails
-          selectedUser={selectedUser}
-          openDetails={openDetails}
-          setOpenDetails={setOpenDetails}
-        />
-      </div>
-            {/* Current Chat Details small screens */}
-            <div
-        className={`h-full ${
-          openDetails ? "block w-[300px] absolute top-0 bottom-0 right-0" : "hidden"
-        } min-[900px]:block min-[900px]:relative min-[900px]:w-1/4`}
-      >
-        <CurrentChatDetails
-          selectedUser={selectedUser}
-          openDetails={openDetails}
-          setOpenDetails={setOpenDetails}
-        />
-      </div>
+      {/* Current Chat Details for large screens */}
+      {selectedUser && (
+        <div className="hidden lg:block lg:col-span-3 h-full flex-shrink-0 overflow-y-auto max-h-[calc(90vh-2rem)]">
+          <CurrentChatDetails
+            selectedUser={selectedUser}
+            openDetails={openDetails}
+            setOpenDetails={setOpenDetails}
+          />
+        </div>
+      )}
 
+      {/* Current Chat Details for small screens */}
+      <div
+        className={`h-full ${openDetails ? "block w-[300px] absolute top-0 bottom-0 right-0" : "hidden"} lg:hidden overflow-y-auto h-[calc(90vh-2rem)]`}
+      >
+        <CurrentChatDetails
+          selectedUser={selectedUser}
+          openDetails={openDetails}
+          setOpenDetails={setOpenDetails}
+        />
+      </div>
 
       {/* Mobile Toggle for Details */}
       {selectedUser && (
         <div
           onClick={() => setOpenDetails(!openDetails)}
-          className="min-[900px]:hidden block absolute top-4 right-4 cursor-pointer z-50"
+          className="lg:hidden block absolute top-4 right-5 cursor-pointer z-50"
         >
           {!openDetails ? <RiUserSharedLine size="24" /> : <MdOutlineCancelPresentation size="24" />}
         </div>

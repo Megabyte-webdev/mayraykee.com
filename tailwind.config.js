@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        '900px': '900px', // Custom breakpoint
+      },
       backgroundImage: {
         'login-background': "url('src/assets/pngs/login-image2.png')",
         'login-background2': "url('src/assets/svgs/login-image-2.svg')",

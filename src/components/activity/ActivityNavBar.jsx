@@ -25,7 +25,7 @@ function ActivityNavBar({ navState, setNavState }) {
           <button
             key={state}
             onClick={() => handleNavigation(state, path)}
-            className={`border-b-2 pb-[5px] px-[10px] text-sm font-semibold ${
+            className={`border-b-2 p-[10px] md:py-[5px] md:px-[10px] text-sm font-semibold ${
               navState === state ? "text-[#4cbc9a] border-b-[#4cbc9a]" : "text-gray-400 border-b-gray-200"
             }`}
           >
