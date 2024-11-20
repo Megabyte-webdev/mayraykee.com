@@ -13,9 +13,9 @@ function TimeEvent({ currentEvent }) {
       components.push(
         <li
           key={index}
-          className="h-[50px] rounded-[10px] cursor-pointer group hover:bg-white  flex items-end py-[5px] px-[5%] gap-[10px] bg-gray-300"
+          className="min-h-[50px] min-w-60 rounded-[10px] cursor-pointer group hover:bg-white  flex items-end py-[5px] px-[5%] gap-[10px] bg-gray-300"
         >
-          <img src={FileImg} className="h-16 group-hover:scale-105 duration-100" />
+          <img src={FileImg} className="h-[80%] group-hover:scale-105 duration-100" />
 
           <div className="h-full flex group-hover:scale-105 duration-100 flex-col justify-end">
             <span className="text-small  font-semibold">{currentAttachment.name}</span>
