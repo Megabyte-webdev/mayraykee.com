@@ -12,7 +12,7 @@ function TimeEvent({ currentEvent }) {
       components.push(
         <li
           key={index}
-          className="min-h-[50px] w-full rounded-[10px] cursor-pointer group hover:bg-white flex items-end py-[5px] px-[5%] gap-[10px] bg-gray-300"
+          className="min-h-[50px] w-full rounded-[10px] cursor-pointer group hover:bg-white flex items-end py-[5px] px-[5%] gap-[10px] bg-gray-300 bg-black"
         >
           <img
             src={FileImg}
