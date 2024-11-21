@@ -18,7 +18,7 @@ function CourseOverview({ data }) {
     initialState
   );
 
-  const { datum, getDatum } = useFetch("Faculty Error");
+  const { datum, getDatum, loading } = useFetch("Faculty Error");
 
   const getAuthors = () => {
     return data?.authors?.map((currentAuthor, index) => (

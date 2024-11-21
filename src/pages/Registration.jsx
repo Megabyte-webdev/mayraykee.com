@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import { registration_steps_keys, titlesOption } from "../utils/constants";
 import MainIcon from "../assets/svgs/main-logo.svg";
 import Person from "../assets/pngs/person.png";

@@ -1,4 +1,3 @@
-// LineChart.js
 import ResizableBox from "./ResizableBox";
 import useDemoConfig from "./useDemoConfig";
 import React, { memo } from "react";
@@ -18,8 +17,14 @@ const data: Series[] = [
   {
     label: 'Series 1',
     data: [
-      { date: new Date(2024, 4, 2), stars: 130 },
-      { date: new Date(2024, 4, 5), stars: 150 },
+      {
+        date: new Date(2024,4,2),
+        stars: 130,
+      },
+      {
+        date: new Date(2024,4,5),
+        stars: 150,
+      },
     ],
   },
   {

@@ -1,4 +1,3 @@
-
 import NameTag from "../NameTag";
 import FileImg from "../../assets/pngs/file.png";
 

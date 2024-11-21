@@ -120,7 +120,6 @@ function LandingTwo() {
             </div>
           </li>
         </motion.ul>
-
       </div>
     </main>
   );
