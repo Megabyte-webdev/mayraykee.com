@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
 /* Style the entire website's scrollbar */
 ::-webkit-scrollbar {
     width: 6px; /* Set the width of the scrollbar */
@@ -35,5 +34,3 @@
     height: 0px; /* Set the height for horizontal scrollbar (if any) */
 }
   }
-=======
->>>>>>> main

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useReducer, useState } from 'react'
-=======
-import React, { useReducer } from 'react'
->>>>>>> main
 import NavBar from '../components/dashboard/NavBar'
 import SideBar from '../components/dashboard/SideBar'
 import { DasboardReducer, intialDashboardState } from '../reducers/DasboardReducer'
@@ -16,11 +12,7 @@ function DashboardLayout() {
 
     const location = useLocation()
     const [state,dispatch] = useReducer(DasboardReducer, getInitialDashboardState(location.pathname, intialDashboardState))
-<<<<<<< HEAD
     const [menu, setMenu] = useState(false);
-=======
-
->>>>>>> main
     const getSideBarOptions = () => {
         return Object.keys(sidebar_keys).map((currentKey) => {
           const currentOption = sidebar_keys[currentKey];
@@ -35,7 +27,6 @@ function DashboardLayout() {
         });
       };
     return (
-<<<<<<< HEAD
         <main className='w-[100vw] h-screen flex overflow-hidden'>
             <SideBar menu={menu} setMenu={setMenu}>
             {getSideBarOptions(state, dispatch)}
@@ -46,25 +37,8 @@ function DashboardLayout() {
             <Outlet/>
             </section>
 
-=======
-        <main className='w-full h-screen flex'>
-       
-            <SideBar>
-            {getSideBarOptions(state, dispatch)}
-            </SideBar>
-
-            <section className='w-[85%] h-full bg-gray-100 flex flex-col'>
-            <NavBar title={state.title}/>
-            <Outlet/>
-            </section>
-            
->>>>>>> main
         </main>
     )
 }
 
-<<<<<<< HEAD
 export default DashboardLayout
-=======
-export default DashboardLayout
->>>>>>> main

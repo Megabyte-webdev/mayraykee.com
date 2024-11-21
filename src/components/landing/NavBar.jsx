@@ -2,19 +2,12 @@ import { useNavigate } from "react-router-dom";
 import MainLogo from "../../assets/pngs/main-logo-white.png";
 import { landingNavOptions } from "../../utils/constants";
 import { motion } from "framer-motion";
-<<<<<<< HEAD
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 function NavBar({ navOptions, setIsOpen }) {
   const navigate = useNavigate();
   const [menu, setMenu]= useState(false);
-=======
-
-function NavBar({ navOptions }) {
-  const navigate = useNavigate();
-
->>>>>>> main
   const navigateToLogin = () => navigate("login");
   const navigateToLandingTwo = () => navigate("/landing_two");
   const navigateToLanding = () => navigate("/");
@@ -61,7 +54,6 @@ function NavBar({ navOptions }) {
         },
       }}
       viewport={{ once: true }}
-<<<<<<< HEAD
       className="h-[90px] w-full overflow-hidden flex justify-between items-center px-[5%]"
     >
       <img className="w-32 md:w-60" src={MainLogo} />
@@ -99,20 +91,6 @@ function NavBar({ navOptions }) {
       >
         {!menu ? <FaBars size={24} /> : <FaTimes size={24} />}
       </div>
-=======
-      className="h-[10%] w-full flex justify-between items-center px-[5%]"
-    >
-      <img className="h-[80%]" src={MainLogo} />
-
-      <div className="flex w-[60%] items-center">
-        <ul className="flex w-[80%] items-center gap-[8%]">{getOptions()}</ul>
-        <button
-          onClick={navigateToLogin}
-          className="text-sm bg-[#F5F5DC] hover:scale-105 duration-50 p-[8px] text-black font-semibold"
-        >
-          Login/Register
-        </button>
->>>>>>> main
       </div>
     </motion.nav>
   );

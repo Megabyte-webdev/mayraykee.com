@@ -16,11 +16,7 @@ function DisplayLiveClasses() {
     }
 
     return ( 
-<<<<<<< HEAD
     <ul className="w-[90%] gap-[20px] divide-y-[1px] divide-gray-400 flex flex-col py-[10px]">
-=======
-    <ul className="w-[50%] gap-[20px] divide-y-[1px] divide-gray-400 flex flex-col py-[10px]">
->>>>>>> main
         {mapEnrolledCourses()}
     </ul> );
 }

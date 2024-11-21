@@ -9,17 +9,10 @@ function ScheduleCard({current}) {
             <div className='w-[85%] text-gray-600 h-full items-start justify-between flex flex-col py-[3%]'>
                 <h6 className='text-sm'>{current.title}</h6>
 
-<<<<<<< HEAD
                 <div className='flex flex-wrap gap-[5%] w-[90%]'>
                     <p className='flex-1 flex flex-wrap text-small items-center gap-[3px]'><img src={Wallet} className='h-[12px]'/>{current.date}</p>
                     <hr className='border-l h-full border-gray-400'/>
                     <p className='flex-1 flex flex-wrap text-small items-center gap-[3px]'><img src={Clock} className='h-[12px]'/>{current.time}</p>
-=======
-                <div className='flex gap-[5%] w-full'>
-                    <p className='flex text-small items-center gap-[3px]'><img src={Wallet} className='h-[12px]'/>{current.date}</p>
-                    <hr className='border-l h-full border-gray-400'/>
-                    <p className='flex text-small items-center gap-[3px]'><img src={Clock} className='h-[12px]'/>{current.time}</p>
->>>>>>> main
                 </div>
 
                 <div className='flex gap-[3px] items-center'>

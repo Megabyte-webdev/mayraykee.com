@@ -21,11 +21,7 @@ function MeetingTimeEvent({ currentEvent }) {
 
   return (
     <li className="w-full flex gap-[25px] mb-[2%] last:has-[hr]:h-0 last:min-h-fit min-h-[50px] ">
-<<<<<<< HEAD
       <div className="flex flex-col h-full">
-=======
-      <div className="flex flex-col w-[10%] h-full">
->>>>>>> main
         <span className="text-gray-400 text-small place-self-center">
           {currentEvent.time}
         </span>
@@ -47,11 +43,7 @@ function MeetingTimeEvent({ currentEvent }) {
           className={`w-[80%] ${
             currentEvent.users.length === 0
               ? "hidden"
-<<<<<<< HEAD
               : "flex items-center justify-start gap-[3%] pl-[10%] overflow-x-auto"
-=======
-              : "flex items-center justify-start gap-[3%]  pl-[10%]"
->>>>>>> main
           }`}
         >
           {getUsers()}

@@ -8,11 +8,7 @@ function MeetingTimeLine({current}) {
     }
 
     return ( 
-<<<<<<< HEAD
     <div className="w-full md:w-[60%] flex flex-col gap-2">
-=======
-    <div className="w-[60%] flex flex-col gap-[20px]">
->>>>>>> main
         <h2 className="text-lg font-bold text-gray-600">
         {current.date}
         </h2>

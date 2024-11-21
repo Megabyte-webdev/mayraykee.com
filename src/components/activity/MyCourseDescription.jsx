@@ -1,11 +1,7 @@
 import Vector from "../../assets/pngs/vector.png";
 
 function MyCourseDescription() {
-<<<<<<< HEAD
     return ( <div className="w-full border-r-[15px] h-fit p-[3%] justify-between flex items-start border-green bg-gray-300">
-=======
-    return ( <div className="w-[100vh] border-r-[15px] h-fit p-[3%] justify-between flex items-start border-green bg-gray-300">
->>>>>>> main
         <img src={Vector} className="h-[20px]" />
         <div className="w-[95%] flex flex-col gap-[15px]">
           <h3 className="font-semibold text-[15px]">
