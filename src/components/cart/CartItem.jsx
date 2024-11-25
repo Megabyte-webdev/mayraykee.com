@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { IoCheckbox } from "react-icons/io5";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
-import Laptop from "../../assets/jpgs/lappy.jpg"; // replace with the actual image path
 import { FormatPrice } from "../../utils/UtilMethods";
+import Laptop from "../../assets/jpgs/lappy.jpg";
 
 function CartItem({
   data,
