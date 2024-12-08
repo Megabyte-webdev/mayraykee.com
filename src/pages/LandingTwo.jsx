@@ -1,7 +1,7 @@
 import NavBar from "../components/landing/NavBar";
 import "../css/extras.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { landingNavOptionsTwo } from "../utils/constants";
 import Elearning from "../assets/pngs/laptop-2.png";
@@ -11,7 +11,6 @@ import WomanInOrange from "../assets/jpgs/woman-in-orange.jpg";
 import LoginModal from "../components/LoginModal";
 
 function LandingTwo() {
-const navigate=useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -60,7 +59,7 @@ const navigate=useNavigate();
           className="w-full sm:w-[90%] lg:w-[80%] grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 pb-4 md:pb-6"
         >
           {/* Recruitment */}
-          <li onClick={()=>{scrollTo(0,0); navigate('https://job-portal-mayrahkee.vercel.app/')}} className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
+          <Link to='https://job-portal-mayrahkee.vercel.app/' className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
             <div className="flex flex-col items-center gap-3">
               <img
                 src={Recuitement}
@@ -76,13 +75,13 @@ const navigate=useNavigate();
                 </span>
               </div>
             </div>
-          </li>
+          </Link>
 
           {/* Divider */}
           <hr className="hidden md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
 
           {/* Capacity Building */}
-          <li onClick={()=>{scrollTo(0,0); navigate('https://job-portal-mayrahkee.vercel.app/learning')}} className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
+          <Link to='https://job-portal-mayrahkee.vercel.app/learning' className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
             <div className="flex flex-col items-center gap-3">
               <img
                 src={Elearning}
@@ -98,7 +97,7 @@ const navigate=useNavigate();
                 </span>
               </div>
             </div>
-          </li>
+          </Link>
 
           {/* Divider */}
           <hr className="hidden md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
