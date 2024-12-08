@@ -59,7 +59,7 @@ function LoginModal({ isOpen, setIsOpen }) {
                 E-Learning
               </button>
               <a
-                href="https://job-portal-mayrahkee.vercel.app/"
+                href="https://job-portal-mayrahkee.vercel.app/login"
                 className="h-[80px] sm:h-[100px] hover:scale-105 duration-100 rounded-md w-[130px] sm:w-[150px] items-center justify-center bg-white border border-green text-green font-bold flex flex-col"
               >
                 <img src={caseIcon} className="h-[25px] sm:h-[30px]" alt="Job Portal Icon" />
