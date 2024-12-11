@@ -9,12 +9,13 @@ export const AuthenticationContextProvider = ({ children }) => {
  
 
   const [authDetails, setAuthDetails] = useState({
-    token: "",
+    token: JSON.parse(sessionStorage.getItem("myToken")),
     user: JSON.parse(sessionStorage.getItem(primaryInfo)),
   });
 
   const storePrimaryDetails = () => {
     sessionStorage.setItem(primaryInfo, JSON.stringify(authDetails.user));
+    sessionStorage.setItem("myToken", JSON.stringify(authDetails.token));
   };
 
   useEffect(() => {

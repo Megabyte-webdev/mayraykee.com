@@ -9,7 +9,7 @@ function OrderSummary({ data }) {
       return <span className="text-small">Select Item for Checkout</span>;
     }
     return data?.map((currentItem, index) => (
-      <li key={index} className="text-small text-black flex w-full justify-between">
+      <li key={index} className="text-sm text-black flex w-full justify-between">
         <h2>{currentItem?.title || currentItem?.name}</h2> {/* Ensure correct property */}
         <span>{FormatPrice(Number(currentItem?.price))}</span>
       </li>
@@ -33,10 +33,10 @@ function OrderSummary({ data }) {
   };
 
   return (
-    <div className="md:w-[350px] min-h-60 border pt-[2%] px-[2%] flex flex-col gap-[5%] border-black bg-white">
+    <div className="md:sticky md:top-0 md:w-[400px] min-h-80 border pt-[2%] px-[2%] flex flex-col gap-[5%] border-black bg-white">
       <h3 className="text-black font-semibold text-lg">ORDER SUMMARY</h3>
 
-      <ul className="w-full flex flex-col pb-[10px] gap-[10px]">
+      <ul className="w-full flex flex-col p-[10px] gap-[10px]">
         {getItems()}
       </ul>
 

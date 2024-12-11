@@ -4,10 +4,10 @@ import CategoryCard from './CategoryCard';
 import CourseCard from './CategoryCard';
 import { memo } from 'react';
 
-function PopularCourses() {
+function PopularCourses({popular}) {
 
     const getCourses = () => {
-        return courses_two.map((currentCourse, index) => <CategoryCard key={index} data={currentCourse}/>)
+        return popular?.map((currentCourse, index) => <CategoryCard key={index} data={currentCourse}/>)
     }
 
     return ( 

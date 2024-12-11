@@ -16,6 +16,7 @@ function useEnrolledCourses() {
   const [loading, setIsLoading] = useState(false)
 
   const getCourses = useCallback(async () => {
+    
     setIsLoading(true);
     try {
       const response = await client.get(`/enroll/getEnrollByUserId/${authDetails?.user?.id}`);
