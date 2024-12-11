@@ -56,7 +56,7 @@ function PageCount({ currentPageContent, setCurrentPageContent, contents }) {
         onClick={() => setCurrentPage(index + 1)}
         className={`${
           currentPage === index + 1 ? "bg-green text-white" : "bg-white"
-        } cursor-pointer flex items-center justify-center duration-100 hover:scale-105 px-2`}
+        } cursor-pointer flex items-center justify-center duration-100 hover:scale-105 px-1 md:px-2 `}
       >
         {index + 1}
       </li>
@@ -71,10 +71,10 @@ function PageCount({ currentPageContent, setCurrentPageContent, contents }) {
   };
 
   return (
-    <div className="w-full flex justify-between my-4">
-      <span className="text-sm text-gray-400">
-        Showing <span className="text-green">{resultsText()}</span> from{" "}
-        <span className="text-green">{totalContents}</span> results
+    <div className="w-full flex justify-between my-2 py-2 sticky bottom-0 bg-gray-100">
+      <span className="text-sm text-gray-600">
+        Showing <span className="text-green font-medium">{resultsText()}</span> from{" "}
+        <span className="text-green font-medium">{totalContents}</span> results
       </span>
       <div className="flex gap-[20px] items-center justify-between">
         <img

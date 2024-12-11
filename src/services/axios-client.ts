@@ -4,7 +4,7 @@ const apiURL = "https://dash.mayrahkeeafrica.com/api";
 
 export const axiosClient = (token: string | null): AxiosInstance => {
   let headers;
-
+//console.log(token)
   if(token){
    headers = {
       "Content-Type": "application/json;charset=utf-8",

@@ -22,7 +22,7 @@ function Cart() {
         <hr className="w-[70%] h-[2px] border-0 bg-gray-300" />
       </div>
 
-      <div className="w-full flex flex-col md:flex-row gap-[5%] justify-start">
+      <div className="w-full flex flex-col md:flex-row gap-[5%] justify-start md:items-start">
         <div className="flex flex-col w-full md:w-2/3 gap-[15px]">
           <h2 className="text-black text-sm">Showing 3 products you added</h2>
           <CartList
@@ -35,7 +35,7 @@ function Cart() {
       </div>
 
 
-      <RelatedCourses />
+      <RelatedCourses cartItems={cartItems}/>
 
     </section>
   );
