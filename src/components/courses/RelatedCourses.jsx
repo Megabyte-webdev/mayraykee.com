@@ -67,7 +67,7 @@ function RelatedCourses({ cartItems }) {
           {error}
         </div>
       ) : (
-        <ul className="w-full grid grid-cols-1 sm:grid-cols-2 min-[900px]:grid-cols-3 min-[1200px]:grid-cols-4 gap-4">
+        <ul className="w-full grid grid-cols-1 sm:grid-cols-2 min-[900px]:grid-cols-3 min-[1200px]:grid-cols-4 justify-center gap-4">
           {limitedRelatedCourses?.map((currentCourse) => (
             <CourseCard key={currentCourse?.id} data={currentCourse} />
           ))}
