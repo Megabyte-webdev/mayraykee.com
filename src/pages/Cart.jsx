@@ -15,7 +15,7 @@ function Cart() {
       <Helmet>
         <title>Mayrahkee - Africa | Cart</title>
       </Helmet>
-      <div className="w-[45%] flex items-end">
+      <div className="md:w-[45%] flex items-end">
         <button className="w-[30%] border-b-2 text-sm text-[#4cbc9a] border-b-[#4cbc9a] pb-[5px]">
           Shopping Cart
         </button>
@@ -24,7 +24,7 @@ function Cart() {
 
       <div className="w-full flex flex-col md:flex-row gap-[5%] justify-start md:items-start">
         <div className="flex flex-col w-full md:w-2/3 gap-[15px]">
-          <h2 className="text-black text-sm">Showing 3 products you added</h2>
+          <h2 className="text-black text-sm">Showing {cartItems?.length || 0} products you added</h2>
           <CartList
             cartItems={cartItems}
             selectedItems={selectedItems}
