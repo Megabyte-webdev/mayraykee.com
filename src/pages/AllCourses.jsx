@@ -21,7 +21,7 @@ function AllCourses() {
   const sortedCourses = courses?.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
      
   return (
-    <section className="flex flex-col pt-[2%] h-auto px-[2%] overflow-y-auto gap-[10%]">
+    <section className="flex flex-col pt-[2%] h-auto px-5 md:px-[2%] overflow-y-auto gap-[10%]">
      <PopularCourses popular={sortedCourses?.slice(0, 4)} />
       {!loading && courses?.length !== 0 && (
         <>
