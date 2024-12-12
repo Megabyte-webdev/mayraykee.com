@@ -49,7 +49,7 @@ function CartItem({
 
     try {
       // Make API call to remove the item from the server with token in the headers
-      await axios.delete(
+      await axios.post(
         `${BASE_URL}/cart/removeCart/${data?.cartsId}`,{
           headers: {
             Authorization: `Bearer ${authDetails?.token}`, // Include the token in the Authorization header
