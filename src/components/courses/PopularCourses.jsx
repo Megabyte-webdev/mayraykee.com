@@ -17,7 +17,7 @@ function PopularCourses({popular}) {
           <button className="text-sm flex items-center gap-[5px] hover:scale-105 duration-105 text-green">View all<img className="h-[10px]" src={ArrowRight}/></button>
         </div>
 
-        <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full justify-around gap-2'>
+        <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full justify-around place-items-center gap-2'>
              {getCourses()}
         </ul>
 
