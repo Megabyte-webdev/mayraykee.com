@@ -11,7 +11,7 @@ function Cart() {
   const { cartItems } = useCart()
 
   return (
-    <section className="w-full px-[2%] pt-[10px] h-fit overflow-y-auto pb-[20px] flex flex-col gap-[25px]">
+    <section className="w-full px-5 md:px-[2%] pt-[10px] h-fit overflow-y-auto pb-[20px] flex flex-col gap-[25px]">
       <Helmet>
         <title>Mayrahkee - Africa | Cart</title>
       </Helmet>
