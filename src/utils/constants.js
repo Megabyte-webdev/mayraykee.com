@@ -98,6 +98,7 @@ export const sidebar_keys = {
     title: "Instructors",
     activeIcon: PersonWithBoard,
     inactiveIcon: InstructorsInactive,
+    route: "/dashboard/instructors",
   },
   profile: {
     title: "Profile",

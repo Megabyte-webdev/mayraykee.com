@@ -19,6 +19,7 @@ import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
 import useAdminDashboardRoute from "./routes/useAdminDashboardRoute";
 import { NetworkStatusContextProvider } from "./context/NetworkStatusContext";
 import { AuthenticationContextProvider } from "./context/AuthenticationContext";
+import { ResourceContextProvider } from "./context/ResourceContext";
 
 const Login = lazy(() => import("./pages/Login"));
 const ForgotPassword = lazy(() => import("../src/pages/ForgotPassword"));
@@ -37,23 +38,26 @@ function App() {
     <>
       <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
         <AuthenticationContextProvider>
-          <NetworkStatusContextProvider>
-            <Suspense fallback={<FallbackComponent />}>
-              <Router>
-                <Routes>
-                  <Route path="/" element={<LandingTwo />} />
-                  <Route path="/landing_two" element={<LandingTwo />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/forgot_password" element={<ForgotPassword />} />
+          <ResourceContextProvider>
+            <NetworkStatusContextProvider>
+              <Suspense fallback={<FallbackComponent />}>
+                <Router>
+                  <Routes>
+                    <Route path="/" element={<LandingTwo />} />
+                    <Route path="/landing_two" element={<LandingTwo />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/forgot_password" element={<ForgotPassword />} />
 
-                  {registrationRoute}
-                  {adminDashboardRoute}
-                  {dashboardRoute}
-                </Routes>
-              </Router>
-            </Suspense>
-            <ToastContainer autoClose={2000} draggable />
-          </NetworkStatusContextProvider>
+                    {registrationRoute}
+                    {adminDashboardRoute}
+                    {dashboardRoute}
+                  </Routes>
+                </Router>
+              </Suspense>
+              <ToastContainer autoClose={2000} draggable />
+            </NetworkStatusContextProvider>
+
+          </ResourceContextProvider>
         </AuthenticationContextProvider>
       </PrimeReactProvider>
     </>
