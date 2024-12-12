@@ -32,6 +32,9 @@ const Schedule = lazy(() => import('../pages/Schedule'))
 //Profile
 const Profile = lazy(() => import('../layout/ProfileDetails'))
 
+//Instructors
+const Instructors = lazy(() => import('../pages/InstructorsPage'))
+
 //Activity
 const Activity = lazy(() => import('../layout/Activity'))
 const You = lazy(() => import('../pages/You'))
@@ -71,6 +74,9 @@ function useDashboardRoute() {
 
             {/* Profile */}
             <Route path='/dashboard/account_profile' element={<Profile/>} />
+         {/* Instructors */}
+         <Route path='/dashboard/instructors' element={<Instructors/>} />
+        
 
             {/* Activity */}
             <Route path='/dashboard/activity' element={<Activity/>} >

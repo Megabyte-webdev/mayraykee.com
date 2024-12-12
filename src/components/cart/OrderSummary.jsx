@@ -40,14 +40,14 @@ function OrderSummary({ data }) {
         {getItems()}
       </ul>
 
-      <div className="text-small text-black border-t flex items-center w-full justify-between">
-        <h2>Grand Total</h2>
+      <div className="mt-auto text-small text-black border-t flex items-center w-full justify-between">
+        <h2 className="font-medium text-xl">Grand Total</h2>
         <span className="text-lime-600 text-lg">{FormatPrice(getTotal())}</span>
       </div>
 
       <button
         onClick={navigateToCheckoutPage}
-        className="mb-2 mt-auto w-[80%] rounded-[5px] hover:scale-105 duration-100 place-self-center py-[5px] text-white font-semibold text-sm bg-black"
+        className="my-2 w-full rounded-[5px] hover:scale-105 duration-100 place-self-center py-[5px] text-white font-semibold text-sm bg-black"
       >
         Checkout
       </button>
