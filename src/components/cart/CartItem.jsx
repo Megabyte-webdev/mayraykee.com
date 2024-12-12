@@ -45,12 +45,10 @@ function CartItem({
     setLoading(true); // Set loading to true when the request starts
 
     // Retrieve the token from localStorage (or cookie, depending on where it's stored)
-    const token = localStorage.getItem("authToken"); // Adjust as needed
-
     try {
       // Make API call to remove the item from the server with token in the headers
       await axios.post(
-        `${BASE_URL}/cart/removeCart/${data?.cartsId}`,{
+        `${BASE_URL}/cart/removeCart/${parseInt(data?.cartsId)}`,{
           headers: {
             Authorization: `Bearer ${authDetails?.token}`, // Include the token in the Authorization header
           },
