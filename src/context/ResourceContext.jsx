@@ -11,12 +11,13 @@ export function ResourceContextProvider({ children }) {
     const token = authDetails?.token ? authDetails.token : null;
     const [checker, setChecker] = useState(false);
     const [errorMesage, setErrorMessage] = useState('');
+    const [cartItems, setCartItems] = useState([]);
 
     const [getInstructors, setGetInstructors] = useState({
         data: null,
         isDataNeeded: false,
     });
-
+    
     //Users Resource useEffect
     useEffect(() => {
         setErrorMessage('');
@@ -35,7 +36,9 @@ export function ResourceContextProvider({ children }) {
                 setChecker,
                 errorMesage,
                 setGetInstructors,
-                getInstructors
+                getInstructors,
+                cartItems,
+                setCartItems
             }}
         >
             {children}
