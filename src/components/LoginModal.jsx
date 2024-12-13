@@ -51,13 +51,6 @@ function LoginModal({ isOpen, setIsOpen }) {
             </div>
 
             <div className="w-full flex flex-col sm:flex-row justify-center items-center mt-4 sm:mt-8 gap-4 sm:gap-[30px]">
-              <button
-                onClick={navigateToElearningLogin}
-                className="h-[80px] sm:h-[100px] hover:scale-105 duration-100 rounded-md w-[130px] sm:w-[150px] items-center justify-center bg-green text-white font-bold flex flex-col"
-              >
-                <img src={laptopIcon} className="h-[25px] sm:h-[30px]" alt="E-Learning Icon" />
-                E-Learning
-              </button>
               <a
                 href="https://job-portal-mayrahkee.vercel.app/login"
                 className="h-[80px] sm:h-[100px] hover:scale-105 duration-100 rounded-md w-[130px] sm:w-[150px] items-center justify-center bg-white border border-green text-green font-bold flex flex-col"
@@ -65,6 +58,14 @@ function LoginModal({ isOpen, setIsOpen }) {
                 <img src={caseIcon} className="h-[25px] sm:h-[30px]" alt="Job Portal Icon" />
                 Job Portal
               </a>
+              <button
+                onClick={navigateToElearningLogin}
+                className="h-[80px] sm:h-[100px] hover:scale-105 duration-100 rounded-md w-[130px] sm:w-[150px] items-center justify-center bg-green text-white font-bold flex flex-col"
+              >
+                <img src={laptopIcon} className="h-[25px] sm:h-[30px]" alt="E-Learning Icon" />
+                E-Learning
+              </button>
+              
             </div>
           </div>
         </motion.div>

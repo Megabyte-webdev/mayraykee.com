@@ -30,9 +30,9 @@ function LandingTwo() {
               transition: { duration: 1 },
             }}
             viewport={{ once: true }}
-            className="font-bold text-3xl sm:text-4xl lg:text-5xl text-white text-center"
+            className="font-bold text-3xl sm:text-4xl lg:text-5xl text-white text-center tracking-wide"
           >
-            The minimalist that offers maximalist
+            Mayrahkee Africa,
           </motion.h1>
 
           <motion.span
@@ -43,9 +43,9 @@ function LandingTwo() {
               transition: { duration: 1 },
             }}
             viewport={{ once: true }}
-            className="font-medium w-full sm:w-[80%] md:w-[60%] text-center text-sm sm:text-md text-white mb-4"
+            className="font-medium w-full sm:w-[80%] md:w-[60%] text-center text-sm sm:text-xl text-white mb-4 tracking-wider"
           >
-            We help people and companies build online visibility - from a business card website to an online superstore.
+            Re-orientating Our Thinking Towards Talent Development
           </motion.span>
         </motion.div>
 
@@ -56,7 +56,7 @@ function LandingTwo() {
             y: 0,
             transition: { duration: 1 },
           }}
-          className="w-full sm:w-[90%] lg:w-[80%] grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 pb-4 md:pb-6"
+          className="w-full sm:w-[90%] lg:w-[80%] grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 md:gap-6 pb-4 md:pb-6"
         >
           {/* Recruitment */}
           <Link to='https://job-portal-mayrahkee.vercel.app/' className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
@@ -71,14 +71,14 @@ function LandingTwo() {
                   Recruitment
                 </h2>
                 <span className="font-light text-sm text-center">
-                  Create an account to hire best talent find employment with reputable organisations.
+                  Create an account to hire best talent,<br /> Find employment with reputable organisations.
                 </span>
               </div>
             </div>
           </Link>
 
           {/* Divider */}
-          <hr className="hidden md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
+          <hr className="md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
 
           {/* Capacity Building */}
           <Link to='https://job-portal-mayrahkee.vercel.app/learning' className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
@@ -100,7 +100,7 @@ function LandingTwo() {
           </Link>
 
           {/* Divider */}
-          <hr className="hidden md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
+          <hr className="md:block border-r-[1.5px] border-[#458a28] h-[80%]" />
 
           {/* Oil and Gas */}
           <li className="flex flex-col items-center justify-center p-4 hover:scale-105 duration-100 gap-4 text-white bg-opacity-75 rounded-lg bg-green-900/50">
