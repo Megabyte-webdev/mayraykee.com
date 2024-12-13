@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import VideoImg from "../../assets/pngs/video.png";
 import { FormatPrice } from "../../utils/UtilMethods";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
@@ -6,10 +6,12 @@ import Tick from "../../assets/pngs/tick.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 import Spinner from "../Spinner";
+import { ResourceContext } from "../../context/ResourceContext";
 
 function CourseAction({ data }) {
   const [addToWishList, setAddToWishList] = useState(false);
-  const { checkCartForCourse, cartItems, addCourseToCart, loading } = useCart();
+  const { cartItems } = useContext(ResourceContext);
+  const { checkCartForCourse, addCourseToCart, loading } = useCart();
   const [isInCart, setIsInCart] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,7 +32,7 @@ function CourseAction({ data }) {
     });
 
   const getThingsToLearn = () => {
-    if (data.things_to_learn?.length === 0 || !data.things_to_learn) {
+    if (data?.things_to_learn?.length === 0 || !data.things_to_learn) {
       return <span className="text-small">No Data Found</span>;
     }
 
@@ -94,13 +96,12 @@ function CourseAction({ data }) {
           <button
             onClick={() => addCourseToCart(data?.id)}
             disabled={isInCart}
-            className={`border flex items-center justify-center gap-[10px] ${
-              isInCart
+            className={`border flex items-center justify-center gap-[10px] ${isInCart
                 ? "bg-gray300 hover:scale-100 "
                 : "bg-none hover:scale-105 duration-100 "
-            } w-[45%] rounded-[10px] border-black font-semibold py-[10px]`}
+              } w-[45%] rounded-[10px] border-black font-semibold py-[10px]`}
           >
-            {isInCart && !loading && "Already in Cart" }
+            {isInCart && !loading && "Already in Cart"}
             {!isInCart && !loading && "Add to Cart"}
             {isInCart && !loading && <img src={Tick} className="h-[15px]" />}
             {loading && <span className="animate-pulse text-small">procesing...</span>}

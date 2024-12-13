@@ -5,10 +5,8 @@ import { FormatPrice } from "../../utils/UtilMethods";
 import Laptop from "../../assets/jpgs/lappy.jpg";
 import { RiDeleteBin6Line } from "react-icons/ri"; // Importing delete icon
 import { RiLoader4Fill } from "react-icons/ri"; // Importing loader icon
-import axios from "axios"; // Importing axios for HTTP requests
-import { BASE_URL } from '../../utils/base'; // Import your base URL
-import { toast } from 'react-toastify'; // Import toastify for toast messages
 import { AuthenticationContext } from "../../context/AuthenticationContext";
+import useCart from "../../hooks/useCart";
 
 function CartItem({
   data,
@@ -17,9 +15,10 @@ function CartItem({
   isAllChecked,
   setIsAllChecked,
 }) {
-  const { authDetails } = useContext(AuthenticationContext);
+  const { cartItems, removeItemsFromCartOnServer } = useCart(); // Importing the method to refresh cart
   const [isChecked, setIsChecked] = useState(false);
-  const [loading, setLoading] = useState(false); // Loading state
+  const [isRemoving, setIsRemoving] = useState(false); // Specific loader state
+
   // Toggle checked state for selection
   const toggleIsChecked = () => setIsChecked(!isChecked);
 
@@ -40,33 +39,6 @@ function CartItem({
     setIsAllChecked(false); // Reset "Select All" state if item is removed
   };
 
-  // Remove item from the cart on the server with token header
-  const removeItemFromCartOnServer = async () => {
-    setLoading(true); // Set loading to true when the request starts
-
-    // Retrieve the token from localStorage (or cookie, depending on where it's stored)
-    try {
-      // Make API call to remove the item from the server with token in the headers
-      await axios.post(
-        `${BASE_URL}/cart/removeCart/${parseInt(data?.cartsId)}`,{
-          headers: {
-            Authorization: `Bearer ${authDetails?.token}`, // Include the token in the Authorization header
-          },
-        }
-      );
-
-      // If the server request is successful, also remove it locally
-      removeItemFromSelectedCart();
-      toast.success("Item successfully removed from the cart!"); // Success toast
-    } catch (error) {
-      console.log(authDetails.token, data)
-      console.error("Error removing item from cart:", error);
-      toast.error("Failed to remove item from cart. Please try again."); // Error toast
-    } finally {
-      setLoading(false); // Set loading to false once the request is done
-    }
-  };
-
   // Update the checked state when `selectedItems` or `isAllChecked` change
   useEffect(() => {
     if (isAllChecked) {
@@ -76,6 +48,27 @@ function CartItem({
       setIsChecked(isFound); // Check if this item is selected
     }
   }, [selectedItems, isAllChecked, data?.cartsId]);
+
+  const handleRemoveItem = async () => {
+    setIsRemoving(true); // Set individual loader state
+
+    try {
+      // Call server to remove item
+      await removeItemsFromCartOnServer(data);
+
+      // Remove from `selectedItems` if it exists
+      const isItemSelected = selectedItems?.some(
+        (item) => item?.cartsId === data?.cartsId
+      );
+      if (isItemSelected) {
+        removeItemFromSelectedCart(); // Remove from selectedItems
+      }
+    } catch (error) {
+      console.error("Failed to remove item from cart:", error);
+    } finally {
+      setIsRemoving(false); // Reset loader state
+    }
+  };
 
   return (
     <div className="w-full border-b flex gap-[10px] py-[10px] items-center">
@@ -97,17 +90,17 @@ function CartItem({
       </div>
 
       {/* Remove from cart button */}
-      <button
-        onClick={removeItemFromCartOnServer}
+     {!isAllChecked && <button
+        onClick={handleRemoveItem}
         className="text-red-500 hover:text-red-700 ml-3"
-        disabled={loading} // Disable the button while loading
+        disabled={isRemoving} // Disable the button while specific loading is active
       >
-        {loading ? (
+        {isRemoving ? (
           <RiLoader4Fill className="text-xl animate-spin" /> // Loader icon while loading
         ) : (
           <RiDeleteBin6Line className="text-xl" /> // Delete icon when not loading
         )}
-      </button>
+      </button>}
     </div>
   );
 }

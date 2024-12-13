@@ -1,47 +1,61 @@
 import { useState } from "react";
 import { IoCheckbox } from "react-icons/io5";
+import { RiDeleteBin6Line, RiLoader4Fill } from "react-icons/ri"; // Combined imports
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import CartItem from "./CartItem";
+import useCart from "../../hooks/useCart";
 
-function CartList({ selectedItems, setSelectedItems, cartItems }) {
+function CartList({ selectedItems = [], setSelectedItems, cartItems = [] }) {
+  const { removeItemsFromCartOnServer } = useCart();
   const [isAllChecked, setIsAllChecked] = useState(false);
+  const [isRemoving, setIsRemoving] = useState(false);
 
   const toggleIsAllChecked = () => setIsAllChecked(!isAllChecked);
-
-  const getCartItems = () => {
-    if (cartItems?.length === 0) {
-      return <span className="text-gray-500 text-sm">No items in the cart.</span>;
+  const handleRemoveSelectedItems = async () => {
+    if (selectedItems.length === 0) return;
+  
+    try {
+      setIsRemoving(true);
+      await removeItemsFromCartOnServer(selectedItems)
+      setSelectedItems([]); // Clear selected items after removal
+      setIsAllChecked(false); // Uncheck "Select All"
+    } catch (error) {
+      console.error("Failed to remove selected items:", error);
+    } finally {
+      setIsRemoving(false);
     }
-    return cartItems.map((currentItem, index) => (
-      <CartItem
-        key={index}
-        isAllChecked={isAllChecked}
-        setIsAllChecked={setIsAllChecked}
-        selectedItems={selectedItems}
-        setSelectedItems={setSelectedItems}
-        data={currentItem}
-      />
-    ));
   };
+  
 
   const addAllItemsToCart = () => {
-    if (cartItems?.length === 0) {
-      return;
-    }
-    cartItems.forEach((currentItem) => {
-      const isFound = selectedItems?.some(
-        (current) => current?.cartsId === currentItem?.cartsId
-      );
-      if (!isFound) {
-        setSelectedItems((prev) => [...prev, currentItem]);
+    cartItems.forEach((item) => {
+      if (!selectedItems.some((selected) => selected.cartsId === item.cartsId)) {
+        setSelectedItems((prev) => [...prev, item]);
       }
     });
-    toggleIsAllChecked();
+    setIsAllChecked(true);
   };
 
   const removeAllItemsFromCart = () => {
     setSelectedItems([]);
-    toggleIsAllChecked();
+    setIsAllChecked(false);
+  };
+
+  const renderCartItems = () => {
+    if (cartItems.length === 0) {
+      return <span className="text-gray-500 text-sm">No items in the cart.</span>;
+    }
+
+    return cartItems.map((item) => (
+      <CartItem
+        key={item.cartsId} // Use a unique identifier instead of index
+        isAllChecked={isAllChecked}
+        setIsAllChecked={setIsAllChecked}
+        selectedItems={selectedItems}
+        setSelectedItems={setSelectedItems}
+        data={item}
+      />
+    ));
   };
 
   return (
@@ -59,11 +73,24 @@ function CartList({ selectedItems, setSelectedItems, cartItems }) {
             className="text-lg cursor-pointer"
           />
         )}
-        <span className="text-sm text-gray-700">Select All</span>
+        <span className="text-sm text-gray-700">Select All ({selectedItems?.length})</span>
+        {isAllChecked && (
+          <button
+            onClick={handleRemoveSelectedItems}
+            className="ml-auto text-red-500 hover:text-red-700"
+            disabled={selectedItems.length === 0}
+          >
+            {isRemoving ? (
+              <RiLoader4Fill className="text-xl animate-spin" />
+            ) : (
+              <RiDeleteBin6Line className="text-xl" />
+            )}
+          </button>
+        )}
       </div>
 
       {/* Cart Items List */}
-      <ul className="flex flex-col gap-2 pb-4">{getCartItems()}</ul>
+      <ul className="flex flex-col gap-2 pb-4">{renderCartItems()}</ul>
     </div>
   );
 }

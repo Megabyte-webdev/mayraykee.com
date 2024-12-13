@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import CartList from "../components/cart/CartList";
 import OrderSummary from "../components/cart/OrderSummary";
 import RelatedCourses from "../components/courses/RelatedCourses";
 import { Helmet } from 'react-helmet'
-import useCart from "../hooks/useCart";
+//import useCart from "../hooks/useCart";
+import { ResourceContext } from "../context/ResourceContext";
 
 
 function Cart() {
   const [selectedItems, setSelectedItems] = useState([]);
-  const { cartItems } = useCart()
+  const { cartItems } = useContext(ResourceContext);
 
   return (
     <section className="w-full px-5 md:px-[2%] pt-[10px] h-fit overflow-y-auto pb-[20px] flex flex-col gap-[25px]">

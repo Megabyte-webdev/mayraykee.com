@@ -18,7 +18,10 @@ function OrderSummary({ data }) {
   
   const navigateToCheckoutPage = () => {
     if (!data || data.length === 0) {
-      onFailure("Please select items");
+      onFailure({
+        message: "Checkout Error",
+        error :"Please select items"
+      });
       return;
     }
 
