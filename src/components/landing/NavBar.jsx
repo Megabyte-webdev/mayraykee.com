@@ -57,6 +57,14 @@ function NavBar({ navOptions = [], setIsOpen }) {
             menu ? "right-0" : "right-[-100%]"
           } bg-green-700 flex flex-col gap-4 lg:hidden p-4 transition-all duration-500`}
         >
+           <div
+        onClick={() => {
+          setMenu(!menu);
+        }}
+        className="block lg:hidden transition-all ease-in-out duration-300 text-white my-4 mx-2"
+      >
+        {!menu ? <FaBars size={24} /> : <FaTimes size={24} />}
+      </div>
           {getOptions()}
           <li>
             <button
