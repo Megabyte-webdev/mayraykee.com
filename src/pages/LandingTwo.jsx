@@ -71,7 +71,7 @@ function LandingTwo() {
                   Recruitment
                 </h2>
                 <span className="font-light text-sm text-center">
-                  Create an account to hire best talent,<br /> Find employment with reputable organisations.
+                  Create an account to hire best talent.<br /> Find employment with reputable organisations.
                 </span>
               </div>
             </div>
