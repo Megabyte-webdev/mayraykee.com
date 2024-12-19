@@ -66,8 +66,11 @@ function NavBar({ navOptions = [], setIsOpen }) {
         {!menu ? <FaBars size={24} /> : <FaTimes size={24} />}
       </div>
           {getOptions()}
-          <li>
-            <div className="hidden md:flex items-center justify-center gap-3 lg:order-2 ml-auto">
+        
+        </ul>
+
+        {/* Login/Register Button */}
+        <div className="hidden md:flex items-center justify-center gap-3 lg:order-2 ml-auto">
         <Btn
           title="Login"
           loc={login}
@@ -79,16 +82,6 @@ function NavBar({ navOptions = [], setIsOpen }) {
           styl="bg-black shadow-[1px_1px_0] shadow-gray-400 hover:shadow-[-1px_-1px_0] text-white"
         />
       </div>
-          </li>
-        </ul>
-
-        {/* Login/Register Button */}
-        <button
-          onClick={() => setIsOpen(true)}
-          className="hidden lg:block ml-auto text-sm bg-[#F5F5DC] hover:scale-105 duration-50 p-[8px] text-black font-semibold"
-        >
-          Login/Register
-        </button>
 
         {/* Menu Toggle */}
         <div
