@@ -4,10 +4,10 @@ import caseIcon from "../assets/pngs/case-icon.png";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
-function LoginModal({ isOpen, setIsOpen }) {
+function LoginModal({ isOpen, setIsOpen, setLogin, login }) {
   const navigate = useNavigate();
 
-  const navigateToElearningLogin = () => navigate("/login");
+  const navigateToElearningLogin = () => {login ? navigate("/login") : navigate("/registration")};
   const navigateToJobLogin = () => navigate("/landing_two");
 
   return (
@@ -38,12 +38,12 @@ function LoginModal({ isOpen, setIsOpen }) {
         >
           <div className="w-[90%] sm:w-[75%] md:w-[60%] lg:w-[45%] h-auto items-center rounded-lg p-4 sm:p-6 bg-white flex flex-col overflow-y-auto">
             <IoIosCloseCircle
-              onClick={() => setIsOpen(false)}
+              onClick={() => {setIsOpen(false); setLogin(false)}}
               className="place-self-end cursor-pointer text-2xl sm:text-lg"
             />
 
             <div className="flex flex-col items-center mt-2 sm:mt-4 text-gray-800">
-              <h2 className="font-bold text-lg sm:text-xl">Login to Account</h2>
+              <h2 className="font-bold text-lg sm:text-xl">{login ? "Login to Account" : "Register an Account"}</h2>
               <p className="text-sm sm:text-[11px] text-gray-400 w-[80%] sm:w-[60%] text-center">
                 Ready to expand your knowledge or take the next step in your
                 career? Choose your path:
@@ -52,7 +52,7 @@ function LoginModal({ isOpen, setIsOpen }) {
 
             <div className="w-full flex flex-col sm:flex-row justify-center items-center mt-4 sm:mt-8 gap-4 sm:gap-[30px]">
               <a
-                href="https://job-portal-mayrahkee.vercel.app/login"
+                href={login ? "https://job-portal-mayrahkee.vercel.app/login" : "https://job-portal-mayrahkee.vercel.app/register"}
                 className="h-[80px] sm:h-[100px] hover:scale-105 duration-100 rounded-md w-[130px] sm:w-[150px] items-center justify-center bg-white border border-green text-green font-bold flex flex-col"
               >
                 <img src={caseIcon} className="h-[25px] sm:h-[30px]" alt="Job Portal Icon" />

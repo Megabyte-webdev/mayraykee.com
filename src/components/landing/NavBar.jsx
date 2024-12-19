@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Btn from './Btn'
-function NavBar({ navOptions = [], setIsOpen }) {
+function NavBar({ navOptions = [], setIsOpen, setLogin }) {
   const [menu, setMenu] = useState(false);
 
   // Toggle menu visibility
@@ -66,19 +66,30 @@ function NavBar({ navOptions = [], setIsOpen }) {
         {!menu ? <FaBars size={24} /> : <FaTimes size={24} />}
       </div>
           {getOptions()}
-        
-        </ul>
-
-        {/* Login/Register Button */}
-        <div className="hidden md:flex items-center justify-center gap-3 lg:order-2 ml-auto">
+          <div className="flex flex-col items-start lg:hidden gap-3 lg:order-2">
         <Btn
           title="Login"
-          loc={login}
+          func={()=>{setIsOpen(true);  setLogin(true)}}
           styl="bg-gray-100 shadow-[1px_1px_0_2px] shadow-gray-400 hover:shadow-[-1px_-1px_0]"
         />
         <Btn
           title="Register"
-          loc={register}
+          func={()=>{setIsOpen(true); setLogin(false)}}
+          styl="bg-black shadow-[1px_1px_0] shadow-gray-400 hover:shadow-[-1px_-1px_0] text-white"
+        />
+      </div>
+        </ul>
+
+        {/* Login/Register Button */}
+        <div className="hidden lg:flex items-center justify-center gap-3 lg:order-2 ml-auto">
+        <Btn
+          title="Login"
+          func={()=>{setIsOpen(true);  setLogin(true)}}
+          styl="bg-gray-100 shadow-[1px_1px_0_2px] shadow-gray-400 hover:shadow-[-1px_-1px_0]"
+        />
+        <Btn
+          title="Register"
+          func={()=>{setIsOpen(true); setLogin(false)}}
           styl="bg-black shadow-[1px_1px_0] shadow-gray-400 hover:shadow-[-1px_-1px_0] text-white"
         />
       </div>

@@ -46,7 +46,7 @@ function Registration() {
   useEffect(() => {}, [state]);
 
   return (
-    <div className="w-full max-w-[600px] px-3 sm:px-6 pt-4 flex flex-col items-center mx-auto">
+    <div className="w-full max-w-[600px] px-3 sm:px-6 pt-4 flex flex-col items-center mx-auto md:overflow-y-auto">
       <img src={MainIcon} className="w-[60%] max-w-[200px] mb-4" />
 
       <div className="flex flex-col items-center gap-2 w-full">
@@ -127,20 +127,20 @@ function Registration() {
           onChange={onTextChange}
         />
 
-        <p className="text-gray-400 flex gap-2 items-center text-xs sm:text-sm">
+        <label className="text-gray-400 flex gap-2 items-center text-xs sm:text-sm">
           {isTrained ? (
             <IoMdCheckbox
               onClick={toggleIsTrained}
-              className="text-green cursor-pointer"
+              className="flex-shrink-0 text-green cursor-pointer"
             />
           ) : (
             <MdCheckBoxOutlineBlank
               onClick={toggleIsTrained}
-              className="cursor-pointer"
+              className="flex-shrink-0 cursor-pointer"
             />
           )}
           Have you been trained by us or Members School before?
-        </p>
+        </label>
 
         <FormBotton loading={loading}>Submit</FormBotton>
       </form>
