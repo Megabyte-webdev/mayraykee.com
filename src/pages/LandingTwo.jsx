@@ -12,14 +12,14 @@ import LoginModal from "../components/LoginModal";
 
 function LandingTwo() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [login, setLogin] = useState(true);
   return (
     <main className="h-max w-full flex bg-cover bg-center relative">
-      <LoginModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <LoginModal isOpen={isOpen} setIsOpen={setIsOpen} setLogin={setLogin} login={login} />
       <img src={WomanInOrange} className="absolute object-cover w-full h-full z-10" alt="Background" />
 
       <div className="w-full flex relative flex-col z-20 items-center min-h-screen bg-green/85 px-4">
-        <NavBar navOptions={landingNavOptionsTwo} setIsOpen={setIsOpen} />
+        <NavBar navOptions={landingNavOptionsTwo} setIsOpen={setIsOpen} setLogin={setLogin} />
 
         <motion.div className="flex-1 flex flex-col items-center justify-center gap-2 my-4">
           <motion.h1

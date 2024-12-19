@@ -10,21 +10,21 @@ function RegistrationProgress({ state, dispatch }) {
       const icon = isSelected ? currentStep.activeIcon : currentStep.inactiveIcon;
 
       return (
-        <li key={currentStep.title} className="w-full flex flex-col sm:flex-row items-center gap-4">
-          <div className="flex flex-col items-center sm:w-[25%]">
+        <li key={currentStep.title} className="w-full flex flex-col md:flex-row items-center gap-4">
+          <div className="flex flex-col items-center md:w-[25%]">
             <div
-              className={`bg-white rounded-md p-[10px] sm:p-[15px] ${
+              className={`bg-white rounded-md p-[10px] md:p-[15px] ${
                 isSelected && "border-2 border-gray-800 transition duration-1000"
               }`}
             >
-              <img className="h-[20px] w-[20px] sm:h-[25px] sm:w-[25px]" src={icon} alt={currentStep.title} />
+              <img className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" src={icon} alt={currentStep.title} />
             </div>
             {currentStep.title !== registration_steps_keys.welcome_video.title && (
-              <hr className="hidden sm:block h-[20px] sm:h-[25px] border-dashed border w-0" />
+              <hr className="hidden md:block h-[20px] md:h-[25px] border-dashed border w-0" />
             )}
           </div>
 
-          <div className="text-center sm:text-left hidden sm:block">
+          <div className="text-center md:text-left hidden md:block">
             <p className="font-semibold text-[10px] sm:text-[15px] text-white">{currentStep.title}</p>
             <p className="font-medium text-small text-gray-400">{currentStep.desc}</p>
           </div>

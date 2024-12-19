@@ -1,8 +1,8 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-const Btn = ({ title="Login", styl, loc='/' }) => {
+
+const Btn = ({ title="Login", styl, func }) => {
   return (
-    <Link to={loc} className={`cursor-pointer font-medium py-2 px-6 rounded-full capitalize ${styl} transition-all ease-in-out duration-300`}> {title} </Link>
+    <button onClick={func} className={`cursor-pointer font-medium py-1 px-4 rounded-full capitalize ${styl} transition-all ease-in-out duration-300`}> {title} </button>
   )
 }
 

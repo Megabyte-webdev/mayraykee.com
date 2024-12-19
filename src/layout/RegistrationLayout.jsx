@@ -10,7 +10,7 @@ function RegistrationLayout() {
     const sharedData = {state: state, dispatch: dispatch}
 
     return (
-        <main className='w-full h-screen flex flex-col sm:flex-row'>
+        <main className='w-full h-screen flex flex-col md:flex-row'>
             <div className='sticky top-0 z-100 w-full sm:w-[50%] h-screen'>
             <RegistrationProgress
             state={state}
