@@ -3,7 +3,7 @@ import MainLogo from "../../assets/pngs/main-logo-white.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-
+import Btn from './Btn'
 function NavBar({ navOptions = [], setIsOpen }) {
   const [menu, setMenu] = useState(false);
 
@@ -67,12 +67,18 @@ function NavBar({ navOptions = [], setIsOpen }) {
       </div>
           {getOptions()}
           <li>
-            <button
-              onClick={() => setIsOpen(true)}
-              className="block lg:hidden text-sm bg-[#F5F5DC] hover:scale-105 duration-50 p-[8px] text-black font-semibold"
-            >
-              Login/Register
-            </button>
+            <div className="hidden md:flex items-center justify-center gap-3 lg:order-2 ml-auto">
+        <Btn
+          title="Login"
+          loc={login}
+          styl="bg-gray-100 shadow-[1px_1px_0_2px] shadow-gray-400 hover:shadow-[-1px_-1px_0]"
+        />
+        <Btn
+          title="Register"
+          loc={register}
+          styl="bg-black shadow-[1px_1px_0] shadow-gray-400 hover:shadow-[-1px_-1px_0] text-white"
+        />
+      </div>
           </li>
         </ul>
 
